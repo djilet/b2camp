@@ -1,0 +1,107 @@
+<TMPL_INCLUDE FILE="blocks/block_edit_header.html">
+				
+				<div class="col-md-12">
+					<div class="form-group" id="Image-box">
+						<label for="Image"><TMPL_VAR NAME='LNG_FieldImage'></label><br />
+					</div>
+					<TMPL_VAR NAME='ImageControlHTML' ESCAPE='none'>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-3"><label for="Title" class="required"><TMPL_VAR NAME='LNG_FieldTitle'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Title" id="Title" value="<TMPL_VAR NAME='Title'>" placeholder="<TMPL_VAR NAME='LNG_FieldTitle'>" /></div>
+					</div>
+					
+					<TMPL_VAR NAME='DuplicateControlHTML' ESCAPE='none'>
+					
+					<!-- <div class="row">
+						<div class="col-md-3"><label for="Type"><TMPL_VAR NAME='LNG_FieldType'></label></div>
+						<div class="col-md-9">
+							<select class="form-control custom-control-itemlist-component" name='Type' id='Type' data-name="Type" data-type="input-select">
+								<option value=""></option>
+								<option value="camp"><TMPL_VAR NAME='LNG_SeasonCamp'></option>
+								<option value="urbanarea"><TMPL_VAR NAME='LNG_SeasonUrbanArea'></option>
+								<option value="holiday"><TMPL_VAR NAME='LNG_SeasonHoliday'></option>
+							</select>
+						</div>
+					</div>
+					 -->				
+					<div class="row">
+						<div class="col-md-3"><label for="Type" class="required"><TMPL_VAR NAME='LNG_FieldType'></label></div>
+						<div class="col-md-9">
+							<select name="Type" id="Type" class="form-control">
+								<TMPL_LOOP NAME='TypeValueList'>
+									<option value="<TMPL_VAR NAME='ID'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+								</TMPL_LOOP>
+							</select>
+						</div>
+					</div>
+					
+					<!-- <div class="row">
+						<div class="col-md-3"><label for="Social"><TMPL_VAR NAME='LNG_FieldType'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Type" id="Type" value="<TMPL_VAR NAME='Type'>" placeholder="<TMPL_VAR NAME='LNG_FieldType'>" /></div>
+					</div> -->
+					
+					<div class="row">
+						<div class="col-md-3"><label for="DateFrom" class="required"><TMPL_VAR NAME='LNG_FieldDateFrom'></label></div>
+						<div class="col-md-9"><input class="form-control datepicker" data-format="dd.mm.yyyy" type="text" name="DateFrom" id="DateFrom" value="<TMPL_VAR NAME='DateFrom' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_FieldDateFrom'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="DateTo" class="required"><TMPL_VAR NAME='LNG_FieldDateTo'></label></div>
+						<div class="col-md-9"><input class="form-control datepicker" data-format="dd.mm.yyyy" type="text" name="DateTo" id="DateTo" value="<TMPL_VAR NAME='DateTo' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_FieldDateTo'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="PlaceCount" class="required"><TMPL_VAR NAME='LNG_FieldPlaceCount'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="PlaceCount" id="PlaceCount" value="<TMPL_VAR NAME='PlaceCount'>" placeholder="<TMPL_VAR NAME='LNG_FieldPlaceCount'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Social"><TMPL_VAR NAME='LNG_FieldSocial'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Social" id="Social" value="<TMPL_VAR NAME='Social'>" placeholder="<TMPL_VAR NAME='LNG_FieldSocial'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Staff"><TMPL_VAR NAME='LNG_FieldStaff'></label></div>
+						<div class="col-md-9">
+							<select name="Staff[]" id="Staff" multiple>
+							    <option></option>
+							    <TMPL_LOOP NAME='StaffValueList'>
+						        <option value="<TMPL_VAR NAME='StaffID'>"<TMPL_IF NAME='Selected'> selected</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+						        </TMPL_LOOP>
+						    </select>
+						    <TMPL_VAR NAME='StaffControlHTML' ESCAPE='none'>
+						</div>
+					</div>
+						<div class="row">
+							<div class="col-md-3"><label for="TransferThereConditions"><TMPL_VAR NAME='LNG_FieldTransferThereNote'/></label></div>
+							<div class="col-md-9">
+								<textarea class="form-control" name="TransferThereConditions" id="TransferThereConditions" rows="2" cols="80" placeholder="<TMPL_VAR NAME='LNG_FieldTransferThereNote'>"><TMPL_VAR NAME='TransferThereConditions'/></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3"><label for="TransferBackConditions"><TMPL_VAR NAME='LNG_FieldTransferBackNote'/></label></div>
+							<div class="col-md-9">
+								<textarea class="form-control" name="TransferBackConditions" id="TransferBackConditions" rows="2" cols="80" placeholder="<TMPL_VAR NAME='LNG_FieldTransferBackNote'>"><TMPL_VAR NAME='TransferBackConditions'/></textarea>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-3"><label for="Comment"><TMPL_VAR NAME='LNG_FieldComment'></label></div>
+						<div class="col-md-9">
+							<textarea class="form-control" name="Comment" id="Comment" rows="6" cols="80" placeholder="<TMPL_VAR NAME='LNG_FieldComment'>"><TMPL_VAR NAME='Comment'></textarea>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="File"><TMPL_VAR NAME='LNG_FieldFile'></label></div>
+						<div class="col-md-9 no-padding">
+							<TMPL_INCLUDE FILE="blocks/block_edit_files.html">
+						</div>
+					</div>
+				</div>
+				
+				
+<TMPL_INCLUDE FILE="blocks/block_edit_footer.html">

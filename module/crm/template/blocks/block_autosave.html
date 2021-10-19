@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		entityID = "<TMPL_IF NAME='LoadFromNewEntity'>0<TMPL_ELSEIF NAME='EntityID'><TMPL_VAR NAME='EntityID'><TMPL_ELSE>0</TMPL_IF>";
+		autosaveInterval = setInterval(function(){
+			SaveFormData($('#entity-form'), "<TMPL_VAR NAME='Entity'>", entityID);
+		}, <TMPL_VAR NAME='AUTOSAVE_INTERVAL'>);
+		LoadFormData($('#entity-form'), "<TMPL_VAR NAME='Entity'>", entityID);
+		
+		$('#entity-form').submit(function(){
+			clearInterval(autosaveInterval);
+			SaveFormData($('#entity-form'), "<TMPL_VAR NAME='Entity'>", entityID);
+		});
+		$('#cancel-link').click(function(){
+			clearInterval(autosaveInterval);
+			ClearFormData("<TMPL_VAR NAME='Entity'>", entityID);
+		});
+	});
+</script>

@@ -1,0 +1,35 @@
+	
+	<thead>
+		<tr class="info">
+			<th><TMPL_VAR NAME='LNG_Season'></th>
+			<th><TMPL_VAR NAME='LNG_BoughtCount'></th>
+			<th><TMPL_VAR NAME='LNG_ReservedCount'></th>
+			<th><TMPL_VAR NAME='LNG_FreeCount'></th>
+		</tr>
+	</thead>
+	<tbody>
+		<TMPL_LOOP NAME='ResultList'>
+			<TMPL_UNLESS NAME='__LAST__'>
+				<tr>
+					<td><TMPL_VAR NAME='Title'></td>
+					<td><TMPL_VAR NAME='BoughtCount'></td>
+					<td><TMPL_VAR NAME='ReservedCount'></td>
+					<td><TMPL_VAR NAME='FreeCount'></td>
+				</tr>
+			</TMPL_UNLESS>
+		</TMPL_LOOP>
+	</tbody>
+	<TMPL_IF NAME='ResultList'>
+		<tfoot>
+			<TMPL_LOOP NAME='ResultList'>
+				<TMPL_IF NAME='__LAST__'>
+					<tr class="info">
+						<th><TMPL_VAR NAME='LNG_Total'></th>
+						<th><TMPL_VAR NAME='BoughtCount'></th>
+						<th><TMPL_VAR NAME='ReservedCount'></th>
+						<th><TMPL_VAR NAME='FreeCount'></th>
+					</tr>
+				</TMPL_IF>
+			</TMPL_LOOP>
+		</tfoot>
+	</TMPL_IF>

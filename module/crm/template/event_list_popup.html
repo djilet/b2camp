@@ -1,0 +1,24 @@
+<TMPL_IF NAME='ItemList'>
+	<TMPL_LOOP NAME="ItemList">
+		<span href="#" class="list-group-item list-group-item-<TMPL_IF NAME='EventType' VALUE='private'>warning<TMPL_ELSEIF NAME='EventType' VALUE='public'>success</TMPL_IF> bottom5">
+			<div class="row">
+				<div class="col-md-9 col-sm-9 col-xs-9">
+					<TMPL_IF NAME='Past'>
+						<i class="fa fa-check"></i>
+					<TMPL_ELSEIF NAME='EventType' VALUE='private'>
+						<i class="fa fa-user"></i>
+					<TMPL_ELSEIF NAME='EventType' VALUE='public'>
+						<i class="fa fa-users"></i>
+					</TMPL_IF>
+					<TMPL_VAR NAME='EventDateFrom' FORMAT='time'> - <TMPL_VAR NAME='EventDateTo' FORMAT='time'> <TMPL_VAR NAME='Title'>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-3 text-right">
+					<a href="#" EntityID="<TMPL_VAR NAME='EntityID'>" class="my-event-edit"><i class="fa fa-edit"></i></a>
+					<a href="#" EntityID="<TMPL_VAR NAME='EntityID'>" class="my-event-remove"><i class="fa fa-close"></i></a>
+				</div>
+			</div>
+		</span>
+	</TMPL_LOOP>
+<TMPL_ELSE>
+	<div class="alert alert-default"><TMPL_VAR NAME='LNG_ListEmpty'></div>
+</TMPL_IF>

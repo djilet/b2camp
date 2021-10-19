@@ -1,0 +1,86 @@
+<?php $this->_GetData($this->_FileSearch('blocks/block_list_header.html'), 1); ?>
+
+				<form action="" method="post">
+					<div class="form-group well transparent">
+						<h3><?php if ($this->_vars['LNG_Filter'] !== null) { print(htmlspecialchars($this->_vars['LNG_Filter'], ENT_QUOTES)); } ?></h3>
+						<div class="row">
+							<div class="col-md-2">
+								<label><?php if ($this->_vars['LNG_FilterTitle'] !== null) { print(htmlspecialchars($this->_vars['LNG_FilterTitle'], ENT_QUOTES)); } ?></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterTitle" value="<?php if ($this->_vars['FilterTitle'] !== null) { print(htmlspecialchars($this->_vars['FilterTitle'], ENT_QUOTES)); } ?>" class="form-control" />
+							</div>
+							<div class="col-md-2">
+								<label><?php if ($this->_vars['LNG_FilterDateFrom'] !== null) { print(htmlspecialchars($this->_vars['LNG_FilterDateFrom'], ENT_QUOTES)); } ?></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterDateFrom" data-format="dd.mm.yyyy" value="<?php if ($this->_vars['FilterDateFrom'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_vars['FilterDateFrom']), ENT_QUOTES)); } ?>" class="form-control datepicker" />
+							</div>
+							<div class="col-md-2">
+								<label><?php if ($this->_vars['LNG_FilterDateTo'] !== null) { print(htmlspecialchars($this->_vars['LNG_FilterDateTo'], ENT_QUOTES)); } ?></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterDateTo" data-format="dd.mm.yyyy" value="<?php if ($this->_vars['FilterDateTo'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_vars['FilterDateTo']), ENT_QUOTES)); } ?>" class="form-control datepicker" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2">
+								<label><?php if ($this->_vars['LNG_FilterChildrenCount'] !== null) { print(htmlspecialchars($this->_vars['LNG_FilterChildrenCount'], ENT_QUOTES)); } ?></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterChildrenCount" value="<?php if ($this->_vars['FilterChildrenCount'] !== null) { print(htmlspecialchars($this->_vars['FilterChildrenCount'], ENT_QUOTES)); } ?>" class="form-control" />
+							</div>
+							
+							<div class="col-md-2">
+								<label><?php if ($this->_vars['LNG_FilterType'] !== null) { print(htmlspecialchars($this->_vars['LNG_FilterType'], ENT_QUOTES)); } ?></label>
+							</div>
+							<div class="col-md-2">
+								<select name="FilterTypeID" class="form-control">
+									<option value=""></option>
+									<?php $row_count_0=count($this->_arrVars['FilterTypeList']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+										<option value="<?php if ($this->_arrVars['FilterTypeList'][$_0]['TypeID'] !== null) { print(htmlspecialchars($this->_arrVars['FilterTypeList'][$_0]['TypeID'], ENT_QUOTES)); } elseif ($this->_vars['TypeID'] !== null) { print(htmlspecialchars($this->_vars['TypeID'], ENT_QUOTES)); } ?>" <?php if ((($this->_arrVars['FilterTypeList'][$_0]['Selected'] !== null) ? $this->_arrVars['FilterTypeList'][$_0]['Selected'] : $this->_vars['Selected'])) { ?>selected<?php } ?>><?php if ($this->_arrVars['FilterTypeList'][$_0]['Title'] !== null) { print(htmlspecialchars($this->_arrVars['FilterTypeList'][$_0]['Title'], ENT_QUOTES)); } elseif ($this->_vars['Title'] !== null) { print(htmlspecialchars($this->_vars['Title'], ENT_QUOTES)); } ?></option>
+									<?php } ?>
+								</select>
+							</div>
+							
+						</div>
+						<div class="row top15">
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-primary btn-icon"><i class="fa fa-search"></i> <?php if ($this->_vars['LNG_FilterSearch'] !== null) { print(htmlspecialchars($this->_vars['LNG_FilterSearch'], ENT_QUOTES)); } ?></button>
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+						</div>
+						
+					</div>
+				</form>
+				
+<?php $this->_GetData($this->_FileSearch('blocks/block_list_table_header.html'), 1); ?>
+
+					<?php if ($this->_vars['ItemList']) { ?>
+					<table class="table">
+						<tr>
+							<th width="25"><input type="checkbox" class="icheck-minimal-green check-all" InputName="EntityIDs[]" /></th>
+							<th>&nbsp;</th>
+							<th><?php if ($this->_vars['LNG_ColumnTitle'] !== null) { print(htmlspecialchars($this->_vars['LNG_ColumnTitle'], ENT_QUOTES)); } ?></th>
+							<th><?php if ($this->_vars['LNG_ColumnPeriod'] !== null) { print(htmlspecialchars($this->_vars['LNG_ColumnPeriod'], ENT_QUOTES)); } ?></th>
+							<th><?php if ($this->_vars['LNG_ColumnChildCount'] !== null) { print(htmlspecialchars($this->_vars['LNG_ColumnChildCount'], ENT_QUOTES)); } ?></th>
+						</tr>
+						<?php $row_count_0=count($this->_arrVars['ItemList']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+						<tr>
+							<td><input type="checkbox" class="icheck-minimal-green" name="EntityIDs[]" value="<?php if ($this->_arrVars['ItemList'][$_0]['EntityID'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['EntityID'], ENT_QUOTES)); } elseif ($this->_vars['EntityID'] !== null) { print(htmlspecialchars($this->_vars['EntityID'], ENT_QUOTES)); } ?>" /></td>
+							<td><?php if ((($this->_arrVars['ItemList'][$_0]['ImageSmallPath'] !== null) ? $this->_arrVars['ItemList'][$_0]['ImageSmallPath'] : $this->_vars['ImageSmallPath'])) { ?><img src="<?php if ($this->_arrVars['ItemList'][$_0]['ImageSmallPath'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['ImageSmallPath'], ENT_QUOTES)); } elseif ($this->_vars['ImageSmallPath'] !== null) { print(htmlspecialchars($this->_vars['ImageSmallPath'], ENT_QUOTES)); } ?>" /><?php } else { ?>&nbsp;<?php } ?></td>
+							<td><a href="<?php if ($this->_arrVars['ItemList'][$_0]['EntityURLPrefix'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['EntityURLPrefix'], ENT_QUOTES)); } elseif ($this->_vars['EntityURLPrefix'] !== null) { print(htmlspecialchars($this->_vars['EntityURLPrefix'], ENT_QUOTES)); } ?>&<?php if ($this->_arrVars['ItemList'][$_0]['InnerFilterParamsForURL'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['InnerFilterParamsForURL'], ENT_QUOTES)); } elseif ($this->_vars['InnerFilterParamsForURL'] !== null) { print(htmlspecialchars($this->_vars['InnerFilterParamsForURL'], ENT_QUOTES)); } ?>&EntityViewID=<?php if ($this->_arrVars['ItemList'][$_0]['EntityID'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['EntityID'], ENT_QUOTES)); } elseif ($this->_vars['EntityID'] !== null) { print(htmlspecialchars($this->_vars['EntityID'], ENT_QUOTES)); } ?>"><?php if ($this->_arrVars['ItemList'][$_0]['Title'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['Title'], ENT_QUOTES)); } elseif ($this->_vars['Title'] !== null) { print(htmlspecialchars($this->_vars['Title'], ENT_QUOTES)); } ?></a></td>
+							<td><?php if ($this->_arrVars['ItemList'][$_0]['LNG_From'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['LNG_From'], ENT_QUOTES)); } elseif ($this->_vars['LNG_From'] !== null) { print(htmlspecialchars($this->_vars['LNG_From'], ENT_QUOTES)); } ?> <?php if ($this->_arrVars['ItemList'][$_0]['DateFrom'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_arrVars['ItemList'][$_0]['DateFrom']), ENT_QUOTES)); } elseif ($this->_vars['DateFrom'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_vars['DateFrom']), ENT_QUOTES)); } ?> <?php if ($this->_arrVars['ItemList'][$_0]['LNG_To'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['LNG_To'], ENT_QUOTES)); } elseif ($this->_vars['LNG_To'] !== null) { print(htmlspecialchars($this->_vars['LNG_To'], ENT_QUOTES)); } ?> <?php if ($this->_arrVars['ItemList'][$_0]['DateTo'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_arrVars['ItemList'][$_0]['DateTo']), ENT_QUOTES)); } elseif ($this->_vars['DateTo'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_vars['DateTo']), ENT_QUOTES)); } ?></td>
+							<td><?php if ($this->_arrVars['ItemList'][$_0]['ChildCount'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['ChildCount'], ENT_QUOTES)); } elseif ($this->_vars['ChildCount'] !== null) { print(htmlspecialchars($this->_vars['ChildCount'], ENT_QUOTES)); } ?></td>
+						</tr>
+						<?php } ?>
+					</table>
+					<?php } ?>
+					
+<?php $this->_GetData($this->_FileSearch('blocks/block_list_table_footer.html'), 1); ?>
+<?php $this->_GetData($this->_FileSearch('blocks/block_list_footer.html'), 1); ?>

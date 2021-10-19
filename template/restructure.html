@@ -1,0 +1,140 @@
+<TMPL_IF NAME='ErrorList'>
+    <div class="col-md-12">
+        <div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'/><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+    </div>
+</TMPL_IF>
+<TMPL_IF NAME='MessageList'>
+    <div class="col-md-12">
+        <div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'/><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+    </div>
+</TMPL_IF>
+
+<TMPL_IF NAME="Confirm">
+    <form action="migrate_staff.php" method="post">
+        <input type="hidden" name="Confirm" value="true"/>
+    <div class="col-md-8"><TMPL_VAR NAME="LNG_Confirm"/></div>
+    <div class="col-md-8">
+        <div class="col-md-4"><button type="submit" class="btn btn-primary btn-icon">OK</button></div>
+    </div>
+    </form>
+</TMPL_IF>
+
+<TMPL_IF NAME="defectedRows">
+    <div class="col-md-8"><TMPL_VAR NAME="defected"/></div>
+    <div id="u10" class="table">
+        <table class="table">
+            <tr>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_EntityID"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_FIO"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_Address"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_DOB"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_Phone"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_Email"/>
+                </th>
+            </tr>
+
+            <TMPL_LOOP NAME="defectedRows">
+            <tr>
+                <td class="table_cell">
+                    <span class="u18_text "><a href="migrate_staff.php?EntityID=<TMPL_VAR NAME='EntityID'/>"><TMPL_VAR NAME="EntityID"/></span>
+                </td>
+                <td class="u12 table_cell">
+                    <span class="u18_text "><TMPL_VAR NAME="LastName"/> <TMPL_VAR NAME="FirstName"/></span>
+                </td>
+                <td class="u13 table_cell">
+                    г.<TMPL_VAR NAME="City"/>, ул.<TMPL_VAR NAME="Street"/>, д.<TMPL_VAR NAME="House"/>, кв.<TMPL_VAR NAME="Flat"/>
+                </td>
+                <td class="u14 table_cell">
+                    <TMPL_VAR NAME="DOB"/>
+                </td>
+                <td class="u15 table_cell">
+                    <TMPL_LOOP NAME="PhoneList">
+                        <TMPL_IF NAME="__FIRST__">
+                            +7-(<TMPL_VAR NAME="Prefix"/>)-<TMPL_VAR NAME="Number"/>
+                        </TMPL_IF>
+                    </TMPL_LOOP>
+                </td>
+                <td class="u16 table_cell">
+                    <TMPL_LOOP NAME="EmailList">
+                        <TMPL_IF NAME="__FIRST__">
+                            <TMPL_VAR NAME="Email"/>
+                        </TMPL_IF>
+                    </TMPL_LOOP>
+                </td>
+            </tr>
+            </TMPL_LOOP>
+
+        </table>
+    </div>
+</TMPL_IF>
+
+<TMPL_IF NAME="affectedRows">
+    <div class="col-md-8"><TMPL_VAR NAME="affected"/></div>
+    <div id="u11" class="table">
+        <table class="table">
+            <tr>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_EntityID"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_FIO"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_Address"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_DOB"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_Phone"/>
+                </th>
+                <th class="table_h">
+                    <TMPL_VAR NAME="LNG_Email"/>
+                </th>
+            </tr>
+
+            <TMPL_LOOP NAME="affectedRows">
+                <tr>
+                    <td class="table_cell">
+                        <span class="u18_text "><TMPL_VAR NAME="EntityID"/></span>
+                    </td>
+                    <td class="u12 table_cell">
+                        <span class="u18_text "><TMPL_VAR NAME="LastName"/> <TMPL_VAR NAME="FirstName"/></span>
+                    </td>
+                    <td class="u13 table_cell">
+                        г.<TMPL_VAR NAME="City"/>, ул.<TMPL_VAR NAME="Street"/>, д.<TMPL_VAR NAME="House"/>, кв.<TMPL_VAR NAME="Flat"/>
+                    </td>
+                    <td class="u14 table_cell">
+                        <TMPL_VAR NAME="DOB"/>
+                    </td>
+                    <td class="u15 table_cell">
+                        <TMPL_LOOP NAME="PhoneList">
+                            <TMPL_IF NAME="__FIRST__">
+                                +7-(<TMPL_VAR NAME="Prefix"/>)-<TMPL_VAR NAME="Number"/>
+                            </TMPL_IF>
+                        </TMPL_LOOP>
+                    </td>
+                    <td class="u16 table_cell">
+                        <TMPL_LOOP NAME="EmailList">
+                            <TMPL_IF NAME="__FIRST__">
+                                <TMPL_VAR NAME="Email"/>
+                            </TMPL_IF>
+                        </TMPL_LOOP>
+                    </td>
+                </tr>
+            </TMPL_LOOP>
+
+        </table>
+    </div>
+</TMPL_IF>

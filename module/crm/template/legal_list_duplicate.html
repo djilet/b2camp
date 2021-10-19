@@ -1,0 +1,21 @@
+<TMPL_IF NAME='ItemList'>
+	<table class="table">
+		<thead>
+			<tr>
+				<th><TMPL_VAR NAME='LNG_ColumnTitle'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnManager'></th>
+			</tr>
+		</thead>
+		<tbody>
+			<TMPL_LOOP NAME='ItemList'>
+				<tr>
+					<td><a href="<TMPL_VAR NAME='MODULE_URL'>&entity=legal&EntityViewID=<TMPL_VAR NAME='EntityID'>" target="_blank"><TMPL_VAR NAME='Title'></a></td>
+					<td><TMPL_VAR NAME='ManagerTitle'></td>
+				</tr>
+			</TMPL_LOOP>
+		</tbody>
+	</table>
+	<div class="text-center">
+		<a href="#" class="btn btn-success ignore" data-dismiss="popover"><TMPL_VAR NAME='LNG_Ignore'></a>
+	</div>
+</TMPL_IF>

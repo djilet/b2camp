@@ -1,0 +1,9 @@
+table td, table th {
+	vertical-align:top;
+}
+td.underlined, th.underlined, tr.underlined td, tr.underlined th{
+	border-bottom:1px solid #000000;
+}
+.bordered{
+	border:1px solid #000000;	
+}

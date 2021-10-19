@@ -1,0 +1,125 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.only').change(function(){
+			if($(this).is(':checked'))
+			{
+				$('.only').not(this).prop('checked', false);
+			}
+			else
+			{
+				
+			}
+		});
+		$('.only').each(function(){
+			if($(this).is(':checked'))
+				$(this).trigger('change');
+		});
+	});
+</script>
+<div class="row">
+	<div class="col-md-3">
+		<input type="text" class="form-control datepicker" data-format="dd.mm.yyyy" name="DateFrom" value="<TMPL_VAR NAME='DateFrom' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_DateFrom'>" />
+	</div>
+	<div class="col-md-3">
+		<input type="text" class="form-control datepicker" data-format="dd.mm.yyyy" name="DateTo" value="<TMPL_VAR NAME='DateTo' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_DateTo'>" />
+	</div>
+	<div class="col-md-3">
+		<select name="SeasonID[]" id="SeasonID" placeholder="<TMPL_VAR NAME='LNG_ChooseSeason'>" multiple>
+			<TMPL_LOOP NAME='ReportSeasonList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>  <TMPL_IF NAME='Archive' VALUE='Y'> class="inactive" <TMPL_ELSEIF NAME='TypeID' VALUE='3'>class="inactive"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportSeasonListControlHTML' ESCAPE='none'>
+	</div>
+	<div class="col-md-3">
+		
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<label for="CategoryID" class="form-label"><TMPL_VAR NAME='LNG_ParamCategory'></label><br />
+		<input type="checkbox" name="CategoryID" id="CategoryID" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='CategoryID'>checked</TMPL_IF> />
+		
+		<!-- 
+		<select name="CategoryID" class="only" id="CategoryID" data-placeholder="<TMPL_VAR NAME='LNG_ChooseCategory'>">
+			<option value=""></option>
+			<TMPL_LOOP NAME='ReportCategoryList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportCategoryListControlHTML' ESCAPE='none'>
+		 -->
+	</div>
+	<div class="col-md-3">
+		<label for="Squad" class="form-label"><TMPL_VAR NAME='LNG_ParamSquad'></label><br />
+		<input type="checkbox" name="Squad" id="Squad" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='Squad'>checked</TMPL_IF> />
+		<!-- 
+		<select name="Squad" id="Squad" class="only" placeholder="<TMPL_VAR NAME='LNG_Squad'>">
+			<option value=""></option>
+			<TMPL_LOOP NAME='ReportSquadList'>
+				<option value="<TMPL_VAR NAME='Title'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportSquadListControlHTML' ESCAPE='none'>
+		 -->
+	</div>
+	<div class="col-md-3">
+		<label for="ManagerID" class="form-label"><TMPL_VAR NAME='LNG_ParamManager'></label><br />
+		<input type="checkbox" name="ManagerID" id="ManagerID" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='ManagerID'>checked</TMPL_IF> />
+		<!-- 
+		<select name="ManagerID[]" id="ManagerID" multiple placeholder="<TMPL_VAR NAME='LNG_ChooseManager'>">
+			<TMPL_LOOP NAME='ReportManagerList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportManagerListControlHTML' ESCAPE='none'>
+		 -->
+	</div>
+	<div class="col-md-3">
+		
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<label for="SchoolID" class="form-label"><TMPL_VAR NAME='LNG_ParamSchool'></label><br />
+		<input type="checkbox" name="SchoolID" id="SchoolID" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='SchoolID'>checked</TMPL_IF> />
+		<!-- 
+		<select name="SchoolID" class="only" id="SchoolID" data-placeholder="<TMPL_VAR NAME='LNG_ChooseSchool'>">
+			<option value=""></option>
+			<TMPL_LOOP NAME='ReportSchoolList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportSchoolListControlHTML' ESCAPE='none'>
+		 -->
+	</div>
+	<div class="col-md-3">
+		<label for="Age" class="form-label"><TMPL_VAR NAME='LNG_ParamAge'></label><br />
+		<input type="checkbox" name="Age" id="Age" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='Age'>checked</TMPL_IF> />
+		<!-- 
+		<select name="Age" id="Age" class="only" placeholder="<TMPL_VAR NAME='LNG_Age'>">
+			<option value=""></option>
+			<TMPL_LOOP NAME='ReportAgeList'>
+				<option value="<TMPL_VAR NAME='Title'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportAgeListControlHTML' ESCAPE='none'>
+		 -->
+	</div>
+	<div class="col-md-3">
+		<label for="StatusID" class="form-label"><TMPL_VAR NAME='LNG_ParamStatus'></label><br />
+		<input type="checkbox" name="StatusID" id="StatusID" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='StatusID'>checked</TMPL_IF> />
+		<!-- 
+		<select name="StatusID" class="only" id="StatusID" data-placeholder="<TMPL_VAR NAME='LNG_ChooseStatus'>">
+			<option value=""></option>
+			<TMPL_LOOP NAME='ReportStatusList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportStatusListControlHTML' ESCAPE='none'>
+		 -->
+	</div>
+	<div class="col-md-3">
+		<button type="submit" class="btn btn-success form-control submit-with-param" param="Output" value=""><TMPL_VAR NAME='LNG_Generate'></button>
+	</div>
+</div>

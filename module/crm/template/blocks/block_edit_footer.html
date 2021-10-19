@@ -1,0 +1,15 @@
+				<div class="clearfix"></div>
+				<div class="top15">
+					<button type="submit" class="btn btn-success btn-icon left15 right15"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+					<a class="btn btn-icon" id="cancel-link" href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></a>
+				</div>
+				<TMPL_VAR NAME='ParamsForForm' ESCAPE='none'>
+				<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+				<input type="hidden" name="Do" value="Save" />
+				<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+			</form>
+		</div>
+	</section>
+</div>
+
+<TMPL_INCLUDE FILE='blocks/block_autosave.html'>

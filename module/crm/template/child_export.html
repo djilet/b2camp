@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class=" ">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th><TMPL_VAR NAME='LNG_LastName'></th>
+				<th><TMPL_VAR NAME='LNG_FirstName'></th>
+				<th><TMPL_VAR NAME='LNG_MiddleName'></th>
+				<th><TMPL_VAR NAME='LNG_DOB'></th>
+				<th><TMPL_VAR NAME='LNG_School'></th>
+				<th><TMPL_VAR NAME='LNG_Phone'></th>
+				<th><TMPL_VAR NAME='LNG_Email'></th>
+				<th><TMPL_VAR NAME='LNG_ParentLastName'></th>
+				<th><TMPL_VAR NAME='LNG_ParentFirstName'></th>
+				<th><TMPL_VAR NAME='LNG_ParentMiddleName'></th>
+				<th><TMPL_VAR NAME='LNG_Phone'></th>
+				<th><TMPL_VAR NAME='LNG_Email'></th>
+			</tr>
+			<TMPL_LOOP NAME='ItemList'>
+				<tr>
+					<td><TMPL_VAR NAME='LastName'></td>
+					<td><TMPL_VAR NAME='FirstName'></td>
+					<td><TMPL_VAR NAME='MiddleName'></td>
+					<td><TMPL_VAR NAME='DOB' FORMAT='date'></td>
+					<td><TMPL_VAR NAME='SchoolTitle'></td>
+					<td><TMPL_LOOP NAME='PhoneList'> +7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'><TMPL_UNLESS NAME='__LAST__'>, </TMPL_UNLESS></TMPL_LOOP></td>
+					<td><TMPL_LOOP NAME='EmailList'><TMPL_VAR NAME='Email'><TMPL_UNLESS NAME='__LAST__'>, </TMPL_UNLESS></TMPL_LOOP></td>
+					<TMPL_LOOP NAME='ParentList'>
+						<TMPL_UNLESS NAME='__FIRST__'></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></TMPL_UNLESS>
+						<td><TMPL_VAR NAME='LastName'></td>
+						<td><TMPL_VAR NAME='FirstName'></td>
+						<td><TMPL_VAR NAME='MiddleName'></td>
+						<td><TMPL_LOOP NAME='PhoneList'> +7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'><TMPL_UNLESS NAME='__LAST__'>, </TMPL_UNLESS></TMPL_LOOP></td>
+						<td><TMPL_LOOP NAME='EmailList'><TMPL_VAR NAME='Email'><TMPL_UNLESS NAME='__LAST__'>, </TMPL_UNLESS></TMPL_LOOP></td>
+					</TMPL_LOOP>
+				</tr>
+			</TMPL_LOOP>	
+		</table>
+	</body>
+</html>

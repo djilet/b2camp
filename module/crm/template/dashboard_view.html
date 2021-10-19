@@ -1,0 +1,450 @@
+<TMPL_INCLUDE FILE="blocks/block_view_header.html">
+
+	<div id="dashboard">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#calendar-tab" data-toggle="tab" id="calendar-tab-link">Календарь</a></li>
+		<li><a href="#eventlist-tab" data-toggle="tab">Список задач</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div class="tab-pane active" id="calendar-tab">
+			<div id='calendar'></div>
+		</div>
+		<div class="tab-pane" id="eventlist-tab">
+			<div class="fc">
+				<div class="pull-left right15 top5 fc-button-group">
+					<button type="button" id="my-event-date-prev" class="fc-prev-button fc-button fc-state-default fc-corner-left"><span class="fc-icon fc-icon-left-single-arrow"></span></button>
+				</div>
+				<div class="pull-right left15 top5 fc-button-group">
+					<button type="button" id="my-event-date-next" class="fc-prev-button fc-button fc-state-default fc-corner-left"><span class="fc-icon fc-icon-right-single-arrow"></span></button>
+				</div>
+
+				<div class="form-inline" style="text-align:center;margin-top:-5px;">
+					<strong>
+						<TMPL_VAR NAME='LNG_MyEventList'> 
+						<input type="text" id="my-event-date" class="form-control simple datepicker" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='CURRENT_DATE' FORMAT='date'>" style="width:100px" />
+					</strong>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="list-group" id="my-event-list">
+			</div>
+			<div class="text-center">
+				<a href="#" class="btn btn-success btn-icon" id="my-event-add"><i class="fa fa-plus"></i> <TMPL_VAR NAME='LNG_Add'></a>
+			</div>
+		</div>
+	</div>
+		<div class="row">
+		</div>
+		<div class="clearfix"></div>
+		<div class="row top15">
+			<div class="col-md-6 col-sm-12 col-xs-12 form-group">
+				<div class="form-control simple text-center">
+					<strong><TMPL_VAR NAME='LNG_ManagerStat'></strong>
+				</div>
+				<div>
+					<form action="" method="post">
+						<div class="col-md-1">
+							<label><TMPL_VAR NAME='LNG_FilterDateFrom'></label>
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ManagerStDateFrom" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='ManagerStDateFrom' FORMAT='date'>" class="form-control manager-date datepicker" />
+						</div>
+						<div class="col-md-1">
+							<label><TMPL_VAR NAME='LNG_FilterDateTo'></label>
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ManagerStDateTo" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='ManagerStDateTo' FORMAT='date'>" class="form-control manager-date datepicker" />
+						</div>
+						<div class="col-md-2">
+							<button type="submit" class="btn btn-primary btn-icon">
+								<TMPL_VAR NAME='LNG_FilterSearch'>
+							</button>
+						</div>
+						<div class='clearfix'></div>
+					</form>
+				</div>
+				<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#child" aria-controls="home" role="tab" data-toggle="tab">Дети</a>
+						</li>
+						<li role="presentation">
+							<a href="#school" aria-controls="profile" role="tab" data-toggle="tab">Школы</a>
+						</li>
+						<li role="presentation">
+							<a href="#legal" aria-controls="messages" role="tab" data-toggle="tab">Юр. лица</a>
+						</li>
+						<li role="presentation">
+							<a href="#call" aria-controls="phone" role="tab" data-toggle="tab">Звонки</a>
+						</li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="child">
+						<table class="table">
+							<thead>
+								<tr class="info">
+									<th></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatName'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatCallCount'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatReservedCount'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatBoughtCount'></th>
+								</tr>
+							</thead>
+							<tbody>
+								<TMPL_LOOP NAME='ManagerStatChildList'>
+									<tr <TMPL_IF NAME='__EVEN__'>class="warning"</TMPL_IF>>
+										<td><TMPL_IF NAME='UserImage'><img src="<TMPL_VAR NAME='UserImageSmallPath'>"></TMPL_IF></td>
+										<td>
+											<TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'> 
+											<TMPL_IF NAME='__FIRST__'>
+												<i class="fa fa-thumbs-up icon-xs icon-rounded icon-primary"></i>
+											</TMPL_IF>
+										</td>
+										<td><TMPL_VAR NAME='CallCount'></td>
+										<td><TMPL_VAR NAME='ReservedCount'></td>
+										<td><TMPL_VAR NAME='BoughtCount'></td>
+									</tr>
+								</TMPL_LOOP>
+								<TMPL_LOOP NAME='TotalManagerStatChildList'>
+									<tr class="info">
+										<td></td>
+										<td>ИТОГО: </td>
+										<td><TMPL_VAR NAME='CallCount'></td>
+										<td><TMPL_VAR NAME='ReservedCount'></td>
+										<td><TMPL_VAR NAME='BoughtCount'></td>
+									</tr>
+								</TMPL_LOOP>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="school">
+						<table class="table">
+							<thead>
+								<tr class="info">
+									<th></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatName'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatCallCount'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatReservedCount'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatBoughtCount'></th>
+								</tr>
+							</thead>
+							<tbody>
+								<TMPL_LOOP NAME='ManagerStatSchoolList'>
+									<tr <TMPL_IF NAME='__EVEN__'>class="warning"</TMPL_IF>>
+										<td><TMPL_IF NAME='UserImage'><img src="<TMPL_VAR NAME='UserImageSmallPath'>"></TMPL_IF></td>
+										<td>
+											<TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'> 
+											<TMPL_IF NAME='__FIRST__'>
+												<i class="fa fa-thumbs-up icon-xs icon-rounded icon-primary"></i>
+											</TMPL_IF>
+										</td>
+										<td><TMPL_VAR NAME='CallCount'></td>
+										<td><TMPL_VAR NAME='ReservedCount'></td>
+										<td><TMPL_VAR NAME='BoughtCount'></td>
+									</tr>
+								</TMPL_LOOP>
+								<TMPL_LOOP NAME='TotalManagerStatSchoolList'>
+									<tr class="info">
+										<td></td>
+										<td>ИТОГО: </td>
+										<td><TMPL_VAR NAME='CallCount'></td>
+										<td><TMPL_VAR NAME='ReservedCount'></td>
+										<td><TMPL_VAR NAME='BoughtCount'></td>
+									</tr>
+								</TMPL_LOOP>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="legal">
+						<table class="table">
+							<thead>
+								<tr class="info">
+									<th></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatName'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatCallCount'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatReservedCount'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatBoughtCount'></th>
+								</tr>
+							</thead>
+							<tbody>
+								<TMPL_LOOP NAME='ManagerStatLegalList'>
+									<tr <TMPL_IF NAME='__EVEN__'>class="warning"</TMPL_IF>>
+										<td><TMPL_IF NAME='UserImage'><img src="<TMPL_VAR NAME='UserImageSmallPath'>"></TMPL_IF></td>
+										<td>
+											<TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'> 
+											<TMPL_IF NAME='__FIRST__'>
+												<i class="fa fa-thumbs-up icon-xs icon-rounded icon-primary"></i>
+											</TMPL_IF>
+										</td>
+										<td><TMPL_VAR NAME='CallCount'></td>
+										<td><TMPL_VAR NAME='ReservedCount'></td>
+										<td><TMPL_VAR NAME='BoughtCount'></td>
+									</tr>
+								</TMPL_LOOP>
+								<TMPL_LOOP NAME='TotalManagerStatLegalList'>
+									<tr class="info">
+										<td></td>
+										<td>ИТОГО: </td>
+										<td><TMPL_VAR NAME='CallCount'></td>
+										<td><TMPL_VAR NAME='ReservedCount'></td>
+										<td><TMPL_VAR NAME='BoughtCount'></td>
+									</tr>
+								</TMPL_LOOP>
+							</tbody>
+						</table>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="call">
+						<table class="table">
+							<thead>
+								<tr class="info">
+									<th></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatName'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatOutgoingCallCount'></th>
+									<th><TMPL_VAR NAME='LNG_ManagerStatIncomingCallCount'></th>
+								</tr>
+							</thead>
+							<tbody>
+								<TMPL_LOOP NAME='ManagerStatCallList'>
+									<tr <TMPL_IF NAME='__EVEN__'>class="warning"</TMPL_IF>>
+										<td><TMPL_IF NAME='UserImage'><img src="<TMPL_VAR NAME='UserImageSmallPath'>"></TMPL_IF></td>
+										<td>
+											<TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'> 
+											<TMPL_IF NAME='__FIRST__'>
+												<i class="fa fa-thumbs-up icon-xs icon-rounded icon-primary"></i>
+											</TMPL_IF>
+										</td>
+										<td><TMPL_VAR NAME='OutgoingCallCount'></td>
+										<td><TMPL_VAR NAME='IncomingCallCount'></td>
+									</tr>
+								</TMPL_LOOP>
+								<TMPL_LOOP NAME='TotalManagerStatCallList'>
+									<tr class="info">
+										<td></td>
+										<td>ИТОГО: </td>
+										<td><TMPL_VAR NAME='OutgoingCallCount'></td>
+										<td><TMPL_VAR NAME='IncomingCallCount'></td>
+									</tr>
+								</TMPL_LOOP>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12 col-xs-12 form-group">
+				<div class="form-control simple text-center">
+					<strong><TMPL_VAR NAME='LNG_FutureSeasonStat'></strong>
+				</div>
+				<form action="" method="post">
+					<div class="row">
+						<div class="col-md-3 col-md-offset-1">
+							<label for="SortSeasonDate" class="form-label"><TMPL_VAR NAME='LNG_SortSeasonDate'></label><br />
+							<input type="checkbox" name="SortSeasonDate" id="sort-season-date" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='SortSeasonDate'>checked</TMPL_IF> />
+						</div>
+						<div class="col-md-3">
+							<label for="SortSales" class="form-label"><TMPL_VAR NAME='LNG_SortSales'></label><br />
+							<input type="checkbox" name="SortSales" id="sort-sales" value="1" class="iswitch iswitch-md iswitch-primary only" <TMPL_IF NAME='SortSales'>checked</TMPL_IF> />
+						</div>
+						<div class="col-md-3">
+							<button type="submit" class="btn btn-primary btn-icon">
+								<TMPL_VAR NAME='LNG_FilterSort'>
+							</button>
+						</div>
+				</form>
+				</div>
+				<TMPL_IF NAME='SeasonStatCampList'>
+				<div>
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#camp" aria-controls="home" role="tab" data-toggle="tab">Лагерь</a>
+						</li>
+						<li role="presentation">
+							<a href="#playground" aria-controls="profile" role="tab" data-toggle="tab">Городская площадка</a>
+						</li>
+						<li role="presentation">
+							<a href="#holiday" aria-controls="messages" role="tab" data-toggle="tab">Праздники</a>
+						</li>
+					</ul>
+
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="camp">
+							<table class="table">
+								<thead>
+									<tr class="info">
+										<th></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatTitle'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatPreOrder'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatReservedCount'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatBoughtCount'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatFreeCount'></th>
+									</tr>
+								</thead>
+								<tbody>
+									<TMPL_LOOP NAME='SeasonStatCampList'>
+										<tr
+											<TMPL_IF NAME='__EVEN__'>class="blue-light"</TMPL_IF>
+											<TMPL_IF NAME='FreeCount' VALUE='1'>style="background-color:#f7d6d6"</TMPL_IF>
+										>
+											<td><TMPL_IF NAME='Image'><img src="<TMPL_VAR NAME='ImageSmallPath'>"></TMPL_IF></td>
+											<td><TMPL_VAR NAME='Title'></td>
+											<td><TMPL_VAR NAME='PreOrder'></td>
+											<td><TMPL_VAR NAME='ReservedCount'></td>
+											<td><TMPL_VAR NAME='BoughtCount'></td>
+											<td><TMPL_VAR NAME='FreeCount'></td>
+										</tr>
+									</TMPL_LOOP>
+									<TMPL_LOOP NAME='TotalSeasonStatCampList'>
+										<tr class="info">
+											<td></td>
+											<td>ИТОГО: </td>
+											<td><TMPL_VAR NAME='PreOrder'></td>
+											<td><TMPL_VAR NAME='ReservedCount'></td>
+											<td><TMPL_VAR NAME='BoughtCount'></td>
+											<td><TMPL_VAR NAME='FreeCount'></td>
+										</tr>
+									</TMPL_LOOP>
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="playground">
+							<table class="table">
+								<thead>
+									<tr class="info">
+										<th></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatTitle'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatPreOrder'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatReservedCount'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatBoughtCount'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatFreeCount'></th>
+									</tr>
+								</thead>
+								<tbody>
+									<TMPL_LOOP NAME='SeasonStatPlaygroundList'>
+										<tr
+											<TMPL_IF NAME='__EVEN__'>class="blue-light"</TMPL_IF>
+											<TMPL_IF NAME='FreeCount' VALUE='1'>style="background-color:#f7d6d6"</TMPL_IF>
+										>
+											<td><TMPL_IF NAME='Image'><img src="<TMPL_VAR NAME='ImageSmallPath'>"></TMPL_IF></td>
+											<td><TMPL_VAR NAME='Title'></td>
+											<td><TMPL_VAR NAME='PreOrder'></td>
+											<td><TMPL_VAR NAME='ReservedCount'></td>
+											<td><TMPL_VAR NAME='BoughtCount'></td>
+											<td><TMPL_VAR NAME='FreeCount'></td>
+										</tr>
+									</TMPL_LOOP>
+									<TMPL_LOOP NAME='TotalSeasonStatPlaygroundList'>
+										<tr class="info">
+											<td></td>
+											<td>ИТОГО: </td>
+											<td><TMPL_VAR NAME='PreOrder'></td>
+											<td><TMPL_VAR NAME='ReservedCount'></td>
+											<td><TMPL_VAR NAME='BoughtCount'></td>
+											<td><TMPL_VAR NAME='FreeCount'></td>
+										</tr>
+									</TMPL_LOOP>
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="holiday">
+							<table class="table">
+								<thead>
+									<tr class="info">
+										<th></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatTitle'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatPreOrder'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatReservedCount'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatBoughtCount'></th>
+										<th><TMPL_VAR NAME='LNG_SeasonStatFreeCount'></th>
+									</tr>
+								</thead>
+								<tbody>
+									<TMPL_LOOP NAME='SeasonStatHolidayList'>
+										<tr
+											<TMPL_IF NAME='__EVEN__'>class="blue-light"</TMPL_IF>
+											<TMPL_IF NAME='FreeCount' VALUE='1'>style="background-color:#f7d6d6"</TMPL_IF>
+										>
+											<td><TMPL_IF NAME='Image'><img src="<TMPL_VAR NAME='ImageSmallPath'>"></TMPL_IF></td>
+											<td><TMPL_VAR NAME='Title'></td>
+											<td><TMPL_VAR NAME='PreOrder'></td>
+											<td><TMPL_VAR NAME='ReservedCount'></td>
+											<td><TMPL_VAR NAME='BoughtCount'></td>
+											<td><TMPL_VAR NAME='FreeCount'></td>
+										</tr>
+									</TMPL_LOOP>
+									<TMPL_LOOP NAME='TotalSeasonStatHolidayList'>
+										<tr class="info">
+											<td></td>
+											<td>ИТОГО: </td>
+											<td><TMPL_VAR NAME='PreOrder'></td>
+											<td><TMPL_VAR NAME='ReservedCount'></td>
+											<td><TMPL_VAR NAME='BoughtCount'></td>
+											<td><TMPL_VAR NAME='FreeCount'></td>
+										</tr>
+									</TMPL_LOOP>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+				<TMPL_ELSE>
+					<div class="alert alert-default"><TMPL_VAR NAME='LNG_ListEmpty'></div>
+				</TMPL_IF>
+			</div>
+		</div>
+		<div class="row top15">
+			<div class="col-md-6 col-sm-12 col-xs-12 form-group">
+				<div class="row">
+					<div class="text-center">
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<div id="dob-list-icon">
+								<TMPL_VAR NAME='BirthdayCount'>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12 col-xs-12">
+							<strong id="dob-list-header"><TMPL_VAR NAME='LNG_DOBList'></strong>
+						</div>
+					</div>
+				</div>
+				<ul class="list-unstyled notification-widget" id="dashboard-dob-list">
+					<TMPL_LOOP NAME='ChildBirthdayList'>
+						<li class="unread status-available">
+							<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=child&EntityViewID=<TMPL_VAR NAME='EntityID'>">
+								<TMPL_IF NAME='Image'>
+									<div class="user-img">
+										<img src="<TMPL_VAR NAME='ImageSmallPath'>" alt="user-image" class="img-circle img-inline">
+									</div>
+								</TMPL_IF>
+								<div>
+									<span class="name">
+										<strong><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></strong>
+										<span class="time small">- <TMPL_VAR NAME='Age'></span>
+										<span class="profile-status available pull-right"></span>
+									</span>
+								</div>
+							</a>
+						</li>
+					</TMPL_LOOP>
+					<TMPL_LOOP NAME='StaffBirthdayList'>
+						<li class="unread status-away">
+							<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=staff&EntityViewID=<TMPL_VAR NAME='EntityID'>">
+								<TMPL_IF NAME='Image'>
+									<div class="user-img">
+										<img src="<TMPL_VAR NAME='ImageSmallPath'>" alt="user-image" class="img-circle img-inline">
+									</div>
+								</TMPL_IF>
+								<div>
+									<span class="name">
+										<strong><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></strong>
+										<span class="time small">- <TMPL_VAR NAME='Age'></span>
+										<span class="profile-status away pull-right"></span>
+									</span>
+								</div>
+							</a>
+						</li>
+					</TMPL_LOOP>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<TMPL_INCLUDE FILE="blocks/block_view_footer.html">

@@ -1,0 +1,74 @@
+<h2 align="center">Акт о приемке выполненных работ № <TMPL_VAR NAME='ActID'></h2>
+
+<p align="center">от <TMPL_VAR NAME='Created' FORMAT='datedoc'> г.</p>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="5">
+	<tr>
+		<td width="50%">
+			<p align="center"><strong>ИСПОЛНИТЕЛЬ</strong></p>
+			<strong>ООО  "Реликт групп"</strong><br />
+			Адрес , г.Москва, ул. М. Калужская, д. 27, кв. 12<br /><br />
+			ИНН/КПП 7725333585/772501001<br />
+			Р/с 40702810202860002779<br />
+			АО «АЛЬФА-БАНК»<br />
+			К/с 30101810200000000593<br />
+			БИК 044525593<br />
+			Телефон 8(495)409-78-89
+		</td>
+		<td width="50%">
+			<table width="100%" border="0">
+				<tr>
+					<td style="text-align:center;"><strong>ЗАКАЗЧИК</strong></td>
+				</tr>
+			</table>
+			<TMPL_VAR NAME='ClientName'><br />
+			<TMPL_VAR NAME='ClientInfo'>
+		</td>
+	</tr>
+</table>
+
+<p>Основание: По договору № <TMPL_VAR NAME='ContractID'> от <TMPL_VAR NAME='ContractCreated' FORMAT='datedoc'> г.</p>
+<p>Мы нижеподписавшиеся, представитель  ИСПОЛНИТЕЛЯ, с одной стороны и представитель ЗАКАЗЧИКА с другой стороны, 
+составили настоящий акт в том, что ИСПОЛНИТЕЛЬ выполнил, а заказчик принял следующие работы:</p> 
+
+<table width="100%" border="1" cellspacing="0" cellpadding="5">
+	<tr>
+		<td width="5%">№</td>
+		<td width="44%">Наименование работы (услуги)</td>
+		<td width="15%">Ед. изм.</td>
+		<td width="12%">Количество</td>
+		<td width="12%">Цена</td>
+		<td width="12%">Сумма</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Туристическая путевка на смену &quot;<TMPL_VAR NAME='SeasonTitle'>&quot; в детский лагерь Terra Nostra</td>
+		<td>шт.</td>
+		<td>1</td>
+		<td><TMPL_VAR NAME='Amount'></td>
+		<td><TMPL_VAR NAME='Amount'></td>
+	</tr>
+	<tr>
+		<td colspan="5" style="text-align:right;"><strong>Итого:</strong></td>
+		<td><TMPL_VAR NAME='Amount'></td> 
+	</tr>
+</table>
+
+<p>Всего оказано услуг на сумму: <TMPL_VAR NAME='AmountString'></p>
+
+<p>Вышеперечисленные работы (услуги) выполнены полностью и в срок. Заказчик претензий по объему, качеству и срокам оказания услуг претензий не имеет.</p>
+
+<table width="100%" border="0">
+	<tr>
+		<td width="50%">
+			Исполнитель ______________________
+		</td>
+		<td width="50%">
+			Заказчик ___________________________
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;">М.П.</td>
+		<td style="text-align:center;">М.П.</td>
+	</tr>
+</table>

@@ -1,0 +1,182 @@
+<TMPL_INCLUDE FILE="blocks/block_list_header.html">
+
+				<form action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post">
+					
+					<a data-toggle="collapse" href="#collapseFilter" aria-expanded="true">
+						<h3><TMPL_VAR NAME='LNG_Filter'></h3>
+					</a>
+
+					<div class="collapse form-group well transparent" id="collapseFilter">
+						<div class="row">
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterDateFrom'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterDateFrom" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='FilterDateFrom' FORMAT='date'>" class="form-control datepicker" />
+							</div>
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterDateTo'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterDateTo" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='FilterDateTo' FORMAT='date'>" class="form-control datepicker" />
+							</div>
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterCheck'></label>
+							</div>
+							<div class="col-md-3">
+<!-- 								<input type="text" name="FilterCheck" value="<TMPL_VAR NAME='FilterCheck'>" class="form-control" /> -->
+								<select name="FilterDirectoryCheckID" class="form-control">
+									<option value=""></option>				
+									<TMPL_LOOP NAME='FilterDirectoryCheckList'>
+										<option value="<TMPL_VAR NAME='DirectoryID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='Name'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+						</div>
+						<div class="row">	
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterArticleType'></label>
+							</div>
+							<div class="col-md-3">
+								<select class="form-control" name="FilteArticleType">
+									<option value=""></option>
+									<option value="1" <TMPL_IF NAME='FilteArticleType' VALUE='1'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='LNG_ArticleIn'></option>
+									<option value="2" <TMPL_IF NAME='FilteArticleType' VALUE='2'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='LNG_ArticleOut'></option>
+								</select>
+<!-- 								<input type="text" name="FilterArticleType" value="<TMPL_VAR NAME='FilterArticleType'>" class="form-control" /> -->
+							</div>
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterArticleIn'></label>
+							</div>
+							<div class="col-md-3">
+								<select name="FilterDirectoryIncomeID" class="form-control">
+									<option value=""></option>				
+									<TMPL_LOOP NAME='FilterDirectoryIncomeList'>
+										<option value="<TMPL_VAR NAME='DirectoryID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='Name'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterArticleOut'></label>
+							</div>
+							<div class="col-md-3">
+								<select name="FilterDirectoryOutcomeID" class="form-control">
+									<option value=""></option>								
+									<TMPL_LOOP NAME='FilterDirectoryOutcomeList'>
+										<option value="<TMPL_VAR NAME='DirectoryID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='Name'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterDocumentNumber'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterDocumentNumber" value="<TMPL_VAR NAME='FilterDocumentNumber'>" class="form-control" />
+							</div>
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterLastname'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterLastname" value="<TMPL_VAR NAME='FilterLastname'>" class="form-control" />
+							</div>
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterContractor'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterContractor" value="<TMPL_VAR NAME='FilterContractor'>" class="form-control" />
+							</div>
+						</div>
+						<div class="row">
+							
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterManagerID'></label>
+							</div>
+							<div class="col-md-3">
+								<select name="FilterManagerID" class="form-control">
+									<option value=""></option>
+									<TMPL_LOOP NAME='FilterManagerList'>
+										<option value="<TMPL_VAR NAME='UserID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterAmount'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterAmount" value="<TMPL_VAR NAME='FilterAmount'>" class="form-control" />
+							</div>
+						</div>
+						<div class="row top15">
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-primary btn-icon"><i class="fa fa-search"></i> <TMPL_VAR NAME='LNG_FilterSearch'></button>
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+						</div>
+					</div>
+				</form>
+	
+				
+<TMPL_INCLUDE FILE="blocks/block_list_table_bookkeeping_header.html">
+<TMPL_INCLUDE FILE="blocks/bookkeeping_amount.php">
+
+					<TMPL_IF NAME='ItemList'>
+						<div class="table-responsive" data-pattern="priority-columns">
+							<table class="table">
+								<thead>
+									<tr>
+										<th width="25" data-priority="1"><input type="checkbox" class="icheck-minimal-green check-all" InputName="EntityIDs[]" /></th>
+										<th data-priority="1">ID</th>
+										<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnDate'></th>
+										<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnDocumentNumber'></th>
+										<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnCheck'></th>
+										<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnBase'></th>
+										<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnArticleIn'></th>
+										<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnAmountIn'></th>
+										<th data-priority="5"><TMPL_VAR NAME='LNG_ColumnArticleOut'></th>
+										<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnAmountOut'></th>
+										<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnFio'></th>
+										<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnManager'></th>
+										
+										<th data-priority="4">Статус/Дата</th>
+									</tr>
+								</thead>
+								<tbody>
+									<TMPL_LOOP NAME='ItemList'>
+										<tr class="<TMPL_VAR NAME='BillColor'>">
+											<td><input type="checkbox" class="icheck-minimal-green" name="EntityIDs[]" value="<TMPL_VAR NAME='EntityID'>" /></td> 
+											<td><TMPL_VAR NAME='BookkeepingID' /></td> 
+ 											<td><TMPL_VAR NAME='Date' format='date'></td>
+											<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityViewID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='DocumentNumber'></a></td>											
+											<td><TMPL_VAR NAME='BillName'></td>											
+											<td><TMPL_VAR NAME='Base'></td>
+											<td><TMPL_VAR NAME='IncomeTypeName'></td>
+											<td><TMPL_VAR NAME='AmountIncome'></td>
+											<td style="white-space: normal"><TMPL_VAR NAME='OutcomeTypeName'></td>
+											<td><TMPL_VAR NAME='AmountOutcome'></td>
+											<td><TMPL_VAR NAME='FIO'><TMPL_VAR NAME='Contractor'></td>
+											<td><TMPL_VAR NAME='ManagerTitle'></td>
+											
+											<td>
+												<TMPL_IF NAME='StatusUpdateDatetime'>
+													<TMPL_VAR NAME='StatusTitle'><br>
+													<TMPL_VAR NAME='StatusUpdateDatetime' FORMAT="datetime"><br>
+													<TMPL_VAR NAME='UserStatusUpdateTitle'>
+												</TMPL_IF>
+													
+											</td>
+										</tr>
+									</TMPL_LOOP>
+								</tbody>
+							</table>
+						</div>
+					</TMPL_IF>
+					
+<TMPL_INCLUDE FILE="blocks/block_list_table_footer.html">
+<TMPL_INCLUDE FILE="blocks/block_list_footer.html">

@@ -1,0 +1,68 @@
+					<div class="form-group">
+						<TMPL_LOOP NAME='CommentList'>
+							<div class="row comment-row <TMPL_IF NAME='__ROWNUM__' OP='>' VALUE='5'>hidden</TMPL_IF>">
+								<div class="col-md-1 col-xs-2"><TMPL_IF NAME='ManagerImage'><img src="<TMPL_VAR NAME='ManagerImageSmallPath'>"><TMPL_ELSE>&nbsp;</TMPL_IF></div>
+								<div class="col-md-11 col-xs-10">
+									<b><TMPL_VAR NAME='ManagerName'></b>&nbsp;&nbsp;&nbsp;<small><TMPL_VAR NAME='Time' FORMAT='datetime'></small><br/>
+									<p>
+										<TMPL_VAR NAME='Text'>
+										<TMPL_IF NAME='FileList'>
+											<TMPL_LOOP NAME='FileList'>
+												<br /><a href="<TMPL_VAR NAME='FileList.FilePath'>" target="_blank" download="<TMPL_VAR NAME='FileList.FileTitle'>"><TMPL_VAR NAME='FileList.FileTitle'></a>
+											</TMPL_LOOP>
+										</TMPL_IF>
+									</p>
+								</div>
+							</div>
+							<TMPL_IF NAME='__LAST__'>
+								<TMPL_IF NAME='__ROWNUM__' OP='>' VALUE='5'>
+									<a href="#" class="show-all-comments dashed"><TMPL_VAR NAME='LNG_ShowAllComments'></a>
+								</TMPL_IF>
+							</TMPL_IF>
+						</TMPL_LOOP>
+					</div>
+					<div class="col-md-12 well">
+						<form id="Comment" action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post" class="nform" enctype="multipart/form-data">
+							<textarea class="form-control" name="Text" id="Text" rows="6" cols="80" placeholder="<TMPL_VAR NAME='LNG_FieldCommentText'>"></textarea>
+					    	<div class="row">
+					    		<div class="col-md-4">
+					    			<input type="file" class="form-control" name="FileUpload[]" multiple>
+					    			<button type="submit" class="btn btn-success btn-icon"><TMPL_VAR NAME='LNG_AddComponent'></button>
+					    		</div>
+					    		<div class="col-md-8">
+					    			<p align="right" id="autosave-info"></p>
+					    		</div>
+					    	</div>
+							<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+							<input type="hidden" name="Do" value="Action" />
+							<input type="hidden" name="Action" value="AddComment" />
+							<input type="hidden" name="Show" value="view" />
+							<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+							<input type="hidden" name="ClearFormData" value="1" />
+							<input type="hidden" name="ClearEntityID" value="<TMPL_VAR NAME='EntityID'>" />
+							<input type="hidden" name="ClearEntity" value="<TMPL_VAR NAME='Entity'>Comment" />
+						</form>
+					</div>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							entityID = "<TMPL_IF NAME='EntityID'><TMPL_VAR NAME='EntityID'><TMPL_ELSE>0</TMPL_IF>";
+							autosaveInterval = setInterval(function(){
+								SaveFormData($('#Comment'), "<TMPL_VAR NAME='Entity'>Comment", entityID);
+							}, <TMPL_VAR NAME='AUTOSAVE_INTERVAL'>);
+							LoadFormData($('#Comment'), "<TMPL_VAR NAME='Entity'>Comment", entityID);
+							
+							$('#entity-form').submit(function(){
+								clearInterval(autosaveInterval);
+								SaveFormData($('#Comment'), "<TMPL_VAR NAME='Entity'>Comment", entityID);
+							});
+							$('#cancel-link').click(function(){
+								clearInterval(autosaveInterval);
+								ClearFormData("<TMPL_VAR NAME='Entity'>Comment", entityID);
+							});
+							$('.show-all-comments').click(function(e){
+								$(this).siblings('.comment-row').removeClass('hidden');
+								e.preventDefault();
+								$(this).remove();
+							});
+						});
+					</script>

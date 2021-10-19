@@ -1,0 +1,44 @@
+	
+	<thead>
+		<tr class="info">
+			<th><TMPL_VAR NAME='LNG_Manager'></th>
+			<th><TMPL_VAR NAME='LNG_Season'></th>
+			<th><TMPL_VAR NAME='LNG_ReservedCount'></th>
+			<th><TMPL_VAR NAME='LNG_BoughtCount'></th>
+		</tr>
+	</thead>
+	<tbody>
+		<TMPL_LOOP NAME='ResultList'>
+			<TMPL_UNLESS NAME='__LAST__'>
+				<TMPL_LOOP NAME='SeasonList'>
+					<TMPL_IF NAME='__LAST__'>
+						<tr style="border-bottom:2px solid #ccc;" class="info">
+							<td><TMPL_VAR NAME='LNG_Total'></td>
+							<td></td>
+							<td><TMPL_VAR NAME='ReservedCount'></td>
+							<td><TMPL_VAR NAME='BoughtCount'></td>
+						</tr>
+					<TMPL_ELSE>
+						<tr>
+							<td><TMPL_VAR NAME='ResultList.Title'></td>
+							<td><TMPL_VAR NAME='Title'></td>
+							<td><TMPL_VAR NAME='ReservedCount'></td>
+							<td><TMPL_VAR NAME='BoughtCount'></td>
+						</tr>
+					</TMPL_IF>
+				</TMPL_LOOP>
+			</TMPL_UNLESS>
+		</TMPL_LOOP>
+	</tbody>
+	<TMPL_LOOP NAME='ResultList'>
+		<TMPL_IF NAME='__LAST__'>
+			<tfoot>
+				<tr class="info">
+					<th><TMPL_VAR NAME='LNG_Total'></th>
+					<th></th>
+					<th><TMPL_VAR NAME='ReservedCount'></th>
+					<th><TMPL_VAR NAME='BoughtCount'></th>
+				</tr>
+			</tfoot>
+		</TMPL_IF>
+	</TMPL_LOOP>

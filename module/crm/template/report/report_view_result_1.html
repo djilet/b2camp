@@ -1,0 +1,33 @@
+
+	<thead>
+		<tr class="info">
+			<th><TMPL_VAR NAME='LNG_Manager'></th>
+			<TMPL_LOOP NAME='StatusList'>
+				<th><TMPL_VAR NAME='Title'></th>
+			</TMPL_LOOP>
+		</tr>
+	</thead>
+	<tbody>
+		<TMPL_LOOP NAME='ResultList'>
+			<TMPL_UNLESS NAME='__LAST__'>
+				<tr>
+					<td><TMPL_VAR NAME='Title'></td>
+					<TMPL_LOOP NAME='StatusList'>
+						<td><TMPL_VAR NAME='Value'></td>
+					</TMPL_LOOP>
+				</tr>
+			</TMPL_UNLESS>
+		</TMPL_LOOP>
+	</tbody>
+	<tfoot>
+		<TMPL_LOOP NAME='ResultList'>
+			<TMPL_IF NAME='__LAST__'>
+				<tr class="info">
+					<td><TMPL_VAR NAME='LNG_Total'></td>
+					<TMPL_LOOP NAME='StatusList'>
+						<td><TMPL_VAR NAME='Value'></td>
+					</TMPL_LOOP>
+				</tr>
+			</TMPL_IF>
+		</TMPL_LOOP>
+	</tfoot>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<common>
+		<Yes>Да</Yes>
+		<No>Нет</No>
+		<Create>Добавить</Create>
+		<Save>Сохранить</Save>
+		<Cancel>Отмена</Cancel>
+		<Help>Помощь</Help>
+		<Search>Поиск</Search>
+		<Copyright><![CDATA[&copy; 2010-2015 <a href="http://www.fokgroup.com/">FokGroup</a>.<br/> Все права защищены.]]></Copyright>
+		<Edit>Редактировать</Edit>
+		<Print>Распечатать</Print>
+		<Remove>Удалить</Remove>
+		<TabMain>Содержание</TabMain>
+		<TabSEO>SEO</TabSEO>
+		<TabAdditional>Дополнительно</TabAdditional>
+	</common>
+	<admin>
+		<_footer.html>
+			<YouAreLoggedInAs>Вы авторизованы как</YouAreLoggedInAs>
+			<Logout>Выйти</Logout>
+			<VoxImplantAnswer>Ответить</VoxImplantAnswer>
+			<VoxImplantReject>Сбросить</VoxImplantReject>
+			<VoxImplantHangup>Окончить разговор</VoxImplantHangup>
+			<VoxImplantClose>Закрыть</VoxImplantClose>
+			<VoxImplantMuteMic>Отключить микрофон</VoxImplantMuteMic>
+			<VoxImplantUnmuteMic>Включить микрофон</VoxImplantUnmuteMic>
+			<VoxImplantRedirect>Перенаправить</VoxImplantRedirect>
+			<VoxImplantRedirectHeader>Перенаправить звонок</VoxImplantRedirectHeader>
+		</_footer.html>
+		<_header.html>
+			<VoxImplantConnectionStatusLabel>VoxImplant</VoxImplantConnectionStatusLabel>
+			<MyProfile>Мой профиль</MyProfile>
+			<Logout>Выйти</Logout>
+			<Hello>Здравствуйте</Hello>
+		</_header.html>
+		<forgot_password.html>
+			<ForgotPassword>Восстановить пароль</ForgotPassword>
+			<EmailRequired>Введите адрес эл. почты</EmailRequired>
+			<Email>Эл. почта</Email>
+			<Close>Закрыть</Close>
+			<GetPassword>Получить пароль</GetPassword>
+		</forgot_password.html>
+		<forgot_password_email.html>
+			<YourNewPassword>Ваш новый пароль:</YourNewPassword>
+		</forgot_password_email.html>
+		<login.html>
+			<AdministrationPanel>Панель администратора</AdministrationPanel>
+			<CMSName>FokCMS</CMSName>
+			<Login>Логин</Login>
+			<Password>Пароль</Password>
+			<Interface>Язык интерфейса</Interface>
+			<RememberMe>Запомнить меня</RememberMe>
+			<ForgotPassword>Забыли пароль?</ForgotPassword>
+			<ButtonLogin>Войти</ButtonLogin>		
+		</login.html>
+		<user_edit.html>
+			<AddUser>Добавить пользователя</AddUser>
+			<EditUser>Редактировать пользователя</EditUser>
+			<UserImage>Картинка пользователя</UserImage>
+			<AllWebsites>Все вебсайты</AllWebsites>
+			<ChooseWebsite>Выберите вебсайт</ChooseWebsite>
+			<FieldsetPersonal>Персональная информация</FieldsetPersonal>
+			<LastName>Фамилия</LastName>
+			<FirstName>Имя</FirstName>
+			<MiddleName>Отчество</MiddleName>
+			<Sex>Пол</Sex>
+			<SexM>Мужской</SexM>
+			<SexF>Женский</SexF>
+			<DOB>Дата рождения</DOB>
+			<Phone>Телефон</Phone>
+			<Social>Социальные сети</Social>
+			<City>Город</City>
+			<Street>Улица</Street>
+			<House>Дом</House>
+			<Flat>Квартира</Flat>
+			<VoxImplantLogin>VoxImplant логин</VoxImplantLogin>
+			<VoxImplantPassword>VoxImplant пароль</VoxImplantPassword>
+			<FieldsetAuthorization>Авторизация</FieldsetAuthorization>
+			<Email>Эл. почта/Логин</Email>
+			<OldPassword>Старый пароль</OldPassword>
+			<ChangePasswordExplanation>Чтобы установить новый пароль, нужно знать старый</ChangePasswordExplanation>
+			<NewPassword>Новый пароль</NewPassword>
+			<RepeatPassword>Повторите пароль</RepeatPassword>
+			<InManagerStat>Учитывать в статистике по менеджерам</InManagerStat>
+			<Role>Роль</Role>
+			<ChooseRole>Выберите из списка</ChooseRole>
+			<AvailableWebsite>Доступный веб-сайт</AvailableWebsite>
+			<InterfaceLanguage>Язык интерфейса</InterfaceLanguage>
+			<FieldsetInfo>Информация</FieldsetInfo>
+			<Created>Зарегистрирован</Created>
+			<LastLogin>Дата последнего входа</LastLogin>
+			<LastIP>IP адрес последнего входа</LastIP>
+			<Unknown>Нет данных</Unknown>
+		</user_edit.html>
+		<user_list.html>
+			<UserList>Пользователи</UserList>
+			<NoSelection>Вы не выбрали пользователей</NoSelection>
+			<ConfirmRemoveMultiple>Вы действительно хотите удалить выбранных пользователей?</ConfirmRemoveMultiple>
+			<ConfirmRemove>Вы действительно хотите удалить пользователя '%Name%'?</ConfirmRemove>
+			<Search>Поиск...</Search>
+			<Add>Добавить</Add>
+			<Name>Имя</Name>
+			<Email>Email</Email>
+			<Role>Роль</Role>
+			<Created>Зарегистрирован</Created>
+			<LastVisit>Дата последнего входа</LastVisit>
+			<Edit>Кликните для редактирования</Edit>
+			<Empty>По вашему запросу ничего не найдено</Empty>
+			<RemoveMultiple>Удалить выбранных</RemoveMultiple>
+		</user_list.html>
+		<user_action_list.html>
+			<UserActionList>Действия пользователей</UserActionList>
+			<DateFrom>Дата с</DateFrom>
+			<DateTo>Дата по</DateTo>
+			<Find>Найти</Find>
+			<Created>Дата</Created>
+			<UserName>Пользователь</UserName>
+			<IP>IP</IP>
+			<RequestMethod>Метод</RequestMethod>
+			<RequestUri>Адрес страницы</RequestUri>
+			<Description>Описание</Description>
+			<Empty>Пусто</Empty>
+		</user_action_list.html>
+		<developer.html>
+			<DeveloperPanelTitle>Панель разработчика</DeveloperPanelTitle>
+			
+			<SectionFiles>Работа с файлами</SectionFiles>
+			<DownloadErrorLog>Скачать error.log</DownloadErrorLog>
+			<DownloadFileByPath>Скачать файл по адресу:</DownloadFileByPath>
+			<Path>Путь</Path>
+			<SetFilePermissions>Установить права для файла/папки:</SetFilePermissions>
+			<FilePermissions>0777</FilePermissions>
+			<CheckExistence>Проверить существование файла/папки:</CheckExistence>
+			<ClearCache>Очистить кеш</ClearCache>
+			<FolderXML>/var/xml/</FolderXML>
+			<FolderCache>/var/cache/</FolderCache>
+			<FolderImage>/var/image/</FolderImage>
+			
+			<SectionSQL>SQL</SectionSQL>
+			<ExecuteQuery>Выполнить SQL-запрос методом:</ExecuteQuery>
+			<MethodExecute>Execute</MethodExecute>
+			<MethodFetchField>FetchField</MethodFetchField>
+			<MethodFetchList>FetchList</MethodFetchList>
+			<MethodFetchRow>FetchRow</MethodFetchRow>
+			<Query>Запрос</Query>
+			<Execute>Выполнить</Execute>
+			<AffectedRows>AffectedRows</AffectedRows>
+			<LastInsertID>LastInsertID</LastInsertID>
+			<NumRows>NumRows</NumRows>
+			<SQLResult>Результат</SQLResult>
+		</developer.html>
+		<restructure.html>
+			<Confirm>Хотите выполнить модификацию базы?</Confirm>
+			<EntityID>ID</EntityID>
+			<FIO>ФИО</FIO>
+			<Address>Адрес</Address>
+			<DOB>Дата рождения</DOB>
+			<Phone>Телефон</Phone>
+			<Email>Email</Email>
+		</restructure.html>
+	</admin>
+</Root>

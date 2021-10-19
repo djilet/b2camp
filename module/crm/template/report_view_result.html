@@ -1,0 +1,19 @@
+<TMPL_IF NAME='Output'>
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=<TMPL_VAR NAME='CHARSET'>" />
+			<TMPL_IF NAME='Output' VALUE='Print'>
+				<script type="text/javascript">
+					window.onload = function(){window.print();};
+				</script>
+			</TMPL_IF>
+		</head>
+		<body>
+</TMPL_IF>
+<table class="table <TMPL_UNLESS NAME='DisableSorting'>data-table</TMPL_UNLESS>" <TMPL_IF NAME='Output'>border="1" cellpadding="5" cellspacing="0" width="100%"</TMPL_IF>>
+	<TMPL_INCLUDE FILE='report/report_view_result_{var:ReportType}.html'>
+</table>
+<TMPL_IF NAME='Output'>
+		</body>
+	</html>
+</TMPL_IF>

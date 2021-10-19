@@ -1,0 +1,532 @@
+<TMPL_VAR NAME='FIO'><TMPL_INCLUDE FILE="blocks/block_edit_header.html">
+
+<div class="col-md-12">
+	<div class="form-group" id="Image-box">
+		<label for="Image"><TMPL_VAR NAME='LNG_FieldImage'></label><br />
+	</div>
+	<TMPL_VAR NAME='ImageControlHTML' ESCAPE='none'>
+</div>
+
+<div class="col-md-12 no-padding form-group">
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-3"><label for="LastName" class="required"><TMPL_VAR NAME='LNG_FieldLastName'></label></div>
+			<div class="col-md-9"><input class="form-control" type="text" name="LastName" id="LastName" value="<TMPL_VAR NAME='LastName'>" placeholder="<TMPL_VAR NAME='LNG_FieldLastName'>" /></div>
+		</div>
+
+		<TMPL_VAR NAME='DuplicateControlHTML' ESCAPE='none'>
+
+		<div class="row">
+			<div class="col-md-3"><label for="FirstName" class="required"><TMPL_VAR NAME='LNG_FieldFirstName'></label></div>
+			<div class="col-md-9"><input class="form-control" type="text" name="FirstName" id="FirstName" value="<TMPL_VAR NAME='FirstName'>" placeholder="<TMPL_VAR NAME='LNG_FieldFirstName'>" /></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="MiddleName"><TMPL_VAR NAME='LNG_FieldMiddleName'></label></div>
+			<div class="col-md-9"><input class="form-control" type="text" name="MiddleName" id="MiddleName" value="<TMPL_VAR NAME='MiddleName'>" placeholder="<TMPL_VAR NAME='LNG_FieldMiddleName'>" /></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Category"><TMPL_VAR NAME='LNG_FieldCategory'></label></div>
+			<div class="col-md-9">
+				<select name="Category" id="Category" class="form-control">
+					<option value="0"></option>
+					<TMPL_LOOP NAME='CategoryValueList'>
+						<option value="<TMPL_VAR NAME='ID'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+					</TMPL_LOOP>
+				</select>
+			</div>
+			<input type="hidden" name="Archive" id="ChildArchive" value="N">
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Squad"><TMPL_VAR NAME='LNG_FieldSquad'></label></div>
+			<div class="col-md-9"><input class="form-control" type="text" name="Squad" id="Squad" value="<TMPL_VAR NAME='Squad'>" placeholder="<TMPL_VAR NAME='LNG_FieldSquad'>" /></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Sex" class="required"><TMPL_VAR NAME='LNG_FieldSex'></label></div>
+			<div class="col-md-9">
+				<div class="form-control simple">
+					<input type="radio" name="Sex" class="icheck-minimal-green" id="SexM" value="M"<TMPL_IF NAME='Sex' VALUE='M'> checked</TMPL_IF>><label for="SexM" class="right15"><TMPL_VAR NAME='LNG_FieldSexM'></label>
+						<input type="radio" name="Sex" class="icheck-minimal-green" id="SexF" value="F"<TMPL_IF NAME='Sex' VALUE='F'> checked</TMPL_IF>><label for="SexF" class="right15"><TMPL_VAR NAME='LNG_FieldSexF'></label>
+					</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="DOB"><TMPL_VAR NAME='LNG_FieldDOB'></label></div>
+			<div class="col-md-9"><input class="form-control datepicker" data-format="dd.mm.yyyy" type="text" name="DOB" id="DOB" value="<TMPL_VAR NAME='DOB' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_FieldDOB'>" /></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Phone"><TMPL_VAR NAME='LNG_FieldPhone'></label></div>
+			<div class="col-md-9 no-padding">
+				<div class="custom-control-phone" id="Phone">
+					<div class="custom-control-phone-rows">
+						<div class="custom-control-phone-row">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-4 col-xs-10">
+										<select class="form-control custom-control-phone-row-type">
+											<option value="mobile"><TMPL_VAR NAME='LNG_PhoneTypeMobile'></option>
+											<option value="work"><TMPL_VAR NAME='LNG_PhoneTypeWork'></option>
+											<option value="home"><TMPL_VAR NAME='LNG_PhoneTypeHome'></option>
+										</select>
+									</div>
+									<div class="col-md-7 col-xs-10"><input type="text" data-mask="phone" class="custom-control-phone-row-number form-control" /></div>
+									<div class="col-md-1 col-xs-2 no-padding"><div class="form-control simple"><a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a></div></div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'></a></div>
+						<TMPL_VAR NAME='PhoneControlHTML' ESCAPE='none'>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Email"><TMPL_VAR NAME='LNG_FieldEmail'></label></div>
+			<div class="col-md-9 no-padding">
+				<div class="custom-control-email" id="Email">
+					<div class="custom-control-email-rows">
+						<div class="custom-control-email-row">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-11 col-xs-10"><input type="text" data-mask="email" class="custom-control-email-row-number form-control" placeholder="<TMPL_VAR NAME='LNG_FieldEmail'>" /></div>
+									<div class="col-md-1 col-xs-2 no-padding"><div class="form-control simple"><a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a></div></div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'></a></div>
+						<TMPL_VAR NAME='EmailControlHTML' ESCAPE='none'>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="School"><TMPL_VAR NAME='LNG_FieldSchool'></label></div>
+			<div class="col-md-9">
+				<select name="School" id="School" class="s2container">
+					<option value="0"></option>
+					<TMPL_LOOP NAME='SchoolValueList'>
+						<option value="<TMPL_VAR NAME='ID'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+					</TMPL_LOOP>
+				</select>
+				<TMPL_VAR NAME='SchoolControlHTML' ESCAPE='none'>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Class"><TMPL_VAR NAME='LNG_FieldClass'></label></div>
+			<div class="col-md-9">
+				<select name="Class" class="form-control">
+					<option value=""></option>
+					<option value="1" <TMPL_IF NAME='Class' VALUE='1'>selected="selected"</TMPL_IF>>1</option>
+					<option value="2" <TMPL_IF NAME='Class' VALUE='2'>selected="selected"</TMPL_IF>>2</option>
+					<option value="3" <TMPL_IF NAME='Class' VALUE='3'>selected="selected"</TMPL_IF>>3</option>
+					<option value="4" <TMPL_IF NAME='Class' VALUE='4'>selected="selected"</TMPL_IF>>4</option>
+					<option value="5" <TMPL_IF NAME='Class' VALUE='5'>selected="selected"</TMPL_IF>>5</option>
+					<option value="6" <TMPL_IF NAME='Class' VALUE='6'>selected="selected"</TMPL_IF>>6</option>
+					<option value="7" <TMPL_IF NAME='Class' VALUE='7'>selected="selected"</TMPL_IF>>7</option>
+					<option value="8" <TMPL_IF NAME='Class' VALUE='8'>selected="selected"</TMPL_IF>>8</option>
+					<option value="9" <TMPL_IF NAME='Class' VALUE='9'>selected="selected"</TMPL_IF>>9</option>
+					<option value="10" <TMPL_IF NAME='Class' VALUE='10'>selected="selected"</TMPL_IF>>10</option>
+					<option value="11" <TMPL_IF NAME='Class' VALUE='11'>selected="selected"</TMPL_IF>>11</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Social"><TMPL_VAR NAME='LNG_FieldSocial'></label></div>
+			<div class="col-md-9"><input class="form-control" type="text" name="Social" id="Social" value="<TMPL_VAR NAME='Social'>" placeholder="<TMPL_VAR NAME='LNG_FieldSocial'>" /></div>
+		</div>
+		<TMPL_IF NAME='EntityID'>
+			<TMPL_IF NAME='USER_Role' OP='!=' VALUE='manager'>
+				<div class="row">
+					<div class="col-md-3"><label for="ManagerID"><TMPL_VAR NAME='LNG_FieldManager'></label></div>
+					<div class="col-md-9">
+						<select name="ManagerID" id="ManagerID" class="form-control">
+							<TMPL_LOOP NAME='ManagerIDValueList'>
+								<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'/></option>
+							</TMPL_LOOP>
+						</select>
+					</div>
+				</div>
+			<TMPL_ELSE>
+				<input type="hidden" name="ManagerID" value="<TMPL_VAR NAME='ManagerID'>" />
+			</TMPL_IF>
+		<TMPL_ELSE>
+			<input type="hidden" name="ManagerID" value="<TMPL_VAR NAME='USER_UserID'>" />
+		</TMPL_IF>
+	</div>
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-3"><label for="Address"><TMPL_VAR NAME='LNG_FieldAddress'></label></div>
+			<div class="col-md-9 no-padding">
+				<div class="col-md-12"><input class="form-control" type="text" name="AddressCity" id="AddressCity" value="<TMPL_VAR NAME='AddressCity'>" placeholder="<TMPL_VAR NAME='LNG_FieldAddressCity'>" /></div>
+				<div class="col-md-6"><input class="form-control" type="text" name="AddressStreet" id="AddressStreet" value="<TMPL_VAR NAME='AddressStreet'>" placeholder="<TMPL_VAR NAME='LNG_FieldAddressStreet'>" /></div>
+				<div class="col-md-3"><input class="form-control" type="text" name="AddressHome" id="AddressHome" value="<TMPL_VAR NAME='AddressHome'>" placeholder="<TMPL_VAR NAME='LNG_FieldAddressHome'>" /></div>
+				<div class="col-md-3"><input class="form-control" type="text" name="AddressFlat" id="AddressFlat" value="<TMPL_VAR NAME='AddressFlat'>" placeholder="<TMPL_VAR NAME='LNG_FieldAddressFlat'>" /></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Comment"><TMPL_VAR NAME='LNG_FieldComment'></label></div>
+			<div class="col-md-9">
+				<textarea class="form-control" name="Comment" id="Comment" rows="6" cols="80" placeholder="<TMPL_VAR NAME='LNG_FieldComment'>"><TMPL_VAR NAME='Comment'></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Document"><TMPL_VAR NAME='LNG_FieldDocumentNumber'/></label></div>
+			<div class="col-md-9 no-padding">
+				<div class="custom-control-document" id="Document">
+					<div class="custom-control-document-rows">
+						<div class="custom-control-document-row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-6 col-xs-10">
+									<select class="form-control custom-control-document-row-type">
+										<option value="passport"><TMPL_VAR NAME='LNG_DocumentTypePassport'/></option>
+										<option value="international"><TMPL_VAR NAME='LNG_DocumentTypeInternational'/></option>
+										<option value="birth"><TMPL_VAR NAME='LNG_DocumentTypeBirth'/></option>
+									</select>
+								</div>
+								<div class="col-md-6 col-xs-10 custom-div-document-main">
+									<input type="radio" name="DocumentMain" class="custom-control-document-main"><label><TMPL_VAR NAME="LNG_MainDocument"/></label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10 col-xs-10"><input type="text" class="custom-control-document-row-number form-control" placeholder="<TMPL_VAR NAME='LNG_PlaceholderDocumentNumber'>" /></div>
+								<div class="col-md-2 col-xs-2 no-padding"><div class="form-control simple"><a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a></div></div>
+							</div>
+						</div>
+							<input type="hidden" class="custom-control-document-id">
+						</div>
+					</div>
+					<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'/></a></div>
+					<TMPL_VAR NAME='DocumentControlHTML' ESCAPE='none'/>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Mailing"><TMPL_VAR NAME='LNG_FieldMailing'></label></div>
+			<div class="col-md-9">
+				<input type="checkbox" name="onSending" <TMPL_IF NAME='onSending' VALUE='Y'>checked <TMPL_ELSEIF NAME='onSending' VALUE='N'> <TMPL_ELSE> checked</TMPL_IF>>
+				<label><TMPL_VAR NAME='LNG_onSending'></label><br>
+				<input type="checkbox" name="onSMS" <TMPL_IF NAME='onSMS' VALUE='Y'>checked <TMPL_ELSEIF NAME='onSMS' VALUE='N'> <TMPL_ELSE> checked</TMPL_IF>>
+				<label><TMPL_VAR NAME='LNG_onSMS'></label><br>
+				<input type="checkbox" name="onPhoto" <TMPL_IF NAME='onPhoto' VALUE='Y'>checked <TMPL_ELSEIF NAME='onPhoto' VALUE='N'> <TMPL_ELSE> checked</TMPL_IF>>
+				<label><TMPL_VAR NAME='LNG_onPhoto'></label>
+			</div>
+		</div>
+
+		<!--<div class="row">
+			<div class="col-md-3"><label for="Season"><TMPL_VAR NAME='LNG_FieldSeason'></label></div>
+			<div class="col-md-9">
+				<select name="Seasons[]" id="Seasons" multiple>
+					<option></option>
+					<TMPL_LOOP NAME='SeasonsValueList'>
+					<option value="<TMPL_VAR NAME='SeasonID'>"<TMPL_IF NAME='Selected'> selected</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+					</TMPL_LOOP>
+				</select>
+				<TMPL_VAR NAME='SeasonsControlHTML' ESCAPE='none'>
+			</div>
+		</div>
+
+		-->
+
+		<div class="row">
+			<div class="col-md-3"><label for="Season"><TMPL_VAR NAME='LNG_FieldSeason'></label></div>
+			<div class="col-md-9 no-padding">
+				<div class="custom-control-season" id="Season">
+					<div class="custom-control-season-rows">
+						<div class="custom-control-season-row">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-11 col-xs-10">
+										<select class="form-control custom-control-season-row-type">
+											<option></option>
+											<TMPL_LOOP NAME='SeasonValueList'>
+												<option value="<TMPL_VAR NAME='SeasonID'>" <TMPL_IF NAME='Archive' VALUE='Y'> class="inactive" <TMPL_ELSEIF NAME='TypeID' VALUE='3'>class="inactive"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+									<div class="col-md-1 col-xs-2 no-padding"><div class="form-control simple"><a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'></a></div>
+					<TMPL_VAR NAME='SeasonControlHTML' ESCAPE='none'>
+				</div>
+			</div>
+		</div>
+
+		<!--<div class="row">
+			<div class="col-md-3"><label for="Staff"><TMPL_VAR NAME='LNG_FieldStaff'></label></div>
+			<div class="col-md-9">
+				<select name="Staff[]" id="Staff" multiple>
+					<option></option>
+					<TMPL_LOOP NAME='StaffValueList'>
+					<option value="<TMPL_VAR NAME='UserID'>"<TMPL_IF NAME='Selected'> selected</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+					</TMPL_LOOP>
+				</select>
+				<TMPL_VAR NAME='StaffControlHTML' ESCAPE='none'>
+			</div>
+		</div>-->
+
+		<div class="row">
+			<div class="col-md-3"><label for="Staff"><TMPL_VAR NAME='LNG_FieldStaff'></label></div>
+			<div class="col-md-9 no-padding">
+				<div class="custom-control-staff" id="Staff">
+					<div class="custom-control-staff-rows">
+						<div class="custom-control-staff-row">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-11 col-xs-10">
+										<select class="form-control custom-control-staff-row-type">
+											<option></option>
+											<TMPL_LOOP NAME='StaffValueList'>
+												<option value="<TMPL_VAR NAME='UserID'>"><TMPL_VAR NAME='Title'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+									<div class="col-md-1 col-xs-2 no-padding"><div class="form-control simple"><a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'></a></div>
+					<TMPL_VAR NAME='StaffControlHTML' ESCAPE='none'>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="Friends"><TMPL_VAR NAME='LNG_FieldFriends'></label></div>
+			<div class="col-md-9">
+				<!--<input id="childChoose" name="Friends[]">-->
+				<select name="Friends[]" id="Friends" multiple>
+					<option></option>
+					<TMPL_LOOP NAME='FriendsValueList'>
+						<option value="<TMPL_VAR NAME='ChildID'>"<TMPL_IF NAME='Selected'> selected</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+					</TMPL_LOOP>
+				</select>
+				<TMPL_VAR NAME='FriendsControlHTML' ESCAPE='none'>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"><label for="File"><TMPL_VAR NAME='LNG_FieldFile'></label></div>
+			<div class="col-md-9 no-padding">
+				<TMPL_INCLUDE FILE="blocks/block_edit_files.html">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"><label for="Source"><TMPL_VAR NAME='LNG_FieldSource'/></label></div>
+			<div class="col-md-9">
+				<select class="form-control" name="Source" id="Source">
+					<option value="0" <TMPL_UNLESS NAME='Source'>selected="selected"</TMPL_UNLESS>></option>
+					<TMPL_LOOP NAME="SourceValueList">
+						<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME="Selected">selected</TMPL_IF>><TMPL_VAR NAME="Title"/></option>
+					</TMPL_LOOP>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"><label for="Contact"><TMPL_VAR NAME='LNG_FieldContact'/></label></div>
+			<div class="col-md-9">
+				<input class="form-control" type="text" name="Contact" id="Contact" value="<TMPL_VAR NAME='Contact'>" placeholder="<TMPL_VAR NAME='LNG_FieldContactPlaceholder'>"/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+
+<div class="row well no-margin">
+	<a href="#" class="toggle-link" for="Questionnaire"><i class="fa fa-chevron-circle-right"></i></a>&nbsp;
+	<a href="#" class="toggle-link" for="Questionnaire"><h3 class="display-inline"><TMPL_VAR NAME="LNG_Questionnaire"/></h3></a>
+
+	<div id="Questionnaire" class="col-md-12 no-padding">
+	<div class="col-md-12">
+		<TMPL_VAR NAME="QuestionnaireControlHTML" ESCAPE="none"/>
+	</div>
+		<input type="hidden" name="QuestionnaireCreated" value="<TMPL_VAR NAME='QuestionnaireCreated'>">
+		<div class="row col-md-12 text-center">
+			<a href="#" class="toggle-link" for="Questionnaire"><TMPL_VAR NAME="LNG_SlideUp"/></a>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 no-padding">
+	<h3><TMPL_VAR NAME='LNG_FieldParent'></h3>
+	<div class="custom-control-itemlist" id="Parent">
+		<div class="custom-control-itemlist-rows">
+			<div class="col-md-12 no-padding well transparent custom-control-itemlist-row">
+				<div class="col-md-12" style="text-align:right;">
+					<a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a>
+				</div>
+				<div class="col-md-6">
+					<input class="custom-control-itemlist-component" data-name="EntityID" data-type="input-text" type="hidden">
+					
+					<div class="row">
+						<div class="col-md-3"><label for="ParentLastName" class="required"><TMPL_VAR NAME='LNG_FieldParentLastName'></label></div>
+						<div class="col-md-9"><input class="form-control custom-control-itemlist-component" data-name="LastName" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentLastName'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="ParentFirstName" class="required"><TMPL_VAR NAME='LNG_FieldParentFirstName'></label></div>
+						<div class="col-md-9"><input class="form-control custom-control-itemlist-component" data-name="FirstName" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentFirstName'>" /></div>
+					</div>
+				
+					<div class="row">
+						<div class="col-md-3"><label for="ParentMiddleName"><TMPL_VAR NAME='LNG_FieldParentMiddleName'></label></div>
+						<div class="col-md-9"><input class="form-control custom-control-itemlist-component" data-name="MiddleName" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentMiddleName'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="ParentStatus"><TMPL_VAR NAME='LNG_FieldParentStatus'></label></div>
+						<div class="col-md-9">
+							<select class="form-control custom-control-itemlist-component" data-name="ParentStatus" data-type="input-select">
+								<option value=""></option>
+								<option value="father"><TMPL_VAR NAME='LNG_ParentStatusFather'></option>
+								<option value="mother"><TMPL_VAR NAME='LNG_ParentStatusMother'></option>
+								<option value="grandfather"><TMPL_VAR NAME='LNG_ParentStatusGrandfather'></option>
+								<option value="grandmother"><TMPL_VAR NAME='LNG_ParentStatusGrandmother'></option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Phone"><TMPL_VAR NAME='LNG_FieldPhone'></label></div>
+						<div class="col-md-9 no-padding">
+							<div class="custom-control-phone custom-control-itemlist-component" data-name="Phone" data-type="custom-phone">
+								<div class="custom-control-phone-rows">
+									<div class="custom-control-phone-row">
+										<div class="col-md-4 col-xs-10">
+											<select class="form-control custom-control-phone-row-type">
+												<option value="mobile"><TMPL_VAR NAME='LNG_PhoneTypeMobile'></option>
+												<option value="work"><TMPL_VAR NAME='LNG_PhoneTypeWork'></option>
+												<option value="home"><TMPL_VAR NAME='LNG_PhoneTypeHome'></option>
+											</select>
+										</div>
+										<div class="col-md-7 col-xs-10"><input type="text" data-mask="phone" class="custom-control-phone-row-number form-control" /></div>
+										<div class="col-md-1 col-xs-2 no-padding"><div class="form-control simple"><a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a></div></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'></a></div>
+							</div>	
+						</div>
+					</div>
+	
+	
+					<div class="row">
+						<div class="col-md-3"><label for="Email"><TMPL_VAR NAME='LNG_FieldEmail'></label></div>
+						<div class="col-md-9 no-padding">
+							<div class="custom-control-email custom-control-itemlist-component" data-name="Email" data-type="custom-email">
+								<div class="custom-control-email-rows">
+									<div class="custom-control-email-row">
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-11 col-xs-10"><input type="text" data-mask="email" class="custom-control-email-row-number form-control" placeholder="<TMPL_VAR NAME='LNG_FieldEmail'>" /></div>
+												<div class="col-md-1 col-xs-2 no-padding"><div class="form-control simple"><a class="remove-row" href="#"><i class="box_close fa fa-times"></i></a></div></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'></a></div>
+							</div>	
+						</div>
+					</div>
+	
+	<!-- 				<div class="row">
+						<div class="col-md-3"><label for="ParentEmail"><TMPL_VAR NAME='LNG_FieldParentEmail'></label></div>
+						<div class="col-md-9"><input class="form-control custom-control-itemlist-component" data-name="Email" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentEmail'>" /></div>
+					</div> -->
+				</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-3"><label for="ParentAddress"><TMPL_VAR NAME='LNG_FieldParentAddress'></label></div>
+						<div class="col-md-9">
+							<div class="row">
+								<div class="col-md-12"><input class="form-control custom-control-itemlist-component" data-name="AddressCity" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentAddressCity'>" /></div>
+							</div>
+							<div class="row">
+								<div class="col-md-12"><input class="form-control custom-control-itemlist-component" data-name="AddressStreet" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentAddressStreet'>" /></div>
+								<div class="col-md-6"><input class="form-control custom-control-itemlist-component" data-name="AddressHome" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentAddressHome'>" /></div>
+								<div class="col-md-6"><input class="form-control custom-control-itemlist-component" data-name="AddressFlat" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentAddressFlat'>" /></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="ParentWork"><TMPL_VAR NAME='LNG_FieldParentWork'></label></div>
+						<div class="col-md-9"><input class="form-control custom-control-itemlist-component" data-name="Work" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentWork'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="ParentPassport"><TMPL_VAR NAME='LNG_FieldParentPassport'></label></div>
+						<div class="col-md-9"><input class="form-control custom-control-itemlist-component" data-name="Passport" data-type="input-text" type="text" placeholder="<TMPL_VAR NAME='LNG_FieldParentPassport'>" /></div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="col-md-12"><a class="add-row" href="#"><TMPL_VAR NAME='LNG_AddComponent'></a></div>
+			<TMPL_VAR NAME='ParentControlHTML' ESCAPE='none'>
+	</div>
+</div>
+<TMPL_INCLUDE FILE="blocks/block_edit_footer.html">
+
+	<!--<script type="text/javascript">
+		// выбор детей
+		var URL = '<TMPL_VAR NAME='MODULE_PATH'>ajax.php';
+		$("#childChoose").select2({
+			placeholder: 'Поиск ребенка',
+			multiple: true,
+			minimumInputLength: 2,
+			quietMillis: 100,
+			ajax: {
+				url: URL,
+				dataType: 'json',
+				quietMillis: 100,
+				data: function (term) {
+					return {
+						q: term,
+						Action: 'Select2Search',
+					};
+				},
+				results: function (data) {
+					return { results: data };
+				},
+				cache: true
+			},
+			formatSelection: function(item, cont){
+				cont.prevObject.attr('childLink', '<TMPL_VAR NAME='MODULE_URL'>&entity=child&&EntityViewID='+item.id);
+				cont.prevObject.val(item.id);
+				return item.text;
+			},
+		})
+		$('#childChoose').val('12');
+		$(document).ready(function()
+		{
+		<TMPL_LOOP NAME='FriendsValueList'>
+			<TMPL_IF NAME='Selected'>
+
+				var option = new Option("text", "id");
+				option.selected = true;
+				$("#childChoose").append(option);
+				$("#childChoose").trigger("change");
+
+				$("#childChoose").val("<TMPL_VAR NAME='ChildID'>").trigger('change');
+				console.log($("#childChoose").val());
+			</TMPL_IF>
+			/*<option value="<TMPL_VAR NAME='ChildID'>"<TMPL_IF NAME='Selected'> selected</TMPL_IF>><TMPL_VAR NAME='Title'></option>*/
+		</TMPL_LOOP>
+		})
+		</script>-->

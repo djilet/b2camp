@@ -1,0 +1,687 @@
+<TMPL_INCLUDE FILE="blocks/block_view_header.html">
+				
+				<div class="col-md-4">
+					<TMPL_IF NAME='ImageSmallPath'><img src="<TMPL_VAR NAME='ImageSmallPath'>" /><br/><br/></TMPL_IF>
+					<b><TMPL_VAR NAME='LNG_FieldComment'></b><br/>
+					<TMPL_VAR NAME='Comment' ESCAPE='none'>
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-6"><h3><TMPL_VAR NAME='Title'></h3></div>
+						<TMPL_IF NAME='CreateDate' VALUE='0000-00-00 00:00:00'>
+							<div class="col-md-3">00-00-0000</div>
+						<TMPL_ELSE>
+							<div class="col-md-3"><TMPL_VAR NAME='CreateDate' FORMAT='datetime'></div>
+						</TMPL_IF>
+						<div class="col-md-3"><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityID=<TMPL_VAR NAME='EntityID'>" class="btn btn-success btn-icon edit-file"><i class="fa fa-image"></i><TMPL_VAR NAME='LNG_Edit'></a></div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Manager"><TMPL_VAR NAME='LNG_FieldManager'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='ManagerTitle'></div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Category"><TMPL_VAR NAME='LNG_FieldCategory'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='CategoryTitle'></div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Phone"><TMPL_VAR NAME='LNG_FieldPhone'></label></div>
+						<div class="col-md-10">
+							<TMPL_IF NAME='PhoneList'>
+								<TMPL_IF NAME='PhoneList'>
+									<TMPL_LOOP NAME='PhoneList'>
+										+7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'> <a href="#" class="btn btn-xs btn-success btn-icon voximplant-create-call hidden" viPhone="7<TMPL_VAR NAME='Prefix'><TMPL_VAR NAME='Number'>" viTitle="<TMPL_VAR NAME='Title'>" viLinkedEntity="<TMPL_VAR NAME='Entity'>" viLinkedEntityID="<TMPL_VAR NAME='EntityID'>"><i class="fa fa-phone"></i> <TMPL_VAR NAME='LNG_Call'></a><br/>
+									</TMPL_LOOP>
+								</TMPL_IF>
+								<TMPL_INCLUDE FILE='blocks/block_view_call_list.html'>
+							</TMPL_IF>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Email"><TMPL_VAR NAME='LNG_FieldEmail'></label></div>
+						<div class="col-md-10">
+						<TMPL_IF NAME='EmailList'>
+							<TMPL_LOOP NAME='EmailList'>
+								<TMPL_VAR NAME='Email'>
+								<TMPL_IF NAME='Email'>&nbsp;&nbsp;<a href="<TMPL_VAR NAME='CommonURLPrefix'>&entity=mailing&FilterShow=create&TargetEmail=<TMPL_VAR NAME='Email' ESCAPE='url'>&TargetName=<TMPL_VAR NAME='Title' ESCAPE='url'>&TargetEntityID=<TMPL_VAR NAME='EntityID'>&TargetEntityType=<TMPL_VAR NAME='Entity'>" target="_blank" class="btn btn-xs btn-success btn-icon"><i class="fa fa-envelope-o"></i> <TMPL_VAR NAME='LNG_SendEmail'></a></TMPL_IF>
+								<br/>
+							</TMPL_LOOP>
+						</TMPL_IF>
+						</div>
+					</div>
+					<!-- <div class="row">
+						<div class="col-md-2"><label for="Email"><TMPL_VAR NAME='LNG_FieldEmail'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='Email'> <TMPL_IF NAME='Email'>&nbsp;&nbsp;<a href="<TMPL_VAR NAME='CommonURLPrefix'>&entity=mailing&FilterShow=create&TargetEmail=<TMPL_VAR NAME='Email' ESCAPE='url'>&TargetName=<TMPL_VAR NAME='Title' ESCAPE='url'>&TargetEntityID=<TMPL_VAR NAME='EntityID'>&TargetEntityType=<TMPL_VAR NAME='Entity'>" target="_blank" class="btn btn-xs btn-success btn-icon"><i class="fa fa-envelope-o"></i> <TMPL_VAR NAME='LNG_SendEmail'></a></TMPL_IF></div>
+					</div> -->
+					<div class="row">
+						<div class="col-md-2"><label for="Website"><TMPL_VAR NAME='LNG_FieldWebsite'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='Website'></div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Address"><TMPL_VAR NAME='LNG_FieldAddress'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='Address'></div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Season"><TMPL_VAR NAME='LNG_FieldSeason'></label></div>
+						<div class="col-md-10">
+						<TMPL_LOOP NAME='SeasonList'>
+							<TMPL_VAR NAME='Title'><br/>
+						</TMPL_LOOP>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Files"><TMPL_VAR NAME='LNG_FieldFile'></label></div>
+						<div class="col-md-10">
+						<TMPL_LOOP NAME='FileList'>
+							<a href="<TMPL_VAR NAME='FilePath'>" target="_blank" download="<TMPL_VAR NAME='FileTitle'>"><TMPL_VAR NAME='FileTitle'></a><br/>
+						</TMPL_LOOP>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="row well">
+					<div class="col-md-9">
+						<TMPL_INCLUDE FILE='blocks/block_status_form.html'>
+					</div>
+					<div class="col-md-3">
+						<form id="StatusCallTask" action="<TMPL_VAR NAME='CommonURLPrefix'>" method="post" class="nform" enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-md-4">
+									<input type="submit" class="btn btn-success" value="<TMPL_VAR NAME='LNG_RemindToCall'>" />
+								</div>
+							</div>
+							<input type="hidden" name="EntityID" value="" />
+							<input type="hidden" name="entity" value="task" />
+							<input type="hidden" name="Title" value="<TMPL_VAR NAME='LNG_RemindToCallTaskTitle'> &quot;<TMPL_VAR NAME='Title'>&quot;" />
+							<input type="hidden" name="Priority" value="normal" />
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					<TMPL_LOOP NAME='ContactList'>
+						<div class="col-md-6">
+							<div class="col-md-12 no-padding"><h3><TMPL_VAR NAME='ContactList.FIO'></h3></div>
+							<div class="row">
+								<div class="col-md-3"><label for="ContactStatus"><TMPL_VAR NAME='LNG_FieldContactStatus'></label></div>
+								<div class="col-md-9">
+									<TMPL_IF NAME='ContactList.ContactStatus' VALUE='director'>
+										<TMPL_VAR NAME='LNG_ContactStatusDirector'>
+									<TMPL_ELSEIF NAME='ContactList.ContactStatus' VALUE='director_deputy'>
+										<TMPL_VAR NAME='LNG_ContactStatusDirectorDeputy'>
+									<TMPL_ELSEIF NAME='ContactList.ContactStatus' VALUE='class_manager'>
+										<TMPL_VAR NAME='LNG_ContactStatusClassManager'>
+									<TMPL_ELSEIF NAME='ContactList.ContactStatus' VALUE='parent_committee'>
+										<TMPL_VAR NAME='LNG_ContactStatusParentCommittee'>
+									<TMPL_ELSEIF NAME='ContactList.ContactStatus' VALUE='other'>
+										<TMPL_VAR NAME='LNG_ContactStatusOther'>
+									</TMPL_IF>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3"><label for="ContactPhone"><TMPL_VAR NAME='LNG_FieldContactPhone'></label></div>
+								<div class="col-md-9">
+									<TMPL_IF NAME='ContactList.PhoneList'>
+										<TMPL_LOOP NAME='ContactList.PhoneList'>
+											+7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'><br/>
+										</TMPL_LOOP>
+									</TMPL_IF>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3"><label for="ContactEmail"><TMPL_VAR NAME='LNG_FieldContactEmail'></label></div>
+								<div class="col-md-9">
+								<TMPL_IF NAME='ContactList.EmailList'>
+									<TMPL_LOOP NAME='ContactList.EmailList'>
+										<TMPL_VAR NAME='Email'>
+										<TMPL_IF NAME='Email'>&nbsp;&nbsp;<a href="<TMPL_VAR NAME='CommonURLPrefix'>&entity=mailing&FilterShow=create&TargetEmail=<TMPL_VAR NAME='Email' ESCAPE='url'>&TargetName=<TMPL_VAR NAME='ContactList.FIO' ESCAPE='url'>&TargetEntityID=<TMPL_VAR NAME='ContactList.EntityID'>&TargetEntityType=school_contact" target="_blank" class="btn btn-xs btn-success btn-icon"><i class="fa fa-envelope-o"></i> <TMPL_VAR NAME='LNG_SendEmail'></a></TMPL_IF>
+										<br/>
+									</TMPL_LOOP>
+								</TMPL_IF>
+								</div>
+							</div>
+<!-- 							<div class="row">
+								<div class="col-md-3"><label for="ContactEmail"><TMPL_VAR NAME='LNG_FieldContactEmail'></label></div>
+								<div class="col-md-9"><TMPL_VAR NAME='ContactList.Email'> <TMPL_IF NAME='ContactList.Email'>&nbsp;&nbsp;<a href="
+								<TMPL_VAR NAME='CommonURLPrefix'>&entity=mailing&FilterShow=create&TargetEmail=<TMPL_VAR NAME='ContactList.Email' ESCAPE='url'>&TargetName=<TMPL_VAR NAME='ContactList.FIO' ESCAPE='url'>&TargetEntityID=<TMPL_VAR NAME='ContactList.EntityID'>&TargetEntityType=school_contact" target="_blank" class="btn btn-xs btn-success btn-icon"><i class="fa fa-envelope-o"></i> <TMPL_VAR NAME='LNG_SendEmail'></a></TMPL_IF></div>
+							</div> -->
+							<div class="row">
+								<div class="col-md-3"><label for="Passport"><TMPL_VAR NAME='LNG_FieldContactPassport'></label></div>
+								<div class="col-md-9">
+									<TMPL_VAR NAME='ContactList.Passport'>
+								</div>
+							</div>
+						</div>
+					</TMPL_LOOP>
+				</div>
+				<div class="col-md-12 no-padding">
+					<h3><TMPL_VAR NAME='LNG_FieldVisit'></h3>
+					<TMPL_IF NAME='VisitList'>
+					<div class="col-md-12 no-padding">
+						<table class="table">
+							<tr>
+								<th><TMPL_VAR NAME='LNG_FieldVisitColumnDate'></th>
+								<th><TMPL_VAR NAME='LNG_FieldVisitColumnClass'></th>
+								<th><TMPL_VAR NAME='LNG_FieldVisitColumnText'></th>
+							</tr>
+							<TMPL_LOOP NAME='VisitList'>
+							<tr>
+								<td><TMPL_VAR NAME='Date'></td>
+								<td><TMPL_VAR NAME='Class'></td>
+								<td><TMPL_VAR NAME='Text'></td>
+							</tr>
+							</TMPL_LOOP>
+						</table>					
+					</div>
+					</TMPL_IF>
+					<div class="well">
+						<form id="Visit" action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post" class="nform" enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-md-2">
+									<input class="form-control datepicker" data-format="yyyy-mm-dd" type="text" name="Date" value="<TMPL_VAR NAME='VisitDefaultDate'>" />
+									<input class="form-control" type="text" name="Class" placeholder="<TMPL_VAR NAME='LNG_FieldVisitClass'>" />
+								</div>
+								<div class="col-md-10">
+									<textarea class="form-control" name="Text" id="Text" rows="6" cols="80" placeholder="<TMPL_VAR NAME='LNG_FieldVisitText'>"></textarea>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-success btn-icon"><TMPL_VAR NAME='LNG_AddComponent'></button>
+							<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+							<input type="hidden" name="Do" value="Action" />
+							<input type="hidden" name="Action" value="AddVisit" />
+							<input type="hidden" name="Show" value="view" />
+							<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+						</form>
+					</div>
+				</div>
+
+				<div class="col-md-12 no-padding">
+					<h3><TMPL_VAR NAME='LNG_FieldComments'></h3>
+					<TMPL_INCLUDE FILE="blocks/block_view_comments.html">
+				</div>
+				
+				<div class="col-md-12 top15">
+					<h3><TMPL_VAR NAME='LNG_FieldFinances'></h3>
+					<ul class="nav nav-tabs default">
+						<li class="active">
+							<a href="#add-contract" data-toggle="tab">
+								<i class="fa fa-plus"></i> <TMPL_VAR NAME='LNG_TabAddContract'>
+							</a>
+						</li>
+						<li>
+							<a href="#add-invoice" data-toggle="tab">
+								<i class="fa fa-plus"></i> <TMPL_VAR NAME='LNG_TabAddInvoice'>
+							</a>
+						</li>
+						<li>
+							<a href="#add-payment" data-toggle="tab">
+								<i class="fa fa-plus"></i> <TMPL_VAR NAME='LNG_TabAddPayment'>
+							</a>
+						</li>
+						<li>
+							<a href="#add-payback" data-toggle="tab">
+								<i class="fa fa-plus"></i> <TMPL_VAR NAME='LNG_TabAddPayback'>
+							</a>
+						</li>
+						<li>
+							<a href="#add-act" data-toggle="tab">
+								<i class="fa fa-plus"></i> <TMPL_VAR NAME='LNG_TabAddAct'>
+							</a>
+						</li>
+					</ul>
+
+					<div class="tab-content default">
+						<div class="tab-pane fade in active" id="add-contract">
+							<h4><TMPL_VAR NAME='LNG_FieldAddingContract'></h4>
+							<form action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post">
+								<div class="row top15">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_ContractContact'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="ContactID" class="form-control">
+											<TMPL_LOOP NAME='ContactList'>
+												<option value="<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='FIO'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_ContractSeason'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="SeasonID[]" id="SeasonID">
+											<TMPL_LOOP NAME='ActiveSeasonList'>
+												<option value="<TMPL_VAR NAME='EntityID'>" <TMPL_IF NAME='Archive' VALUE='Y'> class="inactive" <TMPL_ELSEIF NAME='TypeID' VALUE='3'>class="inactive"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+									<TMPL_VAR NAME='SeasonIDControlHTML' ESCAPE='none'>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-3">
+										<label>Список детей</label>
+									</div>
+									<div class="col-md-3">
+										<input id="childChoose" name="childChoose[]" style="width: 300px">
+									</div>
+								</div>
+								<script type="text/javascript">
+var URL = '<TMPL_VAR NAME='MODULE_PATH'>ajax.php';
+$("#childChoose").select2({
+	placeholder: 'Поиск ребенка',
+	multiple: true,
+	minimumInputLength: 2,
+	quietMillis: 100,
+	ajax: {
+		url: URL,
+		dataType: 'json',
+		quietMillis: 100,
+		data: function (term) {
+			return {
+				q: term,
+				Action: 'Select2Search',
+			};
+		},
+		results: function (data) {
+			return { results: data };
+		},
+		cache: true
+	},
+	formatSelection: function(item, cont){
+		cont.prevObject.attr('gender', item.Sex);
+		cont.prevObject.attr('childLink', '<TMPL_VAR NAME='MODULE_URL'>&entity=child&&EntityViewID='+item.id);
+		return item.text;
+	},
+})
+.on('change', function(e){
+	$('#s2id_childChoose .select2-search-choice').click(function(){
+		window.open($(this).attr('childLInk'))
+	})
+	var countChoosedChilds;
+	if ($(this).val()){
+		countChoosedChilds = $(this).val().split(',').length;
+	} else {
+		countChoosedChilds = 0;
+	}
+	$('input[name="TourCount"]').val(countChoosedChilds);
+	$('input[name="TourCount"]').trigger('change');
+});
+
+								</script>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_ContractTourPrice'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="TourPrice"/>
+									</div>
+									<div class="col-md-2">
+										<label><TMPL_VAR NAME='LNG_ContractTourCount'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="number" min="0" class="form-control number-input" name="TourCount"/>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_ContractCoursePrice'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="CoursePrice"/>
+									</div>
+									<div class="col-md-2">
+										<label><TMPL_VAR NAME='LNG_ContractCourseCount'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="number" min="0" class="form-control number-input" name="CourseCount"/>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="row">
+									<div class="col-md-4">
+										<label><TMPL_VAR NAME='LNG_ContractAmount'></label>
+									</div>
+									<div class="col-md-3">
+										<label id="contract-amount"></label>
+										<input type="hidden" class="form-control" name="Amount" />
+									</div>
+								</div>
+
+								<br>
+
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_ContractLastDayForPay'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" name="LastDayForPay" data-format="dd.mm.yyyy" class="form-control datepicker" />		
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-3">
+										<input type="checkbox" name="IsNeedStamp" class="" />
+										<label><TMPL_VAR NAME='LNG_ContractIsNeedStamp'></label>	
+									</div>
+								</div>
+								<br>
+								<input type="submit" class="btn btn-success" value="<TMPL_VAR NAME='LNG_Create'>" />
+								<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+								<input type="hidden" name="SchoolID" value="<TMPL_VAR NAME='EntityID'>" />
+								<input type="hidden" name="Do" value="Action" />
+								<input type="hidden" name="Action" value="AddContractExtended" />
+								<input type="hidden" name="Show" value="view" />
+								<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="add-invoice">
+							<h4><TMPL_VAR NAME='LNG_FieldAddingInvoice'></h4>
+							<form action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post">
+								<div class="row top15">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_InvoiceContract'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="ContractID" class="form-control">
+											<TMPL_LOOP NAME='ContractList'>
+												<option value="<TMPL_VAR NAME='ContractID'>">№<TMPL_VAR NAME='ContractID'> (<TMPL_VAR NAME='Created' FORMAT='datetime'>)</option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_InvoiceAmount'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" class="form-control" name="Amount" />
+									</div>
+								</div>
+								<input type="submit" class="btn btn-success" value="<TMPL_VAR NAME='LNG_Create'>" />
+								<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+								<input type="hidden" name="Do" value="Action" />
+								<input type="hidden" name="Action" value="AddInvoice" />
+								<input type="hidden" name="Show" value="view" />
+								<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="add-payment">
+							<h4><TMPL_VAR NAME='LNG_FieldAddingPayment'></h4>
+							<form action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post">
+								<div class="row top15">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_PaymentContract'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="ContractID" class="form-control">
+											<TMPL_LOOP NAME='ContractList'>
+												<option value="<TMPL_VAR NAME='ContractID'>">№<TMPL_VAR NAME='ContractID'> (<TMPL_VAR NAME='Created' FORMAT='datetime'>)</option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_PaymentAmount'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" class="form-control" name="Amount" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_Bill'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="BillID" class="form-control">
+											<TMPL_LOOP NAME='BillList'>
+												<option value="<TMPL_VAR NAME='BillID'>"><TMPL_VAR NAME='BillName'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_Reason'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" class="form-control" name="Reason" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_IncomeType'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="ArticleID" class="form-control">
+											<TMPL_LOOP NAME='IncomeIDList'>
+												<option value="<TMPL_VAR NAME='ArticleID'>"><TMPL_VAR NAME='ArticleName'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<input type="submit" class="btn btn-success" value="<TMPL_VAR NAME='LNG_Create'>" />
+								<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+								<input type="hidden" name="ArticleType" value="1" />
+								<input type="hidden" name="Do" value="Action" />
+								<input type="hidden" name="Action" value="AddPayment" />
+								<input type="hidden" name="Show" value="view" />
+								<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+							</form>
+						</div>
+						
+						<div class="tab-pane fade" id="add-payback">
+							<h4><TMPL_VAR NAME='LNG_FieldAddingPayback'></h4>
+							<form action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post">
+								<div class="row top15">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_PaymentContract'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="ContractID" class="form-control">
+											<TMPL_LOOP NAME='ContractList'>
+												<option value="<TMPL_VAR NAME='ContractID'>">№<TMPL_VAR NAME='ContractID'> (<TMPL_VAR NAME='Created' FORMAT='datetime'>)</option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_PaymentAmount'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" class="form-control" name="Amount" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_Bill'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="BillID" class="form-control">
+											<TMPL_LOOP NAME='BillList'>
+												<option value="<TMPL_VAR NAME='BillID'>"><TMPL_VAR NAME='BillName'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_Reason'></label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" class="form-control" name="Reason" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_OutcomeType'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="ArticleID" class="form-control">
+											<TMPL_LOOP NAME='OutcomeIDList'>
+												<option value="<TMPL_VAR NAME='ArticleID'>"><TMPL_VAR NAME='ArticleName'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<input type="submit" class="btn btn-success" value="<TMPL_VAR NAME='LNG_Create'>" />
+								<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+								<input type="hidden" name="ArticleType" value="2" />
+								<input type="hidden" name="Do" value="Action" />
+								<input type="hidden" name="Action" value="AddPayback" />
+								<input type="hidden" name="Show" value="view" />
+								<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+							</form>
+						</div>
+
+						<div class="tab-pane fade" id="add-act">
+							<h4><TMPL_VAR NAME='LNG_FieldAddingAct'></h4>
+							<form action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post">
+								<div class="row top15">
+									<div class="col-md-3">
+										<label><TMPL_VAR NAME='LNG_ActContract'></label>
+									</div>
+									<div class="col-md-3">
+										<select name="ContractID" class="form-control">
+											<TMPL_LOOP NAME='ContractList'>
+												<option value="<TMPL_VAR NAME='ContractID'>">№<TMPL_VAR NAME='ContractID'> (<TMPL_VAR NAME='Created' FORMAT='datetime'>)</option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+								<input type="submit" class="btn btn-success" value="<TMPL_VAR NAME='LNG_Create'>" />
+								<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+								<input type="hidden" name="Do" value="Action" />
+								<input type="hidden" name="Action" value="AddAct" />
+								<input type="hidden" name="Show" value="view" />
+								<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+							</form>
+						</div>
+					</div>
+					
+					<TMPL_IF NAME='ContractList'>
+						<TMPL_VAR NAME='ContractControlHTML' ESCAPE='none'>
+							<div class="table-responsive" data-pattern="priority-columns">
+								<table class="table top15" id="Contract">
+									<thead>
+										<tr>
+											<th data-priority="1"></th>
+											<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnNumber'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnCreated'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnSeason'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnManager'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnAmount'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnPaidAmount'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnUnPaidAmount'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnPaybackAmount'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnLastDayForPay'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnIsNeedStamp'></th>
+										</tr>
+									</thead>
+									<tbody>
+										<TMPL_LOOP NAME='ContractList'>
+											<tr class="bg-light-gray" >
+												<td><a href="#" class="contract-toggle-link" ContractID="<TMPL_VAR NAME='ContractID'>"><i class="fa fa-chevron-circle-right"></i></a></td>
+												<td><TMPL_VAR NAME='LNG_PrefixContract'><TMPL_VAR NAME='ContractID'></td>
+												<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+												<td>
+													<TMPL_LOOP NAME='SeasonList'>
+														<TMPL_VAR NAME='Title'><TMPL_UNLESS NAME='__LAST__'>, </TMPL_UNLESS>
+													</TMPL_LOOP>
+												</td>
+												<td><TMPL_VAR NAME='ManagerTitle'></td>
+												<td><TMPL_VAR NAME='Amount'></td>
+												<td><TMPL_VAR NAME='PaidAmount'></td>
+												<td><TMPL_VAR NAME='UnpaidAmount'></td>
+												<td><TMPL_VAR NAME='PaybackAmount'></td>
+												<td><TMPL_VAR NAME='LastDayForPay'></td>
+												<td><TMPL_VAR NAME='IsNeedStamp'></td>
+												<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetContractPDF&ContractID=<TMPL_VAR NAME='ContractID'>&Print=1" target="_blank"><i class="fa fa-print"></i></a></td>
+												<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetContractPDF&ContractID=<TMPL_VAR NAME='ContractID'>" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+												<td><a class="remove-row" href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityViewID=<TMPL_VAR NAME='global.EntityID'>&Do=Action&Action=RemoveContract&ContractID=<TMPL_VAR NAME='ContractID'>"><i class="box_close fa fa-times"></i></a></td>
+											</tr>
+											<TMPL_LOOP NAME='InvoiceList'>
+												<tr class="contract-row-inner" ContractID="<TMPL_VAR NAME='ContractList.ContractID'>">
+													<td></td>
+													<td><TMPL_VAR NAME='LNG_PrefixInvoice'><TMPL_VAR NAME='InvoiceID'></td>
+													<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+													<td></td>
+													<td><TMPL_VAR NAME='ManagerTitle'></td>
+													<td><TMPL_VAR NAME='Amount'></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetInvoicePDF&InvoiceID=<TMPL_VAR NAME='InvoiceID'>&Print=1" target="_blank"><i class="fa fa-print"></i></a></td>
+													<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetInvoicePDF&InvoiceID=<TMPL_VAR NAME='InvoiceID'>" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+													<td><a class="remove-row" href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityViewID=<TMPL_VAR NAME='global.EntityID'>&Do=Action&Action=RemoveInvoice&InvoiceID=<TMPL_VAR NAME='InvoiceID'>"><i class="box_close fa fa-times"></i></a></td>
+												</tr>
+											</TMPL_LOOP>
+											<TMPL_LOOP NAME='PaymentList'>
+												<tr class="contract-row-inner" ContractID="<TMPL_VAR NAME='ContractList.ContractID'>">
+													<td></td>
+													<td><TMPL_VAR NAME='LNG_PrefixPayment'><TMPL_VAR NAME='PaymentID'></td>
+													<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+													<td></td>
+													<td><TMPL_VAR NAME='ManagerTitle'></td>
+													<td></td>
+													<td><TMPL_VAR NAME='Amount'></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetPaymentPDF&PaymentID=<TMPL_VAR NAME='PaymentID'>&Print=1" target="_blank"><i class="fa fa-print"></i></a></td>
+													<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetPaymentPDF&PaymentID=<TMPL_VAR NAME='PaymentID'>" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+													<td><a class="remove-row" href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityViewID=<TMPL_VAR NAME='global.EntityID'>&Do=Action&Action=RemovePayment&PaymentID=<TMPL_VAR NAME='PaymentID'>"><i class="box_close fa fa-times"></i></a></td>
+												</tr>
+											</TMPL_LOOP>
+											<TMPL_LOOP NAME='PaybackList'>
+												<tr class="contract-row-inner" ContractID="<TMPL_VAR NAME='ContractList.ContractID'>">
+													<td></td>
+													<td><TMPL_VAR NAME='LNG_PrefixPayback'><TMPL_VAR NAME='PaybackID'></td>
+													<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+													<td></td>
+													<td><TMPL_VAR NAME='ManagerTitle'></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><TMPL_VAR NAME='Amount'></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><a class="remove-row" href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityViewID=<TMPL_VAR NAME='global.EntityID'>&Do=Action&Action=RemovePayback&PaybackID=<TMPL_VAR NAME='PaybackID'>"><i class="box_close fa fa-times"></i></a></td>
+												</tr>
+											</TMPL_LOOP>
+											<TMPL_LOOP NAME='ActList'>
+												<tr class="contract-row-inner" ContractID="<TMPL_VAR NAME='ContractList.ContractID'>">
+													<td></td>
+													<td><TMPL_VAR NAME='LNG_PrefixAct'><TMPL_VAR NAME='ActID'></td>
+													<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+													<td></td>
+													<td><TMPL_VAR NAME='ManagerTitle'></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetActPDF&ActID=<TMPL_VAR NAME='ActID'>&Print=1" target="_blank"><i class="fa fa-print"></i></a></td>
+													<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=GetActPDF&ActID=<TMPL_VAR NAME='ActID'>" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+													<td><a class="remove-row" href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityViewID=<TMPL_VAR NAME='global.EntityID'>&Do=Action&Action=RemoveAct&ActID=<TMPL_VAR NAME='ActID'>"><i class="box_close fa fa-times"></i></a></td>
+												</tr>
+											</TMPL_LOOP>
+										</TMPL_LOOP>
+									</tbody>
+								</table>
+							</div>
+					</TMPL_IF>					
+				</div>
+				
+<TMPL_INCLUDE FILE="blocks/block_view_footer.html">

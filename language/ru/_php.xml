@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<confirm-action>Подтвердите действие</confirm-action>
+	<yes>Да</yes>
+	<no>Нет</no>
+	<delete-menu-confirm>Вы действительно хотите удалить меню '%Title%'?</delete-menu-confirm>
+	<delete-page-confirm>Вы действительно хотите удалить страницу '%Title%'?</delete-page-confirm>
+	<has-subpages>У этой страницы есть подстраницы!</has-subpages>
+	<delete-link-confirm>Вы действительно хотите удалить ссылку '%Title%'?</delete-link-confirm>
+	<loading-menu>загружаем меню...</loading-menu>
+	<before-save-error>Ошибка подготовки к сохранению</before-save-error>
+	<error-loading-menu>Сбой загрузки информации о меню</error-loading-menu>
+	<saving-menu>Сохраняем меню...</saving-menu>
+	<removing-menu>Удаляем меню...</removing-menu>
+	<menu-removed>Меню успешно удалено</menu-removed>
+	<error-removing-menu>При удалении меню произошла ошибка</error-removing-menu>
+	<menu-saved>Меню успешно сохранено</menu-saved>
+	<error-saving-menu>При сохранении меню произошла ошибка</error-saving-menu>
+	<removing-page>Удаляем страницу</removing-page>
+	<page-removed>Страница успешно удалена</page-removed>
+	<error-removing-page>При удалении страницы произошла ошибка</error-removing-page>
+	<loading-seo>Загружаем SEO информацию страницы...</loading-seo>
+	<error-loading-seo>Сбой загрузки SEO информации страницы</error-loading-seo>
+	<saving-seo>Сохраняем SEO информацию страницы...</saving-seo>
+	<seo-saved>SEO информация страницы успешно сохранена</seo-saved>
+	<error-saving-seo>При сохранении SEO информации страницы произошла ошибка</error-saving-seo>
+	<saving-sort>Сохраняем порядок отображения страниц...</saving-sort>
+	<error-saving-sort>Список страниц был изменен. Обновление сортировки невозможно. Пожалуйста обновите страницу [F5]</error-saving-sort>
+	<sort-saved>Порядок отображения страниц успешно сохранен</sort-saved>
+	<page-activate>Отобразить страницу</page-activate>
+	<page-deactivate>Спрятать страницу</page-deactivate>
+	<activating-page>Отображаем страницу...</activating-page>
+	<deactivating-page>Скрываем страницу...</deactivating-page>
+	<page-activated>Страница успешно отображена</page-activated>
+	<page-deactivated>Страница успешно спрятана</page-deactivated>
+	<error-activating-page>При отображении страницы произошла ошибка</error-activating-page>
+	<error-deactivating-page>При сокрытии страницы произошла ошибка</error-deactivating-page>
+	<page-preview>Предпросмотр страницы</page-preview>
+	<page-seo>Редактировать SEO информацию страницы</page-seo>
+	<page-delete>Удалить страницу '%Title%'</page-delete>
+	<page-edit>Редактировать страницу '%Title%'</page-edit>
+	<page-hide>Скрыть</page-hide>
+	<page-show>Раскрыть</page-show>
+	<page>Страница</page>
+	<link-delete>Удалить ссылку '%Title%'</link-delete>
+	<link-edit>Редактировать ссылку '%Title%'</link-edit>
+	<link>Ссылка</link>
+	<menu-edit>Редактировать</menu-edit>
+	<menu-delete>Удалить</menu-delete>
+	<menu-title>Заголовок</menu-title>
+	<menu-description>Описание</menu-description>
+	<menu-static-path>MENU_</menu-static-path>
+	<admin-menu-dashboard>Главная</admin-menu-dashboard>
+	<admin-menu-crm-child>Дети</admin-menu-crm-child>
+	<admin-menu-crm-child-active>Актив дети</admin-menu-crm-child-active>
+	<admin-menu-crm-child-archive>Архив</admin-menu-crm-child-archive>
+	<admin-menu-crm-season>Проекты</admin-menu-crm-season>
+	<admin-menu-crm-season-active>Активные проекты</admin-menu-crm-season-active>
+	<admin-menu-crm-season-archive>Архив</admin-menu-crm-season-archive>
+	<admin-menu-crm-school>Школы</admin-menu-crm-school>
+	<admin-menu-crm-staff>Кадры</admin-menu-crm-staff>
+	<admin-menu-crm-staff-active>Активные кадры</admin-menu-crm-staff-active>
+	<admin-menu-crm-staff-archive>Архив</admin-menu-crm-staff-archive>
+	<admin-menu-crm-legal>Юр. лица</admin-menu-crm-legal>
+	<admin-menu-crm-task>Задачи</admin-menu-crm-task>
+	<admin-menu-crm-task-out>Исходящие</admin-menu-crm-task-out>
+	<admin-menu-crm-task-in>Входящие</admin-menu-crm-task-in>
+	<admin-menu-crm-task-closed>Архив</admin-menu-crm-task-closed>
+	<admin-menu-crm-mailing>Рассылка</admin-menu-crm-mailing>
+	<admin-menu-crm-mailing-history>История рассылок</admin-menu-crm-mailing-history>
+	<admin-menu-crm-mailing-create>Создать рассылку</admin-menu-crm-mailing-create>
+	<admin-menu-crm-storage>Хранилище</admin-menu-crm-storage>
+	<admin-menu-crm-report>Отчеты</admin-menu-crm-report>
+	<admin-menu-user-list>Пользователи</admin-menu-user-list>
+	<admin-menu-user-action-list>Действия пользователей</admin-menu-user-action-list>
+	<admin-menu-crm-directory>Справочники</admin-menu-crm-directory>
+	<admin-menu-crm-directory-billings>Счета</admin-menu-crm-directory-billings>
+	<admin-menu-crm-directory-article-arrival>Статьи прихода</admin-menu-crm-directory-article-arrival>
+	<admin-menu-crm-directory-article-consumption>Статьи расхода</admin-menu-crm-directory-article-consumption>
+	<admin-menu-crm-directory-sources-of-child>Источники</admin-menu-crm-directory-sources-of-child>
+	<admin-menu-crm-bookkeeping>Бухгалтерия</admin-menu-crm-bookkeeping>
+	<admin-menu-crm-bookkeepingout>Бухгалтерия</admin-menu-crm-bookkeepingout>
+	<admin-menu-my-profile>Мой профиль</admin-menu-my-profile>
+	<admin-menu-logout>Выйти</admin-menu-logout>
+	<menu-image-no>Не используется</menu-image-no>
+	<menu-image-first-level>Для первого уровня</menu-image-first-level>
+	<menu-image-all-levels>Для всех уровней</menu-image-all-levels>
+	<title-h1>Заголовок h1</title-h1>
+	<meta-title>Meta Title</meta-title>
+	<meta-keywords>Meta Keywords</meta-keywords>
+	<meta-description>Meta Description</meta-description>
+	<attribute-title><![CDATA[Аттрибут title тэга <a>]]></attribute-title>
+	<list-info1>%Page% из %Total%</list-info1>
+	<list-info2>По запросу '%Request%' найдено %Total%</list-info2>
+	<remove-image-confirm>Пожалуйста подтвердите удаление картинки</remove-image-confirm>
+	<removing-image>Удаляем картинку...</removing-image>
+	<error-removing-image>Произошла ошибка при попытке удаления картинки</error-removing-image>
+	<image-removed>Картинка успешно удалена</image-removed>
+	<save>Сохранить</save>
+	<cancel>Отменить</cancel>
+	<msg-no-url>Введите URL ссылки</msg-no-url>
+	<msg-no-page-selected>Выберите страницу из списка</msg-no-page-selected>
+	<msg-no-email>Введите адрес эл.почты</msg-no-email>
+	<title-site-structure>Структура сайта</title-site-structure>
+	<title-page-edit>Редактирование содержимого страницы</title-page-edit>
+	<title-module-edit>Редактирование страницы модуля</title-module-edit>
+	<title-link-edit>Редактирование информации о ссылке</title-link-edit>
+	<title-user-list>Пользователи</title-user-list>
+	<title-user-add>Добавление пользователя</title-user-add>
+	<title-user-edit>Редактирование пользователя</title-user-edit>
+	<title-user-action-list>Действия пользователей</title-user-action-list>
+	<title-developer>Панель разработчика</title-developer>
+	<page-description>Всплывающая подсказка при наведении мышью на ссылку</page-description>
+	<page-is-removed>Страница %Title% удалена</page-is-removed>
+	<title-empty>Введите заголовок</title-empty>
+	<template-is-not-defined>Выберите шаблон вывода содержания страницы из списка</template-is-not-defined>
+	<templateset-is-not-defined>Выберите набор шаблонов вывода содержания модуля из списка</templateset-is-not-defined>
+	<static-path-empty>Введите URL страницы</static-path-empty>
+	<static-path-is-not-unique>Введенный URL не уникален. Выберите другой URL</static-path-is-not-unique>
+	<static-path-incorrect>Введенный URL неверен! Пожалуйста используйте только латинские буквы, цифры, тире (-), точки (.) и знак подчеркивания (_)</static-path-incorrect>
+	<static-path-empty-menu>Введите имя переменной MENU_</static-path-empty-menu>
+	<static-path-is-not-unique-menu>Введенное имя переменной MENU_ не уникально. Выберите другое имя</static-path-is-not-unique-menu>
+	<static-path-incorrect-menu>Введенное имя переменной MENU_ неверно! Пожалуйста используйте только латинские буквы, цифры, тире (-), точки (.) и знак подчеркивания (_)</static-path-incorrect-menu>
+	<parent-is-not-defined>Укажите родительскую страницу/меню</parent-is-not-defined>
+	<parent-language-different>Язык родительской страницы не соответсвует языку текущей страницы. Сохранение данных не возможно.</parent-language-different>
+	<password-is-changed-and-sent>Ваш пароль был успешно изменен и отправлен на ваш эл. адрес</password-is-changed-and-sent>
+	<logged-out>Вы вышли из системы</logged-out>
+	<wrong-login-password>Неправильное сочетание логина и пароля</wrong-login-password>
+	<not-enough-rights>Недостаточно прав</not-enough-rights>
+	<new-password>Новый пароль</new-password>
+	<open-calendar>Нажмите сюда, чтобы открыть календарь</open-calendar>
+	<your-session-expired>Время сессии истекло</your-session-expired>
+	<unknown-module>Модуль '%Module%' не найден</unknown-module>
+	<page-type-is-undefined>Неверно определен тип страницы</page-type-is-undefined>
+	<email-is-not-unique>Введенный вами адрес эл. почты уже занят одним из пользователей. Введите другой адрес</email-is-not-unique>
+	<incorrect-email-format>Введите адрес эл. почты в формате name@yoursite.ru</incorrect-email-format>
+	<incorrect-email-address>Введенный вами адрес эл. почты не зарегистрирован</incorrect-email-address>
+	<wrong-old-password>Старый пароль введен неверно</wrong-old-password>
+	<password-empty>Новый пароль не может быть пустым</password-empty>
+	<password-not-equal>Пароли не совпадают</password-not-equal>
+	<lastname-required>Поле 'Фамилия' является обязательным</lastname-required>
+	<firstname-required>Поле 'Имя' является обязательным</firstname-required>
+	<sex-required>Укажите пол</sex-required>
+	<dob-required>Укажите корректную дату рождения</dob-required>
+	<phone-incorrect>Введите корректный номер телефона в формате +7-(***)-***-**-**</phone-incorrect>
+	<role-undefined>Вы не выбрали роль пользователя</role-undefined>
+	<website-undefined>Вы не выбрали вебсайт к которому будет относиться пользователь</website-undefined>
+	<user-edit-access-denied>Доступ к редактированию чужих данных запрещен</user-edit-access-denied>
+	<user-is-updated>Информация о пользователе обновлена</user-is-updated>
+	<public-user-is-registered>Вы успешно зарегистрированы</public-user-is-registered>
+	<public-user-is-updated>Ваша информация была обновлена</public-user-is-updated>
+	<user-is-removed>Пользователь %UserList% был удален</user-is-removed>
+	<users-are-removed>Пользователи %UserList% были удалены. Всего удалено %UserCount% пользовател(-ей,-я)</users-are-removed>
+	<home-page>Главная</home-page>
+	<sql-error>Ошибка в SQL запросе. Детальная информация об ошибке в log файле</sql-error>
+	<upload-max-file-size>макс. размер 1-го файла: %UploadMaxFileSize%</upload-max-file-size>
+	<no-templates>Вы должны создать файл с именем page.html в папке %Folder%</no-templates>
+	<template-general>Основной</template-general>
+	<menu-image1>Иконка 1</menu-image1>
+	<menu-image2>Иконка 2</menu-image2>
+	<menu-image3>Иконка 3</menu-image3>
+	<menu-image4>Иконка 4</menu-image4>
+	<menu-image5>Иконка 5</menu-image5>
+	<filesys-file-is-not-uploaded>Файл не загружен</filesys-file-is-not-uploaded>
+	<filesys-file-doesnt-exist>Исходный файл не существует</filesys-file-doesnt-exist>
+	<filesys-getimagesize-error>Невозможно получить размеры картинки для файла %File%</filesys-getimagesize-error>
+	<filesys-unsupported-image-mime-type>Картинки с типом '%MimeType%' не поддерживаются</filesys-unsupported-image-mime-type>
+	<filesys-unsupported-image-function>Для завершения процесса изменения размеров картинки, требуется функция %Function%. Но данная функция не поддерживается вашим хостинг провайдером</filesys-unsupported-image-function>
+	<filesys-file-upload-error>Произошла ошибка при загрузке файла на сервер. Номер ошибки %ErrorNumber%</filesys-file-upload-error>
+	<filesys-incorrect-file-name>Имя файла %FileName% неверное. Пожалуйста переименуйте и попробуйте загрузить снова</filesys-incorrect-file-name>
+	<filesys-unsupported-file-mime-type>Файлы с типом '%MimeType%' не поддерживаются</filesys-unsupported-file-mime-type>
+	<filesys-file-exists>Файл с именем %FileName% уже существует в папке %FolderName%</filesys-file-exists>
+	<filesys-copy-error>Ошибка копирования файла из %From% в %To%</filesys-copy-error>
+	<phpmailer-provide-address>Вы должны указать как минимум один E-mail адрес получателя</phpmailer-provide-address>
+	<phpmailer-mailer-not-supported>%Mailer% не поддерживается</phpmailer-mailer-not-supported>
+	<phpmailer-execute>Невозможно выполнить: %Sendmail%</phpmailer-execute>
+	<phpmailer-instantiate>Функция mail() не определена</phpmailer-instantiate>
+	<phpmailer-authenticate>SMTP Ошибка: Ошибка авторизации</phpmailer-authenticate>
+	<phpmailer-from-failed>Невозможно использовать следующие From адреса: %Address%</phpmailer-from-failed>
+	<phpmailer-recipients-failed>SMTP Ошибка: Невозможно отправить E-mail следующим получателям: %Address%</phpmailer-recipients-failed>
+	<phpmailer-data-not-accepted>SMTP Ошибка: Данные не приняты сервером</phpmailer-data-not-accepted>
+	<phpmailer-connect-host>SMTP Ошибка: Невозможно соединиться с SMTP хостом %Host%</phpmailer-connect-host>
+	<phpmailer-file-access>Ошибка доступа к файлу: %File%</phpmailer-file-access>
+	<phpmailer-file-open>Невозможно открыть файл: %File%</phpmailer-file-open>
+	<phpmailer-encoding>Неизвестная кодировка: %Encoding%</phpmailer-encoding>
+	<error-sending-email>Ваше сообщение не было отправлено из-за внутренней ошибки сервера</error-sending-email>
+	<error-sending-incorrect-email>Некорректный E-mail</error-sending-incorrect-email>
+	<incorrect-captcha>Вы ввели неверный код подтверждения</incorrect-captcha>
+	<date-Sun>вс</date-Sun>
+	<date-Mon>пн</date-Mon>
+	<date-Tue>вт</date-Tue>
+	<date-Wed>ср</date-Wed>
+	<date-Thu>чт</date-Thu>
+	<date-Fri>пт</date-Fri>
+	<date-Sat>сб</date-Sat>
+	<date-Sunday>воскресенье</date-Sunday>
+	<date-Monday>понедельник</date-Monday>
+	<date-Tuesday>вторник</date-Tuesday>
+	<date-Wednesday>среда</date-Wednesday>
+	<date-Thursday>четверг</date-Thursday>
+	<date-Friday>пятница</date-Friday>
+	<date-Saturday>суббота</date-Saturday>
+	<date-Jan>янв</date-Jan>
+	<date-Feb>фев</date-Feb>
+	<date-Mar>мар</date-Mar>
+	<date-Apr>апр</date-Apr>
+	<date-May>мая</date-May>
+	<date-Jun>июн</date-Jun>
+	<date-Jul>июл</date-Jul>
+	<date-Aug>авг</date-Aug>
+	<date-Sep>сен</date-Sep>
+	<date-Oct>окт</date-Oct>
+	<date-Nov>ноя</date-Nov>
+	<date-Dec>дек</date-Dec>
+	<date-January>января</date-January>
+	<date-February>февраля</date-February>
+	<date-March>марта</date-March>
+	<date-April>апреля</date-April>
+	<date-June>июня</date-June>
+	<date-July>июля</date-July>
+	<date-August>августа</date-August>
+	<date-September>сентября</date-September>
+	<date-October>октября</date-October>
+	<date-November>ноября</date-November>
+	<date-December>декабря</date-December>
+	<role-integrator>Разработчик</role-integrator>
+	<role-administrator>Администратор</role-administrator>
+	<role-manager>Менеджер</role-manager>
+	<role-guide>Вожатый</role-guide>
+	<add-image>Добавить</add-image>
+	<change-image>Изменить</change-image>
+	<configure-image>Настроить</configure-image>
+	<remove-image>Удалить</remove-image>
+	<set-sort-order-error>Произошла ошибка при попытке обновления позиции</set-sort-order-error>
+	<xml-section-general>Основные</xml-section-general>
+	<php-messages>Сообщения</php-messages>
+	<xml-_header.html>Шапка</xml-_header.html>
+	<xml-_footer.html>Подвал</xml-_footer.html>
+	<xml-_404.html>Шаблон "Страница не найдена"</xml-_404.html>
+	<xml-page.html>Тело страницы</xml-page.html>	
+	<tag-name>Имя</tag-name>
+	<variable-value>Значение</variable-value>
+	<incorrect-parameter>Неверный параметр передан классу VariableList()</incorrect-parameter>
+	<loading-edit-variable>загружаем информацию о переменной...</loading-edit-variable>
+	<saving-variable>Сохраняем значение переменной...</saving-variable>
+	<variable-saved>Значение переменной успешно сохранено</variable-saved>
+	<error-saving-variable>При сохранении значения переменной произоша ошибка</error-saving-variable>
+	<lightbox-image>Картинка</lightbox-image>
+	<lightbox-of>из</lightbox-of>
+
+	<robots-saved>Файл robots.txt успешно изменен.</robots-saved>
+	<robots-error>Ошибка при сохранении файла robots.txt. Проверьте, установлены ли права на запись.</robots-error>
+	<admin-menu-robots>Robots.txt</admin-menu-robots>
+	<admin-menu-template-robots>Изменение файла Robots.txt</admin-menu-template-robots>
+	
+	<sitemap-saved>Файл sitemap.xml успешно изменен.</sitemap-saved>
+	<sitemap-error>Ошибка при сохранении файла sitemap.xml. Проверьте, установлены ли права на запись.</sitemap-error>
+	<admin-menu-sitemap>Карта сайта</admin-menu-sitemap>
+	<admin-menu-template-sitemap>Изменение файла sitemap.xml</admin-menu-template-sitemap>
+	
+	<download-file-does-not-exist>Файл "%Path%" не найден</download-file-does-not-exist>
+	<parent-directory-access-denied>Обращение к родительской директории запрещено</parent-directory-access-denied>
+	<set-file-permissions-message>Права %Permissions% для файла "%Path%" установлены</set-file-permissions-message>
+	<set-file-permissions-error>При установке прав %Permissions% для файла "%Path%" произошла ошибка</set-file-permissions-error>
+	<file-or-directory-exists>Файл/папка "%Path%" существует</file-or-directory-exists>
+	<file-or-directory-does-not-exist>Файла/папки "%Path%" не существует</file-or-directory-does-not-exist>
+	<cms-cache-cleared>Кеш очищен</cms-cache-cleared>
+	<lockable-form-alert-title>Ожидайте</lockable-form-alert-title>
+	<lockable-form-alert-content>Идет отправка формы...</lockable-form-alert-content>
+	
+	<voximplant-connected>Установлено соединение с VoxImplant</voximplant-connected>
+	<voximplant-connection-failed>Не удалось установить соединение с VoxImplant</voximplant-connection-failed>
+	<voximplant-connection-closed>Соединение с Voximplant было сброшено. Проверьте наличие доступа к интернет.</voximplant-connection-closed>
+	<voximplant-authorization-error>Не удалось авторизоваться в VoxImplant как: </voximplant-authorization-error>
+	<voximplant-authorization-success>Авторизован в VoxImplant как: </voximplant-authorization-success>
+	<voximplant-call-incoming-notification>Входящий вызов</voximplant-call-incoming-notification>
+	<voximplant-call-incoming>Входящий вызов...</voximplant-call-incoming>
+	<voximplant-call-starting>Вызов...</voximplant-call-starting>
+	<voximplant-call-failed>Вызов не удался:</voximplant-call-failed>
+	<voximplant-call-failed-486>Абонент занят или сбросил вызов</voximplant-call-failed-486>
+	<voximplant-call-failed-480>Абонент временно недоступен</voximplant-call-failed-480>
+	<voximplant-call-failed-408>Истекло время ожидания</voximplant-call-failed-408>
+	<voximplant-call-disconnected>Разговор окончен</voximplant-call-disconnected>
+	<voximplant-call-during>Идет разговор...</voximplant-call-during>
+	<voximplant-call-redirecting>Пытаемся перенаправить звонок пользователю</voximplant-call-redirecting>
+	<voximplant-call-redirected>Звонок успешно перенаправлен</voximplant-call-redirected>
+	<voximplant-call-redirect-failed>Не удалось перевести звонок</voximplant-call-redirect-failed>
+	<voximplant-call-title>Разговор с: </voximplant-call-title>
+	<voximplant-call-info-error>Не удалось загрузить данные о звонке</voximplant-call-info-error>
+	<voximplant-message-missed-call-title>Пропущен вызов от %Caller%</voximplant-message-missed-call-title>
+	
+	<user-action-module-crm>CRM</user-action-module-crm>
+	<user-action-crm-entity-bookkeeping>Бухгалтерия</user-action-crm-entity-bookkeeping>
+	<user-action-crm-entity-child>Дети</user-action-crm-entity-child>
+	<user-action-crm-entity-dashboard>Главная</user-action-crm-entity-dashboard>
+	<user-action-crm-entity-directory>Справочники</user-action-crm-entity-directory>
+	<user-action-crm-entity-event>События</user-action-crm-entity-event>
+	<user-action-crm-entity-legal>Юр. лица</user-action-crm-entity-legal>
+	<user-action-crm-entity-mailing>Рассылки</user-action-crm-entity-mailing>
+	<user-action-crm-entity-report>Отчеты</user-action-crm-entity-report>
+	<user-action-crm-entity-school>Школы</user-action-crm-entity-school>
+	<user-action-crm-entity-season>Проекты</user-action-crm-entity-season>
+	<user-action-crm-entity-sender>Отправители</user-action-crm-entity-sender>
+	<user-action-crm-entity-staff>Кадры</user-action-crm-entity-staff>
+	<user-action-crm-entity-storage>Хранилище</user-action-crm-entity-storage>
+	<user-action-crm-entity-task>Задачи</user-action-crm-entity-task>
+	
+	<user-action-crm-entity-view>Просмотр объекта</user-action-crm-entity-view>
+	<user-action-crm-entity-print>Печать объекта</user-action-crm-entity-print>
+	<user-action-crm-entity-print-list>Печать списка объектов</user-action-crm-entity-print-list>
+	<user-action-crm-entity-edit>Редактирование объекта</user-action-crm-entity-edit>
+	<user-action-crm-entity-add>Добавление объекта</user-action-crm-entity-add>
+	<user-action-crm-entity-remove>Удаление объектов</user-action-crm-entity-remove>
+	<user-action-crm-entity-cancel>Отмена объектов</user-action-crm-entity-cancel>
+	<user-action-crm-action-Export>Экспорт</user-action-crm-action-Export>
+	<user-action-crm-action-Reassign>Переназначение на другого менеджера</user-action-crm-action-Reassign>
+	<user-action-crm-action-ClearPanel>Очистить панель</user-action-crm-action-ClearPanel>
+	<user-action-crm-action-SaveStatus>Сохранить статусы</user-action-crm-action-SaveStatus>
+	<user-action-crm-action-AddComment>Добавить комментарий</user-action-crm-action-AddComment>
+	<user-action-crm-action-AddContract>Добавить договор</user-action-crm-action-AddContract>
+	<user-action-crm-action-AddInvoice>Добавить счет</user-action-crm-action-AddInvoice>
+	<user-action-crm-action-AddPayment>Добавить оплату</user-action-crm-action-AddPayment>
+	<user-action-crm-action-AddPayback>Добавить возврат</user-action-crm-action-AddPayback>
+	<user-action-crm-action-AddAct>Добавить акт</user-action-crm-action-AddAct>
+	<user-action-crm-action-GetPaymentPDF>Распечатать оплату</user-action-crm-action-GetPaymentPDF>
+	<user-action-crm-action-GetContractPDF>Распечатать договор</user-action-crm-action-GetContractPDF>
+	<user-action-crm-action-GetInvoicePDF>Распечатать счет</user-action-crm-action-GetInvoicePDF>
+	<user-action-crm-action-GetActPDF>Распечатать акт</user-action-crm-action-GetActPDF>
+	<user-action-crm-action-RemoveContract>Удалить договор</user-action-crm-action-RemoveContract>
+	<user-action-crm-action-RemoveInvoice>Удалить счет</user-action-crm-action-RemoveInvoice>
+	<user-action-crm-action-RemovePayment>Удалить оплату</user-action-crm-action-RemovePayment>
+	<user-action-crm-action-RemovePayback>Удалить возврат</user-action-crm-action-RemovePayback>
+	<user-action-crm-action-RemoveAct>Удалить акт</user-action-crm-action-RemoveAct>
+	<user-action-crm-action-AddContractExtended>Расширенное добавление договора</user-action-crm-action-AddContractExtended>
+	<user-action-crm-action-SetEmail>Задать email</user-action-crm-action-SetEmail>
+	<user-action-crm-action-Resend>Отправить повторно</user-action-crm-action-Resend>
+	<user-action-crm-action-Send>Отправить</user-action-crm-action-Send>
+	<user-action-crm-action-AddVisit>Добавить обход</user-action-crm-action-AddVisit>
+	<user-action-crm-action-SendToArchive>Отправить в архив</user-action-crm-action-SendToArchive>
+	<user-action-crm-action-SaveSubscribers>Сохранить подписчиков</user-action-crm-action-SaveSubscribers>
+	<user-action-crm-action-SaveProperty>Сохранить свойство объекта</user-action-crm-action-SaveProperty>
+	<user-action-crm-action-Generate>Сгенерировать</user-action-crm-action-Generate>
+	
+	<user-action-notification>Уведомление о действии пользователя в CRM</user-action-notification>
+</Root>

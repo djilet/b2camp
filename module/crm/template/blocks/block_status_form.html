@@ -1,0 +1,393 @@
+<form id="StatusCallTask" action="<TMPL_VAR NAME='CommonURLPrefix'>" method="post" class="nform" enctype="multipart/form-data">
+	<input type="hidden" name="EntityID" value="" />
+	<input type="hidden" name="entity" value="task" />
+	<input type="hidden" name="Priority" value="normal" />
+	<input 
+		type="hidden" 
+		name="Title" 
+		value="<TMPL_VAR NAME='LNG_RemindToCallTaskTitle'> &quot;<TMPL_IF NAME='Entity' VALUE='child'><TMPL_VAR NAME='FIO'><TMPL_ElSE><TMPL_VAR NAME='Title'></TMPL_IF>&quot;" 
+	/>
+</form>
+<form id="Status" action="<TMPL_VAR NAME='EntityURLPrefix'>#StatusAnchor" method="post" class="nform" enctype="multipart/form-data">
+	<div id="StatusAnchor"></div>
+	<div class="row">
+		<div class="col-md-12 col-xs-12 form-group">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-xs-6">
+						<select id="status-season-id" class="form-control">
+							<TMPL_LOOP NAME='StatusPossibleSeasonList'>
+								<option value="<TMPL_VAR NAME='SeasonID'>" <TMPL_IF NAME='Archive' VALUE='Y'> class="inactive" <TMPL_ELSEIF NAME='TypeID' VALUE='3'>class="inactive"</TMPL_IF>><TMPL_VAR NAME='Title'/></option>
+							</TMPL_LOOP>
+						</select>
+					</div>
+					<div class="col-xs-3">
+						<a href="#" id="add-status" class="btn btn-success btn-icon form-control-inline"><i class="fa fa-plus"></i> <TMPL_VAR NAME='LNG_Add'></a>
+					</div>
+					<div class="col-xs-3">
+						<div class="row pull-right">
+							<div class="col-md-4 form-group">
+								<input type="submit" form="StatusCallTask" class="btn btn-success form-control-inline" value="<TMPL_VAR NAME='LNG_RemindToCall'>" />
+								<input type="hidden" name="Title" value="<TMPL_VAR NAME='LNG_RemindToCallTaskTitle'> &quot;<TMPL_IF NAME='Entity' VALUE='child'><TMPL_VAR NAME='FIO'><TMPL_ElSE><TMPL_VAR NAME='Title'></TMPL_IF>&quot;" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<table class="table" id="status-list">
+				<thead>
+					<tr>
+						<th width="5%"></th>
+						<th width="14%"><TMPL_VAR NAME='LNG_StatusCreated'></th>
+						<th width="36%"><TMPL_VAR NAME='LNG_StatusSeason'></th>
+						<th width="14%"><TMPL_VAR NAME='LNG_StatusQuantity'></th>
+						<th width="14%"><TMPL_VAR NAME='LNG_StatusStatus'></th>
+						<th width="14%" id="th_date"></th>
+						<th width="5%"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<TMPL_IF NAME='StatusList'>
+						
+					<TMPL_ELSE/>
+						<tr class="empty">
+							<td colspan="5" class="text-center">
+								<TMPL_VAR NAME='LNG_Empty'/>
+							</td>
+						</tr>
+					</TMPL_IF>
+				</tbody>
+			</table>
+			<div class="row">
+				<div class="col-xs-12">
+					<button type="submit" class="btn btn-success btn-icon"><TMPL_VAR NAME='LNG_StatusSave'></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="entity-id-field" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+	<input type="hidden" id="entity-field" name="Entity" value="<TMPL_VAR NAME='Entity'>" />
+	<input type="hidden" name="Do" value="Action" />
+	<input type="hidden" name="Action" value="SaveStatus" />
+	<input type="hidden" name="Show" value="view" />
+	<input type="hidden" name="ManagerID" value="<TMPL_VAR NAME='ManagerID'>"/>
+	<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none' />
+</form>
+<div class="hidden">
+	<table>
+		<tbody id="status-template">
+			<tr>
+				<td>
+					<a href="#" class="status-toggle-link" SeasonID="<TMPL_VAR NAME='SeasonID'>">
+						<i class="fa fa-chevron-circle-right"></i>
+					</a>
+					<input type="hidden" name="StatusList[#rownum#][HistoryStatusID]" value="" />
+					<input type="hidden" name="StatusList[#rownum#][SeasonID]" value="" />
+					<input type="hidden" name="StatusList[#rownum#][Created]" value="" />
+					<input type="hidden" name="StatusList[#rownum#][SeasonTitle]" value="" />
+					<input type="hidden" name="StatusList[#rownum#][ContractID]" value="" />
+				</td>
+				<td class="created"></td>
+				<td class="season-title"></td>
+				<td>
+					<input 
+						type="text" 
+						class="form-control input-sm" 
+						name="StatusList[#rownum#][Quantity]" 
+						value="" <TMPL_UNLESS NAME='StatusCustomQuantity'>readonly</TMPL_UNLESS> 
+					/>
+				</td>
+				<td style="padding: 5px;">
+					<select name="StatusList[#rownum#][StatusID]" class="form-control input-sm status-sm">
+						<TMPL_LOOP NAME='StatusPossibleStatusList'>
+							<option value="<TMPL_VAR NAME='StatusID'>"><TMPL_VAR NAME='Title'/></option>
+						</TMPL_LOOP>
+					</select>
+				</td>
+				<td>
+					<input type="text" class="form-control input-sm datepicker" name="StatusList[#rownum#][StatusDate]" data-format="dd.mm.yyyy" placeholder="<TMPL_VAR NAME='LNG_BookingTill'>"/>
+				</td>
+				<td class="text-right">
+					<a href="#" class="remove-row">
+						<i class="fa fa-close icon-sm"></i>
+					</a>
+				</td>
+			</tr>
+			<tr class="status-row-inner status-row-transfer">
+				<td colspan="2">
+					<b><TMPL_VAR NAME="LNG_Transfer"/>:</b>
+				</td>
+				<td colspan="4">
+					<table width="100%">
+						<tr>
+							<td width="46%">
+								<div class="col-md-3 no-padding">
+									<label for="TransferThere"><TMPL_VAR NAME='LNG_There'/>:</label>
+								</div>
+								<div class="col-md-9 text-nowrap well iradio_minimal-green">
+									<input type="radio" name="StatusList[#rownum#][TransferThere]" id="TransferThereY" value="Y"><label for="TransferThereY" class="right15"><TMPL_VAR NAME='LNG_Yes'/></label>
+									<input type="radio" name="StatusList[#rownum#][TransferThere]" id="TransferThereN" value="N"><label for="TransferThereN" class="right15"><TMPL_VAR NAME='LNG_No'/></label>
+								</div>
+
+							</td>
+							<td width="54%">
+								<div class="col-md-3 no-padding"><label for="TransferBack"><TMPL_VAR NAME='LNG_AndBackAgain'/>:</label></div>
+								<div class="col-md-9">
+									<div class="text-nowrap well iradio_minimal-green">
+										<input type="radio" name="StatusList[#rownum#][TransferBack]" id="TransferBackY" value="Y"><label for="TransferBackY" class="right15"><TMPL_VAR NAME='LNG_Yes'/></label>
+										<input type="radio" name="StatusList[#rownum#][TransferBack]" id="TransferBackN" value="N"><label for="TransferBackN" class="right15"><TMPL_VAR NAME='LNG_No'/></label>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="transfer-there-conditions"><div><b><TMPL_VAR NAME="LNG_TransferConditions"/>: </b></div></td>
+							<td class="transfer-back-conditions"><div><b><TMPL_VAR NAME="LNG_TransferConditions"/>: </b></div></td>
+						</tr>
+						<tr>
+							<td>
+								<div class="col-md-3 no-padding"><label for="TransferThereNote"><TMPL_VAR NAME="LNG_Note"/>:</label></div>
+								<div class="col-md-9">
+									<input type="text" class="form-control" name="StatusList[#rownum#][TransferThereNote]" />
+								</div>
+							</td>
+							<td>
+								<div class="col-md-3 no-padding"><label for="TransferBackNote"><TMPL_VAR NAME="LNG_Note"/>:</label></div>
+								<div class="col-md-9">
+									<input type="text" class="form-control" name="StatusList[#rownum#][TransferBackNote]" />
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr class="status-row-inner">
+				<td colspan="2">
+					<b><TMPL_VAR NAME='LNG_HistoryChanges'>:</b>
+				</td>
+				<td colspan="4">
+					<table width="100%" class="table-history-of-changes">
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript">
+	function OnRowChange(){
+		$("#CancelChanges").removeClass("disabled");
+	}
+
+	function AddStatus(created, historyStatusID, seasonID, seasonTitle, quantity, statusID, hidden, position, contractID, statusDate, transferThere, transferThereNote, transferBack, transferBackNote, ChangesHistory){
+		if (transferThereNote === undefined) transferThereNote = transferBackNote = "";
+
+		if ($('#Status #status-list tbody[rownum]').size() == 0){
+			var rownum = 0;
+		}
+		else {
+			var rownum = 0;
+			$('#Status #status-list tbody[rownum]').each(function() {
+				var value = parseInt($(this).attr('rownum'));
+				rownum = (value > rownum) ? value : rownum;
+			});
+			rownum++;
+		}
+		var clone = $('#status-template').clone();
+		clone.removeAttr('id');
+		clone.attr('rownum', rownum);
+		clone.html(clone.html().replace(/#rownum#/gi, rownum));
+		clone.find('td.created').append(created);
+		clone.find('input[name*="[HistoryStatusID]"]').val(historyStatusID);
+		clone.find('input[name*="[SeasonID]"]').val(seasonID);
+		clone.find('input[name*="[Created]"]').val(created);
+		clone.find('input[name*="[SeasonTitle]"]').val(seasonTitle);
+		clone.find('input[name*="[ContractID]"]').val(contractID);
+		clone.find('.status-toggle-link').attr("seasonid", seasonID);
+		clone.find('.status-row-inner').attr("seasonid", seasonID);
+		clone.find('td.season-title').append(seasonTitle);
+		clone.find('input[name*="[Quantity]"]').val(quantity);
+		clone.find('select[name*="[StatusID]"]').val(statusID);
+		clone.find("#TransferThere"+transferThere).prop("checked", true);
+		clone.find("#TransferBack"+transferBack).prop("checked", true);
+		clone.find('input[name*="[TransferThereNote]"]').val(transferThereNote);
+		clone.find('input[name*="[TransferBackNote]"]').val(transferBackNote);
+
+		$.ajax({
+			url: "<TMPL_VAR NAME='MODULE_PATH'>"+"ajax.php",
+			dataType: "JSON",
+			type: "post",
+			data: {
+				'Action': "GetSeasonInfo",
+				'SeasonID': seasonID
+			},
+			success: function(data){
+				if (!data)
+					return false;
+				clone.find(".transfer-there-conditions div").append(data.TransferThereConditions);
+				clone.find(".transfer-back-conditions div").append(data.TransferBackConditions);
+			}
+		});
+
+		var datepicker = clone.find(".datepicker");
+		var opt = {
+			autoclose: true,
+			minViewMode: getValue(datepicker, 'minViewMode', 0),
+			format: getValue(datepicker, 'format', 'mm/dd/yyyy'),
+            startDate: getValue(datepicker, 'startDate', Date()),
+			endDate: getValue(datepicker, 'endDate', ''),
+			daysOfWeekDisabled: getValue(datepicker, 'disabledDays', ''),
+			startView: getValue(datepicker, 'startView', 0),
+			language: 'ru'
+		};
+		datepicker.datepicker(opt);
+		datepicker.closest("td").css("padding","5px");
+		if(String(statusID) != "4" && String(statusID) != "6" ){
+			clone.find('input[name*="[StatusDate]"]').val(statusDate);
+			datepicker.addClass("active");
+			datepicker.prop("required", true);
+			$("#th_date").text("<TMPL_VAR NAME='LNG_StatusDate'>");
+		}
+		else{
+			datepicker.val("");
+			datepicker.prop("required", false);
+			datepicker.hide();
+		}
+
+		if(hidden == true) clone.addClass('hidden');
+		if(position == "first")
+			$('#Status #status-list').prepend(clone);
+		else if(position == "last")
+			$('#Status #status-list').append(clone);
+
+		if (String(statusID) != "3" && String(statusID) != "6"){
+			clone.find("tr.status-row-documents td").slideUp();
+		}
+		else
+			clone.find("tr.status-row-documents td").slideDown();
+		if (seasonID!="")
+			$('#status-season-id option[value='+seasonID+']').prop('disabled', true);
+
+		if (transferThere!="Y") clone.find(".transfer-there-conditions div").css("display","none");
+		if (transferBack!="Y") clone.find(".transfer-back-conditions div").css("display","none");
+
+		if (ChangesHistory){
+			ChangesHistory.forEach(
+				(e,i)=>clone.find('.table-history-of-changes').append(
+					"<tr><td>"+e.EventTime + ' ' + e.Name + ' ' + e.EventText+"</td></tr>"
+				)
+			)
+		}
+		return clone;
+	}
+
+	$(document).on("click", '#Status #add-status' ,function(e){
+		if($('#status-season-id option:selected').prop('disabled') == false) {
+			AddStatus('', 0, $('#status-season-id').val(), $.trim($('#status-season-id option:selected').text()), 1, 0, false, "first", 0);
+			OnRowChange();
+		}
+		e.preventDefault();
+	});
+
+	$(document).ready(function(){
+		$(document).on('click', '#Status .remove-row', function(e){
+			var seasonID = $(this).closest('tr').find('input[name*="[SeasonID]"]').val();
+			$('#status-season-id option[value='+seasonID+']').prop('disabled', false);
+			$(this).closest('tbody').remove();
+			e.preventDefault();
+		});
+		$(document).on('click', '#Status .show-all-statuses', function(e){
+			$('#Status #status-list tbody').removeClass('hidden');
+			$(this).closest('tr').remove();
+			e.preventDefault();
+		});
+
+		<TMPL_LOOP NAME='StatusList'>
+		AddStatus(
+			'<TMPL_VAR NAME='Created' FORMAT='datetime' ESCAPE='js'>', 
+			'<TMPL_VAR NAME='HistoryStatusID' ESCAPE='js'>', 
+			'<TMPL_VAR NAME='SeasonID' ESCAPE='js'>', 
+			'<TMPL_VAR NAME='SeasonTitle' ESCAPE='none'>', 
+			'<TMPL_VAR NAME='Quantity' ESCAPE='js'>', 
+			'<TMPL_VAR NAME='StatusID' ESCAPE='js'>', 
+			<TMPL_IF NAME='__ROWNUM__' OP='>' VALUE='5'>
+				true
+			<TMPL_ELSE>
+				false
+			</TMPL_IF>, 
+			"last", 
+			'<TMPL_VAR NAME='ContractID'>', 
+			'<TMPL_VAR NAME="StatusDate" FORMAT="date">', 
+			'<TMPL_VAR NAME="TransferThere">', 
+			'<TMPL_VAR NAME="TransferThereNote">', 
+			'<TMPL_VAR NAME="TransferBack">', 
+			'<TMPL_VAR NAME="TransferBackNote">',
+			[
+				<TMPL_LOOP NAME='ChangesHistory'>
+					{
+						ChangesID : <TMPL_VAR NAME='ChangesID'>,
+						HistoryStatusID : <TMPL_VAR NAME='HistoryStatusID'>,
+						EventTime : '<TMPL_VAR NAME='EventTime'>',
+						UserID : <TMPL_VAR NAME='UserID'>,
+						EventText : '<TMPL_VAR NAME='EventText'>',
+						Name : '<TMPL_VAR NAME='Name'>',
+					},
+				</TMPL_LOOP>
+			]
+		);
+		<TMPL_IF NAME='__LAST__'>
+			<TMPL_IF NAME='__ROWNUM__' OP='>' VALUE='5'>
+				$('#Status #status-list').append('<tbody><tr><td colspan="4" class="text-center"><a href="#" class="show-all-statuses dashed"><TMPL_VAR NAME='LNG_StatusShowAll'></a></td></tr></tbody>');
+			</TMPL_IF>
+		</TMPL_IF>
+		</TMPL_LOOP>
+
+		<TMPL_IF NAME='WrongField'>
+			$("<TMPL_VAR NAME='WrongField'>").closest("td").addClass("text-danger");
+			var wrongStatus = $("<TMPL_VAR NAME='WrongField'>").closest("tbody[rownum]");
+			wrongStatus.find(".status-toggle-link").trigger("click");
+		</TMPL_IF>
+
+		InitStatusTableControl($("#status-list"));
+	});
+
+	$(document).on("click", ".status-toggle-link", function(e){
+		$("#status-list").find('.status-row-inner[seasonid='+$(this).attr('seasonid')+']').toggle();
+		$(this).find('i').toggleClass('fa-chevron-circle-right fa-chevron-circle-down');
+		e.preventDefault();
+	});
+
+	$(document).on("change", ".status-sm", function(event){
+		var datetitle = $("#th_date");
+		var datepicker = $(this).parent().next().find(".datepicker");
+		var active_dates = $(".datepicker").filter(".active").length;
+		if ($(this).val() != "4" && $(this).val() != "6") {
+			datepicker.show();
+			datepicker.addClass("active");
+			datepicker.prop("required", true);
+			datetitle.text("<TMPL_VAR NAME='LNG_StatusDate'>");
+		}
+		else {
+			datepicker.val(null)
+			datepicker.hide();
+			datepicker.removeClass("active");
+			datepicker.prop("required", false);
+			if (active_dates == 1)
+				datetitle.text("");
+		}
+	});
+
+	$(document).on("click", "input[type=radio]", function (event) {
+		var toggleClass = ($(this).attr("name").indexOf("Back")>=0)?".transfer-back-conditions":".transfer-there-conditions";
+		var toggleTd = $(this).closest("table").find(toggleClass);
+		if ($(this).val() == "N"){
+			toggleTd.find("div").slideUp(75);
+		}
+		else {
+			toggleTd.find("div").slideDown(75);
+		}
+	});
+
+	$(document).on("change", "#Status #status-list", function(event){
+		OnRowChange();
+	});
+</script>

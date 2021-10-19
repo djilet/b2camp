@@ -1,0 +1,69 @@
+<p>ООО Детский оздоровительный лагерь «Синяя  птица»</p>
+
+<p>Адрес: 630091, Россия г. Новосибирск, ул.Красный пр-т, 82,офис 324</p>
+
+<h3 align="center">Образец заполнения платежного поручения</h3>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="5">
+	<tr>
+		<td>ИНН 5406615029</td>
+		<td>КПП 540601001</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="2">Получатель <br />ООО Детский оздоровительный лагерь «Синяя птица»</td>
+		<td>Сч. №</td>
+		<td>40702810200430119546</td>
+	</tr>
+	<tr>
+		<td colspan="2" rowspan="2">Банк получателя<br />Филиал «Сибирский»  ПАО "Банк ВТБ"</td>
+		<td>БИК</td>
+		<td>045004788</td>
+	</tr>
+	<tr>
+		<td>Сч. №</td>
+		<td>30101810850040000788</td>
+	</tr>
+</table>
+
+<h2 align="center">Счет № <TMPL_VAR NAME='InvoiceID'> от <TMPL_VAR NAME='Created' FORMAT='datedoc'> г.</h2>
+
+<p>Плательщик: <TMPL_VAR NAME='ClientName'></p> 				
+
+<table width="100%" border="1" cellspacing="0" cellpadding="5">
+	<tr>
+		<td width="5%">№</td>
+		<td width="44%">Наименование товара</td>
+		<td width="15%">Единица измерения</td>
+		<td width="12%">Количество</td>
+		<td width="12%">Цена</td>
+		<td width="12%">Сумма</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><TMPL_VAR NAME='InvoiceSubject'></td>
+		<td>шт.</td>
+		<td>1</td>
+		<td><TMPL_VAR NAME='Amount'></td>
+		<td><TMPL_VAR NAME='Amount'></td>
+	</tr>
+	<tr>
+		<td colspan="5" style="text-align:right;"><strong>Итого</strong></td>
+		<td><TMPL_VAR NAME='Amount'></td> 
+	</tr>
+	<tr>
+		<td colspan="5" style="text-align:right;"><strong>Без налога (НДС)</strong></td>
+		<td>-</td> 
+	</tr>
+	<tr>
+		<td colspan="5" style="text-align:right;"><strong>Всего к оплате</strong></td>
+		<td><TMPL_VAR NAME='Amount'></td> 
+	</tr>
+</table>			
+
+<p>Всего наименований 1, на сумму <TMPL_VAR NAME='Amount'> рублей</p>
+
+<p><TMPL_VAR NAME='AmountString'></p>
+
+<p align="center"><img src="<TMPL_VAR NAME='PATH2MOD'>images/invoice-sign.png" /></p>

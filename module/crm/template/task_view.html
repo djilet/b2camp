@@ -1,0 +1,143 @@
+<TMPL_INCLUDE FILE="blocks/block_view_header.html">
+				
+				<div class="row">
+					<div class="col-md-12"><h3><TMPL_VAR NAME='Title'></h3></div>
+					<div class="col-md-3">
+						<label><TMPL_VAR NAME='LNG_FieldCreated'></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-9">
+						<TMPL_VAR NAME='Created' FORMAT='datetime'>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<label><TMPL_VAR NAME='LNG_FieldExecutionDate'></label>
+					</div>
+					<div class="col-md-9">
+						<TMPL_VAR NAME='ExecutionDateFrom' FORMAT='date'> - <TMPL_VAR NAME='ExecutionDateTo' FORMAT='date'>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<label><TMPL_VAR NAME='LNG_FieldCreatedManager'>:</label> <TMPL_VAR NAME='CreatedManagerTitle'>
+					</div>
+					<div class="col-md-9">
+						<label><TMPL_VAR NAME='LNG_FieldPriority'></label>: 
+						<TMPL_IF NAME='Priority' VALUE='low'>
+							<span class="label block label-success"><TMPL_VAR NAME='LNG_PriorityLow'></span>
+						<TMPL_ELSEIF NAME='Priority' VALUE='normal'>
+							<span class="label block label-warning"><TMPL_VAR NAME='LNG_PriorityNormal'></span>
+						<TMPL_ELSEIF NAME='Priority' VALUE='high'>
+							<span class="label block label-danger"><TMPL_VAR NAME='LNG_PriorityHigh'></span>
+						</TMPL_IF>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<label><TMPL_VAR NAME='LNG_FieldExecutorManager'>:</label> <TMPL_VAR NAME='ExecutorManagerTitle'>
+					</div>
+				</div>
+				<TMPL_IF NAME='Description'>
+					<div class="row top15">
+						<div class="col-md-12">
+							<TMPL_VAR NAME='Description' FORMAT='nl2br' ESCAPE='none'>
+						</div>
+					</div>
+				</TMPL_IF>
+				<TMPL_IF NAME='FileList'>
+					<div class="row top15">
+						<div class="col-md-2"><label><TMPL_VAR NAME='LNG_FieldFile'></label></div>
+						<div class="col-md-10">
+						<TMPL_LOOP NAME='FileList'>
+							<a href="<TMPL_VAR NAME='FilePath'>" target="_blank" download="<TMPL_VAR NAME='FileTitle'>"><TMPL_VAR NAME='FileTitle'></a><br/>
+						</TMPL_LOOP>
+						</div>
+					</div>
+				</TMPL_IF>
+
+				<div class="well transparent top15">
+					<form id="Subscriber" action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post" class="nform" enctype="multipart/form-data">
+						<div class="col-md-2">
+					    	<label for="SubscriberID"><TMPL_VAR NAME='LNG_Subscribers'></label>
+					    </div>
+						<div class="col-md-8">
+							<select name="SubscriberID[]" id="SubscriberID" multiple>
+								<option value=""></option>
+								<TMPL_LOOP NAME='SubscriberIDValueList'>
+									<option value="<TMPL_VAR NAME='UserID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+								</TMPL_LOOP>
+							</select>
+						</div>
+					    <div class="col-md-2">
+					    	<button type="submit" class="btn btn-success btn-icon left15 right15"><TMPL_VAR NAME='LNG_Save'></button>
+					    </div>
+						<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+						<input type="hidden" name="Do" value="Action" />
+						<input type="hidden" name="Action" value="SaveSubscribers" />
+						<input type="hidden" name="Show" value="view" />
+						<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+						<TMPL_VAR NAME='SubscriberIDControlHTML' ESCAPE='none'>
+						<div class="clearfix"></div>
+					</form>
+				</div>
+				
+				<TMPL_IF NAME='USER_Role' VALUE='manager'>
+					<TMPL_IF NAME='StatusAccess'>
+						<div class="well transparent">
+							<form id="Status" action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post" class="nform" enctype="multipart/form-data">
+								<div class="col-md-2 col-xs-12">
+							    	<label><TMPL_VAR NAME='LNG_Status'></label>
+							    </div>
+								<div class="col-md-8 col-xs-8">
+									<input class="" type="radio" name="Status" id="StatusOpened" value="opened" <TMPL_IF NAME='Status' VALUE='opened'>checked</TMPL_IF> /> <label for="StatusOpened" class="right15"><TMPL_VAR NAME='LNG_StatusOpened'></label>
+									<input class="" type="radio" name="Status" id="StatusClosed" value="closed" <TMPL_IF NAME='Status' VALUE='closed'>checked</TMPL_IF> /> <label for="StatusClosed" class="right15"><TMPL_VAR NAME='LNG_StatusClosed'></label>
+								</div>
+								<div class="col-md-2 col-xs-4">
+							    	<button type="submit" class="btn btn-success btn-icon left15 right15"><TMPL_VAR NAME='LNG_Save'></button>
+							    </div>
+								<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+								<input type="hidden" name="Do" value="Action" />
+								<input type="hidden" name="Action" value="SaveProperty" />
+								<input type="hidden" name="Show" value="view" />
+								<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+								<div class="clearfix"></div>
+							</form>
+						</div>
+						<div class="clearfix"></div>
+					</TMPL_IF>
+				<TMPL_ELSE>
+					<div class="well transparent">
+						<form id="Status" action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post" class="nform" enctype="multipart/form-data">
+							<div class="col-md-2 col-xs-12">
+						    	<label><TMPL_VAR NAME='LNG_Status'></label>
+						    </div>
+							<div class="col-md-8 col-xs-12 form-group">
+								<input class="" type="radio" name="Status" id="StatusOpened" value="opened" <TMPL_IF NAME='Status' VALUE='opened'>checked</TMPL_IF> /> <label for="StatusOpened" class="right15"><TMPL_VAR NAME='LNG_StatusOpened'></label>
+								<input class="" type="radio" name="Status" id="StatusClosed" value="closed" <TMPL_IF NAME='Status' VALUE='closed'>checked</TMPL_IF> /> <label for="StatusClosed" class="right15"><TMPL_VAR NAME='LNG_StatusClosed'></label>
+							</div>
+							<div class="col-md-2 col-xs-12">
+						    	<button type="submit" class="btn btn-success btn-icon"><TMPL_VAR NAME='LNG_Save'></button>
+						    </div>
+							<input type="hidden" name="EntityID" value="<TMPL_VAR NAME='EntityID'>" />
+							<input type="hidden" name="Do" value="Action" />
+							<input type="hidden" name="Action" value="SaveProperty" />
+							<input type="hidden" name="Show" value="view" />
+							<TMPL_VAR NAME='InnerFilterParamsForForm' ESCAPE='none'>
+							<div class="clearfix"></div>
+						</form>
+					</div>
+					<div class="clearfix"></div>
+				</TMPL_IF>
+				
+				<div class="col-md-12">
+					&nbsp;
+				</div>
+				
+				<div class="col-md-12 no-padding">
+					<h3><TMPL_VAR NAME='LNG_FieldComments'></h3>
+					<TMPL_INCLUDE FILE="blocks/block_view_comments.html">
+				</div>
+
+<TMPL_INCLUDE FILE="blocks/block_view_footer.html">

@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-3">
+		<input type="text" class="form-control datepicker" data-format="dd.mm.yyyy" name="DateFrom" value="<TMPL_VAR NAME='DateFrom' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_DateFrom'>" />
+	</div>
+	<div class="col-md-3">
+		<input type="text" class="form-control datepicker" data-format="dd.mm.yyyy" name="DateTo" value="<TMPL_VAR NAME='DateTo' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_DateTo'>" />
+	</div>
+	<div class="col-md-3">
+		<select name="SeasonID[]" id="SeasonID" placeholder="<TMPL_VAR NAME='LNG_ChooseSeason'>" multiple>
+			<TMPL_LOOP NAME='ReportSeasonList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>  <TMPL_IF NAME='Archive' VALUE='Y'> class="inactive" <TMPL_ELSEIF NAME='TypeID' VALUE='3'>class="inactive"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportSeasonListControlHTML' ESCAPE='none'>
+	</div>
+	<div class="col-md-3">
+		<select name="ManagerID[]" id="ManagerID" multiple placeholder="<TMPL_VAR NAME='LNG_ChooseManager'>">
+			<TMPL_LOOP NAME='ReportManagerList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportManagerListControlHTML' ESCAPE='none'>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<button type="submit" class="btn btn-success form-control submit-with-param" param="Output" value=""><TMPL_VAR NAME='LNG_Generate'></button>
+	</div>
+</div>

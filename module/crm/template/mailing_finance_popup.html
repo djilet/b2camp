@@ -1,0 +1,80 @@
+<TMPL_IF NAME='ContractList'>
+	<TMPL_VAR NAME='ContractControlHTML' ESCAPE='none'>
+	<table class="table top15" id="Contract">
+		<thead>
+			<tr>
+				<th></th>
+				<th><TMPL_VAR NAME='LNG_ColumnNumber'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnCreated'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnSeason'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnManager'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnAmount'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnPaidAmount'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnUnPaidAmount'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnPaybackAmount'></th>
+				<th></th>
+			</tr>
+		</thead>
+		<TMPL_LOOP NAME='ContractList'>
+			<tr class="bg-light-gray">
+				<td><a href="#" class="contract-toggle-link" ContractID="<TMPL_VAR NAME='ContractID'>"><i class="fa fa-chevron-circle-right"></i></a></td>
+				<td><TMPL_VAR NAME='LNG_PrefixContract'><TMPL_VAR NAME='ContractID'></td>
+				<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+				<td>
+					<TMPL_LOOP NAME='SeasonList'>
+						<TMPL_VAR NAME='Title'><TMPL_UNLESS NAME='__LAST__'>, </TMPL_UNLESS>
+					</TMPL_LOOP>
+				</td>
+				<td><TMPL_VAR NAME='ManagerTitle'></td>
+				<td><TMPL_VAR NAME='Amount'></td>
+				<td><TMPL_VAR NAME='PaidAmount'></td>
+				<td><TMPL_VAR NAME='UnpaidAmount'></td>
+				<td><TMPL_VAR NAME='PaybackAmount'></td>
+				<td><a class="btn btn-success finance-attachment-add" filename="contract_<TMPL_VAR NAME='Entity'>_<TMPL_VAR NAME='ContractID'>.pdf" href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='Entity'>&Do=Action&Action=GetContractPDF&ContractID=<TMPL_VAR NAME='ContractID'>&ToMailingAttachment=1"><TMPL_VAR NAME='LNG_Add'></a></td>
+			</tr>
+			<TMPL_LOOP NAME='InvoiceList'>
+				<tr class="contract-row-inner" ContractID="<TMPL_VAR NAME='ContractList.ContractID'>">
+					<td></td>
+					<td><TMPL_VAR NAME='LNG_PrefixInvoice'><TMPL_VAR NAME='InvoiceID'></td>
+					<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+					<td></td>
+					<td><TMPL_VAR NAME='ManagerTitle'></td>
+					<td></td>
+					<td><TMPL_VAR NAME='Amount'></td>
+					<td></td>
+					<td></td>
+					<td><a class="btn btn-success finance-attachment-add" filename="invoice_<TMPL_VAR NAME='Entity'>_<TMPL_VAR NAME='InvoiceID'>.pdf" href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='Entity'>&Do=Action&Action=GetInvoicePDF&InvoiceID=<TMPL_VAR NAME='InvoiceID'>&ToMailingAttachment=1"><TMPL_VAR NAME='LNG_Add'></a></td>
+				</tr>
+			</TMPL_LOOP>
+			<TMPL_LOOP NAME='PaymentList'>
+				<tr class="contract-row-inner" ContractID="<TMPL_VAR NAME='ContractList.ContractID'>">
+					<td></td>
+					<td><TMPL_VAR NAME='LNG_PrefixPayment'><TMPL_VAR NAME='PaymentID'></td>
+					<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+					<td></td>
+					<td><TMPL_VAR NAME='ManagerTitle'></td>
+					<td></td>
+					<td><TMPL_VAR NAME='Amount'></td>
+					<td></td>
+					<td></td>
+					<td><a class="btn btn-success finance-attachment-add" filename="payment_<TMPL_VAR NAME='Entity'>_<TMPL_VAR NAME='PaymentID'>.pdf" href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='Entity'>&Do=Action&Action=GetPaymentPDF&PaymentID=<TMPL_VAR NAME='PaymentID'>&ToMailingAttachment=1"><TMPL_VAR NAME='LNG_Add'></a></td>
+				</tr>
+			</TMPL_LOOP>
+			<TMPL_LOOP NAME='ActList'>
+				<tr class="contract-row-inner" ContractID="<TMPL_VAR NAME='ContractList.ContractID'>">
+					<td></td>
+					<td><TMPL_VAR NAME='LNG_PrefixAct'><TMPL_VAR NAME='ActID'></td>
+					<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+					<td></td>
+					<td><TMPL_VAR NAME='ManagerTitle'></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a class="btn btn-success finance-attachment-add" filename="act_<TMPL_VAR NAME='Entity'>_<TMPL_VAR NAME='ActID'>.pdf" href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='Entity'>&Do=Action&Action=GetActPDF&ActID=<TMPL_VAR NAME='ActID'>&ToMailingAttachment=1"><TMPL_VAR NAME='LNG_Add'></a></td>
+				</tr>
+			</TMPL_LOOP>
+		</TMPL_LOOP>
+	</table>
+<TMPL_ELSE>
+	<div class="alert alert-success"><TMPL_VAR NAME='LNG_ListEmpty'></div>
+</TMPL_IF>

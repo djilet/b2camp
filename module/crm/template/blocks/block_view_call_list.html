@@ -1,0 +1,47 @@
+<TMPL_IF NAME='CallList'>
+	<a href="#" class="dashed" data-toggle="modal" data-target="#<TMPL_VAR NAME='Entity'>-<TMPL_VAR NAME='EntityID'>-call-history"><TMPL_VAR NAME='LNG_CallHistory'></a>
+	<div id="<TMPL_VAR NAME='Entity'>-<TMPL_VAR NAME='EntityID'>-call-history" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title"><TMPL_VAR NAME='LNG_CallHistoryHeader'></h4>
+				</div>
+				<div class="modal-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th><TMPL_VAR NAME='LNG_CallHistoryCreated'></th>
+								<th><TMPL_VAR NAME='LNG_CallHistoryManagerName'></th>
+								<th><TMPL_VAR NAME='LNG_CallHistoryDuration'></th>
+								<th><TMPL_VAR NAME='LNG_CallHistoryRecord'></th>
+							</tr>
+						</thead>
+						<tbody>
+							<TMPL_LOOP NAME='CallList'>
+								<tr>
+									<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+									<td><TMPL_VAR NAME='ManagerName'></td>
+									<td>
+										<TMPL_IF NAME='Duration'>
+											<TMPL_VAR NAME='Duration'>
+										<TMPL_ELSE>
+											<TMPL_VAR NAME='LNG_No'>
+										</TMPL_IF>
+									</td>
+									<td>
+										<TMPL_IF NAME='RecordURL'>
+											<a href="<TMPL_VAR NAME='RecordURL'>" target="_blank"><TMPL_VAR NAME='LNG_CallHistoryRecordOpen'></a>
+										<TMPL_ELSE>
+											<TMPL_VAR NAME='LNG_No'>
+										</TMPL_IF>
+									</td>
+								</tr>
+							</TMPL_LOOP>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</TMPL_IF>

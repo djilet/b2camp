@@ -1,0 +1,346 @@
+<TMPL_IF NAME='FilterShow' VALUE='history'>
+	<TMPL_INCLUDE FILE="blocks/block_list_header.html">
+				<form action="<TMPL_VAR NAME='EntityURLPrefix'>&FilterShow=history" method="post">
+					<div class="form-group well transparent">
+						<h3><TMPL_VAR NAME='LNG_Filter'></h3>
+						<div class="row">
+							<div class="col-md-1">
+								<label><TMPL_VAR NAME='LNG_FilterEmail'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterEmail" value="<TMPL_VAR NAME='FilterEmail'>" class="form-control" />
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-primary btn-icon"><i class="fa fa-search"></i> <TMPL_VAR NAME='LNG_FilterSearch'></button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<div class="col-md-6 no-padding form-group">
+					<ul class="pagination">
+						<TMPL_VAR NAME='Paging' ESCAPE='none'>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="form-group">
+					<a href="<TMPL_VAR NAME='EntityURLPrefix'>&FilterShow=create" class="btn btn-success btn-icon"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_Create'></a>
+					<a href="#" class="btn btn-danger btn-icon" onclick="return MultipleRemove($('#entity-list')[0], 'EntityIDs[]');"><i class="fa fa-remove"></i><TMPL_VAR NAME='LNG_RemoveMultiple'></a>
+				</div>
+				<p><TMPL_VAR NAME='ListInfo'></p>
+				<div>
+					<form action="" method="post" id="entity-list">
+						<TMPL_IF NAME='ErrorList'>
+						<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+						</TMPL_IF>
+						<TMPL_IF NAME='MessageList'>
+						<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+						</TMPL_IF>
+	
+						<TMPL_IF NAME='ItemList'>
+							<div class="table-responsive" data-pattern="priority-columns">
+								<table class="table">
+									<thead>
+										<tr>
+											<th width="25" data-priority="1"><input type="checkbox" class="icheck-minimal-green check-all" InputName="EntityIDs[]" /></th>
+											<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnSubject'></th>
+											<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnCountReciever'></th>
+											<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnReciever'></th>
+											<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnUser'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnSender'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnCreated'></th>
+										</tr>
+									</thead>
+									<tbody>
+										<TMPL_LOOP NAME='ItemList'>
+											<tr>
+												<td><input type="checkbox" class="icheck-minimal-green" name="EntityIDs[]" value="<TMPL_VAR NAME='EntityID'>" /></td>
+												<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityViewID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='Subject'></a></td>
+												<td><TMPL_VAR NAME='CountReciever'></td>
+												<td><a href="/module.php?load=crm&entity=<TMPL_VAR NAME='RecieverEntity'>&&EntityViewID=<TMPL_VAR NAME='RecieverEntityID'>"><TMPL_VAR NAME='Reciever'></a></td>
+												<td><TMPL_VAR NAME='UserTitle'></td>
+												<td><TMPL_VAR NAME='SenderEmail'></td>
+												<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+											</tr>
+										</TMPL_LOOP>
+									</tbody>
+								</table>
+							</div>
+						</TMPL_IF>
+						
+	<TMPL_INCLUDE FILE="blocks/block_list_table_footer.html">
+	<TMPL_INCLUDE FILE="blocks/block_list_footer.html">
+
+<TMPL_ELSE>
+	<div class="col-md-12">
+		<section class="box">
+			<header class="panel_header">
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_Mailing'></h2>
+				<p class="pull-right top15 right15" id="autosave-info"></p>
+			</header>
+			<div class="content-body">
+				<TMPL_IF NAME='ErrorList'>
+					<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+				</TMPL_IF>
+				<TMPL_IF NAME='MessageList'>
+					<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+				</TMPL_IF>
+				<form id="entity-form" action="" method="post" class="lockable" enctype="multipart/form-data">
+					<div class="form-group well transparent">
+						<TMPL_IF NAME='TargetEmail'>
+							<div class="row">
+								<div class="col-md-2">
+									<label><TMPL_VAR NAME='LNG_Target'></label>
+								</div>
+								<div class="col-md-10">
+									<label class="form-label"><TMPL_VAR NAME='TargetName'> (<TMPL_VAR NAME='TargetEmail'>)</label>
+								</div>
+							</div>
+							<input type="hidden" name="TargetName" value="<TMPL_VAR NAME='TargetName'>" />
+							<input type="hidden" name="TargetEmail" value="<TMPL_VAR NAME='TargetEmail'>" />
+							<input type="hidden" name="TargetEntityType" value="<TMPL_VAR NAME='TargetEntityType'>" />
+							<input type="hidden" name="TargetEntityID" value="<TMPL_VAR NAME='TargetEntityID'>" />
+						<TMPL_ELSE>
+							<script type="text/javascript">
+								$(document).ready(function(){
+									$('.mailing-entity-panel').click(function(){
+										$(this).find('input[type=checkbox]').iCheck('check');
+									});
+								});
+							</script>
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingOne">
+										<h4 class="panel-title">
+											<a class="collapsed mailing-entity-panel" data-toggle="collapse" data-parent="#accordion" href="#filter-child" aria-expanded="true" aria-controls="filter-child">
+												<input type="checkbox" class="icheck-minimal-green" name="load_child" value="1" <TMPL_IF NAME='load_child'>checked</TMPL_IF>> <TMPL_VAR NAME='LNG_FilterChild'>
+											</a>
+										</h4>
+									</div>
+									<div id="filter-child" class="panel-collapse collapse" role="tabpanel" aria-labelledby="filter-child">
+										<div class="panel-body">
+											<div class="col-md-12 form-group">
+												<TMPL_LOOP NAME='ChildCategoryList'>
+													<input type="checkbox" class="icheck-minimal-green" name="ChildCategoryID[]" value="<TMPL_VAR NAME='CategoryID'>" <TMPL_IF NAME='Selected'>checked</TMPL_IF> id="child-category-<TMPL_VAR NAME='CategoryID'>"><label for="child-category-<TMPL_VAR NAME='CategoryID'>" class="right15"><TMPL_VAR NAME='Title'></label>
+												</TMPL_LOOP>
+											</div>
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_ChildAge'></label>
+											</div>
+											<div class="col-md-3">
+												<input type="text" class="form-control" name="ChildAge" value="<TMPL_VAR NAME='ChildAge'>" />
+											</div>
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_ChildClass'></label>
+											</div>
+											<div class="col-md-3">
+												<select name="ChildClass" class="form-control">
+													<option value=""></option>
+													<option value="1" <TMPL_IF NAME='ChildClass' VALUE='1'>selected="selected"</TMPL_IF>>1</option>
+													<option value="2" <TMPL_IF NAME='ChildClass' VALUE='2'>selected="selected"</TMPL_IF>>2</option>
+													<option value="3" <TMPL_IF NAME='ChildClass' VALUE='3'>selected="selected"</TMPL_IF>>3</option>
+													<option value="4" <TMPL_IF NAME='ChildClass' VALUE='4'>selected="selected"</TMPL_IF>>4</option>
+													<option value="5" <TMPL_IF NAME='ChildClass' VALUE='5'>selected="selected"</TMPL_IF>>5</option>
+													<option value="6" <TMPL_IF NAME='ChildClass' VALUE='6'>selected="selected"</TMPL_IF>>6</option>
+													<option value="7" <TMPL_IF NAME='ChildClass' VALUE='7'>selected="selected"</TMPL_IF>>7</option>
+													<option value="8" <TMPL_IF NAME='ChildClass' VALUE='8'>selected="selected"</TMPL_IF>>8</option>
+													<option value="9" <TMPL_IF NAME='ChildClass' VALUE='9'>selected="selected"</TMPL_IF>>9</option>
+													<option value="10" <TMPL_IF NAME='ChildClass' VALUE='10'>selected="selected"</TMPL_IF>>10</option>
+													<option value="11" <TMPL_IF NAME='ChildClass' VALUE='11'>selected="selected"</TMPL_IF>>11</option>
+												</select>
+											</div>
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_ChildStatus'></label>
+											</div>
+											<div class="col-md-3">
+												<select name="ChildStatusID" class="form-control">
+													<option value=""></option>
+													<TMPL_LOOP NAME='ChildStatusList'>
+														<option value="<TMPL_VAR NAME='StatusID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+													</TMPL_LOOP>
+												</select>
+											</div>
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_ChildSeason'></label>
+											</div>
+											<div class="col-md-3">
+												<select name="ChildSeasonID" id="ChildSeasonID">
+													<option value=""></option>
+													<TMPL_LOOP NAME='ChildSeasonList'>
+														<option value="<TMPL_VAR NAME='SeasonID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF> <TMPL_IF NAME='Archive' VALUE='Y'> class="inactive" <TMPL_ELSEIF NAME='TypeID' VALUE='3'>class="inactive"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+													</TMPL_LOOP>
+												</select>
+												<TMPL_VAR NAME='ChildSeasonIDControlHTML' ESCAPE='none'>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title">
+											<a class="collapsed mailing-entity-panel" data-toggle="collapse" data-parent="#accordion" href="#filter-school" aria-expanded="false" aria-controls="filter-school">
+												<input type="checkbox" class="icheck-minimal-green" name="load_school" value="1" <TMPL_IF NAME='load_school'>checked</TMPL_IF>> <TMPL_VAR NAME='LNG_FilterSchool'>
+											</a>
+										</h4>
+									</div>
+									<div id="filter-school" class="panel-collapse collapse" role="tabpanel" aria-labelledby="filter-school">
+										<div class="panel-body">
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_SchoolCategory'></label>
+											</div>
+											<div class="col-md-3">
+												<select name="SchoolCategoryID" class="form-control">
+													<option value=""></option>
+													<TMPL_LOOP NAME='SchoolCategoryList'>
+														<option value="<TMPL_VAR NAME='CategoryID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+													</TMPL_LOOP>
+												</select>
+											</div>    
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingThree">
+										<h4 class="panel-title">
+											<a class="collapsed mailing-entity-panel" data-toggle="collapse" data-parent="#accordion" href="#filter-legal" aria-expanded="false" aria-controls="filter-legal">
+												<input type="checkbox" class="icheck-minimal-green" name="load_legal" value="1" <TMPL_IF NAME='load_legal'>checked</TMPL_IF>> <TMPL_VAR NAME='LNG_FilterLegal'>
+											</a>
+										</h4>
+									</div>
+									<div id="filter-legal" class="panel-collapse collapse" role="tabpanel" aria-labelledby="filter-legal">
+										<div class="panel-body">
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_LegalCategory'></label>
+											</div>
+											<div class="col-md-3">
+												<select name="LegalCategoryID" class="form-control">
+													<option value=""></option>
+													<TMPL_LOOP NAME='LegalCategoryList'>
+														<option value="<TMPL_VAR NAME='CategoryID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+													</TMPL_LOOP>
+												</select>
+											</div> 
+											
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_LegalGroup'></label>
+											</div>
+											<div class="col-md-3">
+												<select name="LegalGroupID" class="form-control">
+													<option value=""></option>
+													<TMPL_LOOP NAME='LegalGroupList'>
+														<option value="<TMPL_VAR NAME='GroupID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+													</TMPL_LOOP>
+												</select>
+											</div>   
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingFour">
+										<h4 class="panel-title">
+											<a class="collapsed mailing-entity-panel" data-toggle="collapse" data-parent="#accordion" href="#filter-staff" aria-expanded="false" aria-controls=filter-staff>
+												<input type="checkbox" class="icheck-minimal-green" name="load_staff" value="1" <TMPL_IF NAME='load_staff'>checked</TMPL_IF>> <TMPL_VAR NAME='LNG_FilterStaff'>
+											</a>
+										</h4>
+									</div>
+									<div id="filter-staff" class="panel-collapse collapse" role="tabpanel" aria-labelledby="filter-staff">
+										<div class="panel-body">
+											<div class="col-md-1">
+												<label><TMPL_VAR NAME='LNG_StaffCategory'></label>
+											</div>
+											<div class="col-md-3">
+												<select name="StaffCategoryID" class="form-control">
+													<option value=""></option>
+													<TMPL_LOOP NAME='StaffCategoryList'>
+														<option value="<TMPL_VAR NAME='CategoryID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+													</TMPL_LOOP>
+												</select>
+											</div>     
+										</div>
+									</div>
+								</div>
+							</div>
+						</TMPL_IF>
+						<div class="row">
+							<div class="col-md-2">
+								<label><TMPL_VAR NAME='LNG_Sender'></label>
+							</div>
+							<div class="col-md-3">
+								<TMPL_LOOP NAME='SenderList'>
+									<p style="margin-top: 10px"><TMPL_VAR NAME='Email'></p>
+									<input type="hidden" value="<TMPL_VAR NAME='SenderID'>" name="SenderID">
+								</TMPL_LOOP>
+							</div>
+							<!--<div class="col-md-7">
+								<label class="form-label">
+									<a href="<TMPL_VAR NAME='CommonURLPrefix'>&entity=sender" target="_blank"><TMPL_VAR NAME='LNG_SenderManagement'></a>
+								</label>
+							</div>-->
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label><TMPL_VAR NAME='LNG_Subject'></label>
+							</div>
+							<div class="col-md-12">
+								<input type="text" class="form-control" name="Subject" value="<TMPL_VAR NAME='Subject'>" />
+							</div>
+							<div class="col-md-12">
+								<label><TMPL_VAR NAME='LNG_Content'></label>
+							</div>
+							<div class="col-md-12">
+								<textarea class="form-control" name="Content" id="Content" rows="10"><TMPL_VAR NAME='Content'></textarea>
+							</div>
+							<script type="text/javascript">
+								$(document).ready(function(){
+									createCKEditor('Content', 'basic');
+								});
+							</script>
+							<div class="col-md-12 top15 finance-attachment-list">
+								
+							</div>
+							<div class="col-md-12 top15 attachment-list">
+								<TMPL_LOOP NAME='AttachmentList'>
+									<div class="row bottom5">
+										<div class="col-md-6 col-xs-9">
+											<input type="text" name="AttachmentList[]" readonly class="form-control" value="<TMPL_VAR NAME='Value'>" /> 
+										</div>
+										<div class="col-md-6 col-xs-3">
+											<a href="#" class="form-control simple remove-attachment"><i class="fa fa-close"></i></a>
+										</div>
+									</div>
+								</TMPL_LOOP>
+							</div>
+							<div class="col-md-12">
+								<a href="#" class="add-attachment btn btn-icon btn-success"> <i class="fa fa-file-o"></i><TMPL_VAR NAME='LNG_AddAttachment'></a>
+								<TMPL_IF NAME='TargetEmail'>
+									<TMPL_IF NAME='TargetEntityType' VALUE='child'>
+										<a href="#" class="open-finance-attachment-popup btn btn-icon btn-success" Entity="<TMPL_VAR NAME='TargetEntityType'>" EntityID="<TMPL_VAR NAME='TargetEntityID'>"> <i class="fa fa-file-o"></i><TMPL_VAR NAME='LNG_AddFinanceAttachment'></a>
+									<TMPL_ELSEIF NAME='TargetEntityType' VALUE='parent'>
+										<a href="#" class="open-finance-attachment-popup btn btn-icon btn-success" Entity="<TMPL_VAR NAME='TargetEntityType'>" EntityID="<TMPL_VAR NAME='TargetEntityID'>"> <i class="fa fa-file-o"></i><TMPL_VAR NAME='LNG_AddFinanceAttachment'></a>
+									<TMPL_ELSEIF NAME='TargetEntityType' VALUE='school'>
+										<a href="#" class="open-finance-attachment-popup btn btn-icon btn-success" Entity="<TMPL_VAR NAME='TargetEntityType'>" EntityID="<TMPL_VAR NAME='TargetEntityID'>"> <i class="fa fa-file-o"></i><TMPL_VAR NAME='LNG_AddFinanceAttachment'></a>
+									<TMPL_ELSEIF NAME='TargetEntityType' VALUE='legal'>
+										<a href="#" class="open-finance-attachment-popup btn btn-icon btn-success" Entity="<TMPL_VAR NAME='TargetEntityType'>" EntityID="<TMPL_VAR NAME='TargetEntityID'>"> <i class="fa fa-file-o"></i><TMPL_VAR NAME='LNG_AddFinanceAttachment'></a>
+									</TMPL_IF>
+								</TMPL_IF>
+							</div>
+						</div>
+						<div class="row top15">
+							<div class="col-md-12">
+								<input type="submit" class="btn btn-primary" value="<TMPL_VAR NAME='LNG_Send'>">
+							</div>
+						</div>
+					</div>
+					<input type="hidden" name="Do" value="Action" />
+					<input type="hidden" name="Action" value="Send" />
+					<input type="hidden" name="Show" value="list" />
+					<div class="clearfix"></div>
+				</form>
+			</div>
+		</section>
+	</div>
+	<TMPL_INCLUDE FILE='blocks/block_autosave.html'>
+</TMPL_IF>

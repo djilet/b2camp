@@ -1,0 +1,106 @@
+ <TMPL_INCLUDE FILE="blocks/block_list_header.html">
+ 
+<style>
+#filegator{
+	border: medium none;
+}
+</style>
+<div id="content" class="content">
+  
+	<iframe id='filegator' src="<TMPL_VAR NAME='PROJECT_PATH'>include/filegator/index.php" width="100%" height="1000px" align="left"></iframe>
+ 
+<!--   <div id='files' class='filemanager-container'></div> -->
+  <div style="clear: both;"></div>
+</div>
+
+				<!-- <form action="" method="post">
+					<div class="form-group well transparent">
+						<h3><TMPL_VAR NAME='LNG_Filter'></h3>
+						<div class="row">
+							<div class="col-md-3">
+								<label><TMPL_VAR NAME='LNG_FilterType'></label>
+							</div>
+							<div class="col-md-3">
+								<select name="FilterType" id="FilterType">
+									<option value=""></option>
+									<option value="txt" <TMPL_IF NAME='FilterType' VALUE='txt'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_FilterTypeTxt'></option>
+									<option value="jpg" <TMPL_IF NAME='FilterType' VALUE='jpg'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_FilterTypeJpg'></option>
+									<option value="png" <TMPL_IF NAME='FilterType' VALUE='png'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_FilterTypePng'></option>
+									<option value="pdf" <TMPL_IF NAME='FilterType' VALUE='pdf'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_FilterTypePdf'></option>
+									<option value="doc" <TMPL_IF NAME='FilterType' VALUE='doc'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_FilterTypeDoc'></option>
+								</select>
+								<script type="text/javascript">
+									$(document).ready(function(){
+										$("#FilterType").select2({placeholder:"",allowClear: true}).on("select2-open", function() {$(this).data("select2").results.addClass("overflow-hidden").perfectScrollbar();});
+									});
+								</script>
+							</div>
+							<div class="col-md-3">
+								<label><TMPL_VAR NAME='LNG_FilterTitle'></label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="FilterTitle" value="<TMPL_VAR NAME='FilterTitle'>" class="form-control" />
+							</div>
+						</div>
+						<div class="row top15">
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-primary btn-icon"><i class="fa fa-search"></i> <TMPL_VAR NAME='LNG_FilterSearch'></button>
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+						</div>
+						
+					</div>
+				</form>
+
+					<TMPL_IF NAME='ItemList'>
+					<p><TMPL_VAR NAME='ListInfo'></p>
+					<table class="table">
+						<tr>
+							<th><TMPL_VAR NAME='LNG_ColumnTitle'></th>
+							<th><TMPL_VAR NAME='LNG_ColumnManager'></th>
+							<th>&nbsp;</th>
+						</tr>
+						<TMPL_LOOP NAME='ItemList'>
+						<tr>
+							<td>
+								<a target="_blank" href="<TMPL_VAR NAME='FilePath'>" download="<TMPL_VAR NAME='FileTitle'>"><TMPL_VAR NAME='FileTitle'></a><br/>
+								<TMPL_VAR NAME='Created' FORMAT='datetime'>
+							</td>
+							<td><TMPL_VAR NAME='ManagerTitle'></td>
+							<td><a class="btn btn-success" target="_blank" href="<TMPL_VAR NAME='FilePath'>" download="<TMPL_VAR NAME='FileTitle'>"><TMPL_VAR NAME='LNG_Download'></a></td>
+						</tr>
+						</TMPL_LOOP>
+					</table>
+					</TMPL_IF> -->
+					
+<TMPL_INCLUDE FILE="blocks/block_list_footer.html"> 
+
+<!--   <script type="text/javascript">
+/*     window.addEvent('domready', function() { */
+ $(document).ready(function(){ 	 
+
+      /* Simple Example */
+      var manager1 = new FileManager({
+        url: '/filemanager/Demos/manager.php',
+        language: 'ru',
+        hideOnClick: true,
+        assetBasePath: '/filemanager/Assets',
+        uploadAuthData: {session: 'MySessionId'},
+        upload: true,
+        download: true,
+        destroy: true,
+        rename: true,
+        createFolders: true,
+      });
+      $('example1').on('click', manager1.show().bind(manager1));
+
+    
+      
+      
+    });
+  </script> -->

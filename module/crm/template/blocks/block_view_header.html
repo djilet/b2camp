@@ -1,0 +1,16 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<h2 class="title pull-left"><TMPL_VAR NAME='LNG_Title'></h2>
+		</header>
+		<div class="content-body">
+				<TMPL_IF NAME='ErrorList'>
+					<div class="col-md-12">
+						<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</div>
+				</TMPL_IF>
+				<TMPL_IF NAME='MessageList'>
+					<div class="col-md-12">
+						<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</div>
+				</TMPL_IF>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title><TMPL_VAR NAME='FIO'></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				window.print();
+			}
+		</script>
+	</head>
+	<body>
+		<h2 align="center"><TMPL_VAR NAME='FIO'></h2>
+		<table width="100%" border="1" cellspacing="0" cellpadding="10" style="border-collapse:collapse;">
+			<tr>
+				<td width="30%"><TMPL_VAR NAME='LNG_FieldSquad'></td>
+				<td width="70%"><TMPL_VAR NAME='Squad'></td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldAge'></td>
+				<td><TMPL_VAR NAME='Age'></td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldSchool'></td>
+				<td><TMPL_VAR NAME='SchoolTitle'></td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldClass'></td>
+				<td><TMPL_VAR NAME='Class'> <TMPL_VAR NAME='LNG_FieldClassSuffix'></td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldFriends'></td>
+				<td>
+					<TMPL_LOOP NAME='FriendsList'>
+						<TMPL_VAR NAME='Title'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS>
+					</TMPL_LOOP>
+				</td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldStaff'></td>
+				<td>
+					<TMPL_LOOP NAME='StaffList'>
+						<TMPL_VAR NAME='Title'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS>
+					</TMPL_LOOP>
+				</td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldSeason'></td>
+				<td>
+					<TMPL_LOOP NAME='SeasonList'>
+						<TMPL_VAR NAME='Title'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS>
+					</TMPL_LOOP>
+				</td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldComment'></td>
+				<td><TMPL_VAR NAME='Comment' ESCAPE='none'></td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldParent'></td>
+				<td>
+					<TMPL_LOOP NAME='ParentList'>
+						<TMPL_VAR NAME='FIO'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS>
+					</TMPL_LOOP>
+				</td>
+			</tr>
+			<tr>
+				<td><TMPL_VAR NAME='LNG_FieldPhone'></td>
+				<td>
+					<TMPL_LOOP NAME='PhoneList'>
+						+7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS>
+					</TMPL_LOOP>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

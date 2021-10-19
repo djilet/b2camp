@@ -1,0 +1,246 @@
+/*
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * Styles used by the XHTML 1.1 sample page (sample14.html).
+ */
+
+/**
+ * Basic definitions for the editing area.
+ */
+ /*
+body
+{
+	background:#fff; 
+	font-family:Tahoma, Geneva, sans-serif; color:#646464; font-size:13px;
+}
+
+a {color:#30788a; text-decoration:underline;}
+a:hover {color:#30788a; text-decoration:none;}
+p {margin:0 0 18px 0;padding:0;}
+a img {border:0px;}
+ul {list-style-image:url(../images/bullet.gif); margin:0; padding:0;}
+ul li {margin-bottom:0px;}
+
+h1 {font-weight:normal;font-size:20px;line-height:20px;padding:0;margin:0 0 20px 0;}
+h2 {font-weight:normal;font-size:20px;line-height:20px;padding:0;margin:0 0 20px 0;}
+h3 {margin-bottom:14px; color:#30788a; font:700 normal 16px/24px Tahoma, Geneva, sans-serif;}
+h4 {margin-bottom:14px; color:#30788a; font:700 normal 16px/24px Tahoma, Geneva, sans-serif;}
+h5 {color:#F9C120; font-size:12px; font-style:italic; font-weight:normal; margin:0px 0px 5px 0px; line-height:120%;} 
+h6 {color:#FFFFFF; font-size:14px; font-weight:normal; margin:0px; line-height:120%;}
+
+.pic_left {float:left; margin:3px 10px 3px 0px;}
+.pic_right {float:right; margin:3px 0px 3px 10px;}
+
+.small {margin:0px; font-size:11px;}
+
+.img {border:none;}
+*/
+/**
+ * Core styles.
+ */
+
+.Bold { font-weight: bold; }
+.Italic { font-style: italic; }
+.Underline { text-decoration: underline; }
+.StrikeThrough { text-decoration: line-through; }
+.Subscript { vertical-align: sub; font-size: smaller; }
+.Superscript { vertical-align: super; font-size: smaller; }
+
+/**
+ * Font faces.
+ */
+
+.FontVerdana { font-family: Verdana; }
+.FontTahoma { font-family: Tahoma; }
+.FontTrebuchet { font-family: 'Trebuchet MS'; }
+.FontSans { font-family: sans-serif; }
+.FontArial { font-family: Arial; }
+.FontHelvetica { font-family: Helvetica; }
+.FontComic { font-family: 'Comic Sans MS'; }
+.FontCourier { font-family: 'Courier New'; }
+.FontTimes { font-family: 'Times New Roman'; }
+
+/**
+ * Font sizes.
+ */
+
+.Font8px { font-size: 8px; }
+.Font9px { font-size: 9px; }
+.Font10px { font-size: 10px; }
+.Font11px { font-size: 11px; }
+.Font12px { font-size: 12px; }
+.Font14px { font-size: 14px; }
+.Font16px { font-size: 16px; }
+.Font18px { font-size: 18px; }
+.Font20px { font-size: 20px; }
+.Font22px { font-size: 22px; }
+.Font24px { font-size: 24px; }
+.Font8pt { font-size: 8pt; }
+.Font9pt { font-size: 9pt; }
+.Font10pt { font-size: 10pt; }
+.Font11pt { font-size: 11pt; }
+.Font12pt { font-size: 12pt; }
+.Font14pt { font-size: 14pt; }
+.Font16pt { font-size: 16pt; }
+.Font18pt { font-size: 18pt; }
+.Font20pt { font-size: 20pt; }
+.Font22pt { font-size: 22pt; }
+.Font24pt { font-size: 24pt; }
+.Font50Percent { font-size: 50%; }
+.Font75Percent { font-size: 75%; }
+.Font100Percent { font-size: 100%; }
+.Font125Percent { font-size: 125%; }
+.Font150Percent { font-size: 150%; }
+.Font175Percent { font-size: 175%; }
+.Font200Percent { font-size: 200%; }
+
+/**
+ * Font colors.
+ */
+
+.FC01 { color: #000000; }
+.FC02 { color: #993300; }
+.FC03 { color: #333300; }
+.FC04 { color: #003300; }
+.FC05 { color: #003366; }
+.FC06 { color: #000080; }
+.FC07 { color: #333399; }
+.FC08 { color: #333333; }
+.FC09 { color: #800000; }
+.FC10 { color: #FF6600; }
+.FC11 { color: #808000; }
+.FC12 { color: #008000; }
+.FC13 { color: #008080; }
+.FC14 { color: #0000FF; }
+.FC15 { color: #666699; }
+.FC16 { color: #808080; }
+.FC17 { color: #FF0000; }
+.FC18 { color: #FF9900; }
+.FC19 { color: #99CC00; }
+.FC20 { color: #339966; }
+.FC21 { color: #33CCCC; }
+.FC22 { color: #3366FF; }
+.FC23 { color: #800080; }
+.FC24 { color: #999999; }
+.FC25 { color: #FF00FF; }
+.FC26 { color: #FFCC00; }
+.FC27 { color: #FFFF00; }
+.FC28 { color: #00FF00; }
+.FC29 { color: #00FFFF; }
+.FC30 { color: #00CCFF; }
+.FC31 { color: #993366; }
+.FC32 { color: #C0C0C0; }
+.FC33 { color: #FF99CC; }
+.FC34 { color: #FFCC99; }
+.FC35 { color: #FFFF99; }
+.FC36 { color: #CCFFCC; }
+.FC37 { color: #CCFFFF; }
+.FC38 { color: #99CCFF; }
+.FC39 { color: #CC99FF; }
+.FC40 { color: #FFFFFF; }
+
+/**
+ * Background colors.
+ */
+
+.FC01BG { background-color: #000000; }
+.FC02BG { background-color: #993300; }
+.FC03BG { background-color: #333300; }
+.FC04BG { background-color: #003300; }
+.FC05BG { background-color: #003366; }
+.FC06BG { background-color: #000080; }
+.FC07BG { background-color: #333399; }
+.FC08BG { background-color: #333333; }
+.FC09BG { background-color: #800000; }
+.FC10BG { background-color: #FF6600; }
+.FC11BG { background-color: #808000; }
+.FC12BG { background-color: #008000; }
+.FC13BG { background-color: #008080; }
+.FC14BG { background-color: #0000FF; }
+.FC15BG { background-color: #666699; }
+.FC16BG { background-color: #808080; }
+.FC17BG { background-color: #FF0000; }
+.FC18BG { background-color: #FF9900; }
+.FC19BG { background-color: #99CC00; }
+.FC20BG { background-color: #339966; }
+.FC21BG { background-color: #33CCCC; }
+.FC22BG { background-color: #3366FF; }
+.FC23BG { background-color: #800080; }
+.FC24BG { background-color: #999999; }
+.FC25BG { background-color: #FF00FF; }
+.FC26BG { background-color: #FFCC00; }
+.FC27BG { background-color: #FFFF00; }
+.FC28BG { background-color: #00FF00; }
+.FC29BG { background-color: #00FFFF; }
+.FC30BG { background-color: #00CCFF; }
+.FC31BG { background-color: #993366; }
+.FC32BG { background-color: #C0C0C0; }
+.FC33BG { background-color: #FF99CC; }
+.FC34BG { background-color: #FFCC99; }
+.FC35BG { background-color: #FFFF99; }
+.FC36BG { background-color: #CCFFCC; }
+.FC37BG { background-color: #CCFFFF; }
+.FC38BG { background-color: #99CCFF; }
+.FC39BG { background-color: #CC99FF; }
+.FC40BG { background-color: #FFFFFF; }
+
+/**
+ * Indentation.
+ */
+
+.Indent1 { margin-left: 40px; }
+.Indent2 { margin-left: 80px; }
+.Indent3 { margin-left: 120px; }
+.Indent4 { margin-left: 160px; }
+.Indent5 { margin-left: 200px; }
+
+/**
+ * Alignment.
+ */
+
+.JustifyLeft { text-align: left; }
+.JustifyRight { text-align: right; }
+.JustifyCenter { text-align: center; }
+.JustifyFull { text-align: justify; }
+
+/**
+ * Other.
+ */
+
+code
+{
+	font-family: courier, monospace;
+	background-color: #eeeeee;
+	padding-left: 1px;
+	padding-right: 1px;
+	border: #c0c0c0 1px solid;
+}
+
+kbd
+{
+	padding: 0px 1px 0px 1px;
+	border-width: 1px 2px 2px 1px;
+	border-style: solid;
+}
+
+blockquote
+{
+	color: #808080;
+}

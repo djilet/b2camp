@@ -1,0 +1,29 @@
+<script>
+	$('document').ready(function(){
+		$('.manager-date').datepicker({
+	        language:  'ru',
+	        format: "dd.mm.yyyy",
+	        linkFormat: "yyyy-mm-dd",
+	        //startDate: "01-04-2016",
+	    });
+	});
+</script>
+<div class="row">
+	<div class="col-md-3">
+		<input type="text" class="form-control manager-date datepicker" data-format="dd.mm.yyyy" name="DateFrom" value="<TMPL_VAR NAME='DateFrom' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_DateFrom'>" />
+	</div>
+	<div class="col-md-3">
+		<input type="text" class="form-control manager-date datepicker" data-format="dd.mm.yyyy" name="DateTo" value="<TMPL_VAR NAME='DateTo' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_DateTo'>" />
+	</div>
+	<div class="col-md-3">
+		<select name="ManagerID[]" id="ManagerID" multiple placeholder="<TMPL_VAR NAME='LNG_ChooseManager'>">
+			<TMPL_LOOP NAME='ReportManagerList'>
+				<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+			</TMPL_LOOP>
+		</select>
+		<TMPL_VAR NAME='ReportManagerListControlHTML' ESCAPE='none'>
+	</div>
+	<div class="col-md-3">
+		<button type="submit" class="btn btn-success form-control submit-with-param" param="Output" value=""><TMPL_VAR NAME='LNG_Generate'></button>
+	</div>
+</div>

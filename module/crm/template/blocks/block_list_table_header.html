@@ -1,0 +1,69 @@
+			<div class="col-md-6 no-padding form-group">
+				<ul class="pagination">
+					<TMPL_VAR NAME='Paging' ESCAPE='none'>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="form-group row">
+				<div class="col-md-5 col-sm-5 col-xs-12 form-group">
+					<a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityID=" class="btn btn-success btn-icon"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_Create'></a>
+					<a href="#" class="btn btn-danger btn-icon" onclick="return MultipleRemove($('#entity-list')[0], 'EntityIDs[]');"><i class="fa fa-remove"></i><TMPL_VAR NAME='LNG_RemoveMultiple'></a>
+				</div>
+				<div class="col-md-5 col-sm-5 col-md-offset-2 col-xs-12 form-group">
+					<div class="pull-right">
+						<TMPL_IF NAME='ShowClearPanelButton'>
+							<a href="#" class="btn btn-warning btn-icon" onclick="return MultipleClearPanel($('#entity-list')[0], 'EntityIDs[]');"><i class="glyphicon glyphicon-edit"></i><TMPL_VAR NAME='LNG_ClearPanel'></a>
+						</TMPL_IF>
+						<TMPL_IF NAME='ShowExportButton'>
+							<a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&Do=Action&Action=Export" class="btn btn-success btn-icon"><i class="glyphicon glyphicon-export"></i><TMPL_VAR NAME='LNG_Export'></a>
+						</TMPL_IF>
+						<TMPL_IF NAME='ShowPrintButton'>
+							<a href="<TMPL_VAR NAME='EntityURLPrefix'>&Page=<TMPL_VAR NAME='CurrentPage' />&EntityPrintList=1" class="btn btn-success btn-icon" target="_blank">
+								<i class="glyphicon glyphicon-print"></i>
+								<TMPL_VAR NAME='LNG_Print'>
+							</a>
+						</TMPL_IF>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<TMPL_IF NAME='ShowReassignButton'>
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-4 form-group">
+								<label class="form-control simple text-right"><TMPL_VAR NAME='LNG_ReassignChooseManager'></label>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 form-group">
+								<select id="ReassignManagerID" class="form-control no-margin">
+									<TMPL_LOOP NAME='FilterManagerList'>
+										<option value="<TMPL_VAR NAME='UserID'>"><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 form-group">
+								<a href="#" class="btn btn-success" onclick="return MultipleReassign($('#entity-list')[0], 'EntityIDs[]');"><TMPL_VAR NAME='LNG_Reassign'></a>
+							</div>
+						</div>
+					</TMPL_IF>
+					<TMPL_IF NAME='ShowSendToArchiveButton'>
+						<TMPL_IF NAME='FilterArchive' OP='!=' VALUE='Y'>
+							<a href="#" class="btn btn-success" onclick="return MultipleSendToArchive($('#entity-list')[0], 'EntityIDs[]');"><TMPL_VAR NAME='LNG_SendToArchive'></a>
+						</TMPL_IF>
+					</TMPL_IF>
+					<TMPL_IF NAME='ShowRemoveFromArchiveButton'>
+						<TMPL_IF NAME='FilterArchive' VALUE='Y'>
+							<a href="#" class="btn btn-success" onclick="return MultipleRemoveFromArchive($('#entity-list')[0], 'EntityIDs[]');"><TMPL_VAR NAME='LNG_RemoveFromArchive'></a>
+						</TMPL_IF>
+					</TMPL_IF>
+				</div>
+			</div>
+			<p><TMPL_VAR NAME='ListInfo'></p>
+			<div>
+				<form action="" method="post" id="entity-list">
+					<TMPL_IF NAME='ErrorList'>
+					<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</TMPL_IF>
+					<TMPL_IF NAME='MessageList'>
+					<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</TMPL_IF>

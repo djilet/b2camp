@@ -1,0 +1,19 @@
+#SecFilterEngine Off
+
+<files configure.ini>
+  order allow,deny
+  deny from all
+</files>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  Options +FollowSymlinks
+  Options -MultiViews
+
+
+#Standard rules of FokCMS
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^images/(.*)$ image.php?s=$1 [L]
+</IfModule>
+
+AddDefaultCharset Off

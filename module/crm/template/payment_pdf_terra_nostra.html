@@ -1,0 +1,395 @@
+<table style="width: 100%">
+	<tr>
+		<td style="text-align:left; padding-left: 10px;">
+			<span style="font-size: 14px; border-bottom: 1px solid black;">Общество с ограниченной ответственностью</span>
+		</td>
+		<td style="text-align:right;">
+			<span style="font-size: 14px;">Форма №</span><span>__________</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left;padding-left: 110px;">
+			<span style="font-size: 14px; border-bottom: 1px solid black;">"Реликт групп"</span>
+		</td>
+		<td style="text-align:right;">
+			<span style="font-size: 12px;">Утверждена Минфином РФ</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left; padding-left: 60px;">
+			<span style="font-size: 10px;">наименование предприятия, организации</span>
+		</td>
+		<td style="text-align:right; padding-left: 60px;">
+			<span style="font-size: 10px;">письмом от 20.04.95 г. № 16-00-30-35</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left;padding-left: 40px;">
+			<span style="font-size: 14px; border-bottom: 1px solid black;">Ленинская слобода, 26с5, офис 1210</span>
+		</td>
+		<td style="text-align:right;">
+			<span style="font-size: 10px;">1 экз. Приходный кассовый ордер</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left; padding-left: 150px;">
+			<span style="font-size: 10px;">адрес</span>
+		</td>
+		<td style="text-align:right; padding-right: 85px;">
+			<span style="font-size: 10px;">2 экз. Заказчику</span>
+		</td>
+	</tr>
+</table>
+
+<br><br>
+
+<table>
+	<tr>
+		<td style="padding-left: 240px;">
+			<p style="font-size:18px; font-weight:bold;">КВИТАНЦИЯ</p>
+		</td>
+		<td style="padding-left: 170px;">
+			<p style="font-size:14px; font-weight:bold;">Серия АА</p>
+		</td>
+		<td style="padding-left: 50px;">
+			<p style="font-size:14px; font-weight:bold;">N</p>
+		</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td>
+			<span style="font-size:12px;">Ф.,и.,о. заказчика</span>
+		</td>
+		<td style="width: 60px;"></td>
+		<td style="border-bottom: 1px solid black; width: 300px; text-align: center;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='ClientName'></span>
+		</td>
+		<td style="padding-left: 30px;">
+			<span style="font-size:12px;">№ телефона</span>
+		</td>
+		<td style="border-bottom: 1px solid black; text-align: center; width: 120;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='Phone'></span>
+		</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td>
+			<span style="font-size:12px;">Адрес</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 160px;">
+			<span style="font-size:12px;">Дата выполнения заказа</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table style="width: 100%;" border="1">
+	<tr>
+		<td style="text-align: center; height: 40px;">
+			<span style="font-size:12px;">За что получено (вид продукции, услуги)</span>
+		</td>
+		<td style="text-align: center;">
+			<span style="font-size:12px; font-weight: bold;">Сумма (руб.)</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; height: 40px;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='SeasonTitle'></span>
+		</td>
+		<td style="text-align: center;">
+			<span style="font-size:12px; font-weight: bold;"><TMPL_VAR NAME='Amount'></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; height: 40px;">
+			<span style="font-size:12px;">дата заезда: <TMPL_VAR NAME='DateFrom' format='date'></span>, 
+			<span style="font-size:12px;">дата выезда: <TMPL_VAR NAME='DateTo' format='date'></span>
+		</td>
+		<td style="text-align: center;">
+			<span style=""></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; height: 20px;">
+			<span style="font-size:12px;">Всего по квитанции</span>
+		</td>
+		<td style="text-align: center;">
+			<span style=""></span>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table style="">
+	<tr>
+		<td style="text-align: left; padding-right: 60px;">
+			<span style="font-size:12px;">Сумма прописью</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='AmountString'></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; padding-right: 60px;">
+			<span style="font-size:12px;">Оплатил заказчик</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+			<span style="font-size:12px;"></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="">
+		</td>
+		<td style="padding-left:240px;">
+			<span style="font-size:10px;">(подпись)</span>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table>
+	<tr>
+		<td style="border-bottom: 1px solid black;">
+			<span style="font-size:10px;">Получил кассир (материально-ответственное лицо)</span>
+		</td>
+		<td style="border-bottom: 1px solid black; padding-left: 140px; width: 460px;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='Manager'></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-left:330px;">
+			<span style="font-size:10px;">(подпись)</span>
+		</td>
+		<td style="padding-left:240px;">
+			<span style="font-size:10px;">(ФИО)</span>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table>
+	<tr>
+		<td style="">
+			<span style="font-size:12px; border-bottom: 1px solid black;">"<TMPL_VAR NAME='PayDay'>"</span>
+		</td>
+		<td style="">
+			<span style="font-size:12px; border-bottom: 1px solid black;"><TMPL_VAR NAME='PayMonth'></span>
+		</td>
+		<td style="">
+			<span style="font-size:12px; border-bottom: 1px solid black;"><TMPL_VAR NAME='PayYear'> г.</span>
+		</td>
+	</tr>
+</table>
+
+<pagebreak />
+
+<table style="width: 100%">
+	<tr>
+		<td style="text-align:left; padding-left: 10px;">
+			<span style="font-size: 14px; border-bottom: 1px solid black;">Общество с ограниченной ответственностью</span>
+		</td>
+		<td style="text-align:right;">
+			<span style="font-size: 14px;">Форма №</span><span>__________</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left;padding-left: 110px;">
+			<span style="font-size: 14px; border-bottom: 1px solid black;">"Реликт групп"</span>
+		</td>
+		<td style="text-align:right;">
+			<span style="font-size: 12px;">Утверждена Минфином РФ</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left; padding-left: 60px;">
+			<span style="font-size: 10px;">наименование предприятия, организации</span>
+		</td>
+		<td style="text-align:right; padding-left: 60px;">
+			<span style="font-size: 10px;">письмом от 20.04.95 г. № 16-00-30-35</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left;padding-left: 40px;">
+			<span style="font-size: 14px; border-bottom: 1px solid black;">Ленинская слобода, 26с5, офис 1210</span>
+		</td>
+		<td style="text-align:right;">
+			<span style="font-size: 10px;">1 экз. Приходный кассовый ордер</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left; padding-left: 150px;">
+			<span style="font-size: 10px;">адрес</span>
+		</td>
+		<td style="text-align:right; padding-right: 85px;">
+			<span style="font-size: 10px;">2 экз. Заказчику</span>
+		</td>
+	</tr>
+</table>
+
+<br><br>
+
+<table>
+	<tr>
+		<td style="padding-left: 240px;">
+			<p style="font-size:18px; font-weight:bold;">КВИТАНЦИЯ</p>
+		</td>
+		<td style="padding-left: 170px;">
+			<p style="font-size:14px; font-weight:bold;">Серия АА</p>
+		</td>
+		<td style="padding-left: 50px;">
+			<p style="font-size:14px; font-weight:bold;">N</p>
+		</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td>
+			<span style="font-size:12px;">Ф.,и.,о. заказчика</span>
+		</td>
+		<td style="width: 60px;"></td>
+		<td style="border-bottom: 1px solid black; width: 300px; text-align: center;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='ClientName'></span>
+		</td>
+		<td style="padding-left: 30px;">
+			<span style="font-size:12px;">№ телефона</span>
+		</td>
+		<td style="border-bottom: 1px solid black; text-align: center; width: 120;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='Phone'></span>
+		</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td>
+			<span style="font-size:12px;">Адрес</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 160px;">
+			<span style="font-size:12px;">Дата выполнения заказа</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table style="width: 100%;" border="1">
+	<tr>
+		<td style="text-align: center; height: 40px;">
+			<span style="font-size:12px;">За что получено (вид продукции, услуги)</span>
+		</td>
+		<td style="text-align: center;">
+			<span style="font-size:12px; font-weight: bold;">Сумма (руб.)</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; height: 40px;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='SeasonTitle'></span>
+		</td>
+		<td style="text-align: center;">
+			<span style="font-size:12px; font-weight: bold;"><TMPL_VAR NAME='Amount'></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; height: 40px;">
+			<span style="font-size:12px;">дата заезда: <TMPL_VAR NAME='DateFrom' format='date'></span>, 
+			<span style="font-size:12px;">дата выезда: <TMPL_VAR NAME='DateTo' format='date'></span>
+		</td>
+		<td style="text-align: center;">
+			<span style=""></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; height: 20px;">
+			<span style="font-size:12px;">Всего по квитанции</span>
+		</td>
+		<td style="text-align: center;">
+			<span style=""></span>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table style="">
+	<tr>
+		<td style="text-align: left; padding-right: 60px;">
+			<span style="font-size:12px;">Сумма прописью</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='AmountString'></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: left; padding-right: 60px;">
+			<span style="font-size:12px;">Оплатил заказчик</span>
+		</td>
+		<td style="text-align: left; border-bottom: 1px solid black; width: 550px;">
+			<span style="font-size:12px;"></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="">
+		</td>
+		<td style="padding-left:240px;">
+			<span style="font-size:10px;">(подпись)</span>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table>
+	<tr>
+		<td style="border-bottom: 1px solid black;">
+			<span style="font-size:10px;">Получил кассир (материально-ответственное лицо)</span>
+		</td>
+		<td style="border-bottom: 1px solid black; padding-left: 140px; width: 460px;">
+			<span style="font-size:12px;"><TMPL_VAR NAME='Manager'></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-left:330px;">
+			<span style="font-size:10px;">(подпись)</span>
+		</td>
+		<td style="padding-left:240px;">
+			<span style="font-size:10px;">(ФИО)</span>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table>
+	<tr>
+		<td style="">
+			<span style="font-size:12px; border-bottom: 1px solid black;">"<TMPL_VAR NAME='PayDay'>"</span>
+		</td>
+		<td style="">
+			<span style="font-size:12px; border-bottom: 1px solid black;"><TMPL_VAR NAME='PayMonth'></span>
+		</td>
+		<td style="">
+			<span style="font-size:12px; border-bottom: 1px solid black;"><TMPL_VAR NAME='PayYear'> г.</span>
+		</td>
+	</tr>
+</table>

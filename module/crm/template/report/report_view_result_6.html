@@ -1,0 +1,44 @@
+	
+	<thead>
+		<tr class="info">
+			<th><TMPL_VAR NAME='LNG_Manager'></th>
+			<th><TMPL_VAR NAME='LNG_ContractAndContractCount'></th>
+			<th><TMPL_VAR NAME='LNG_Season'></th>
+			<th><TMPL_VAR NAME='LNG_Amount'></th>
+			<th><TMPL_VAR NAME='LNG_PaidAmount'></th>
+			<th><TMPL_VAR NAME='LNG_UnpaidAmount'></th>
+		</tr>
+	</thead>
+	<tbody>
+		<TMPL_LOOP NAME='ResultList'>
+			<tr>
+				<td><TMPL_VAR NAME='Title'></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<TMPL_LOOP NAME='ContractList'>
+				<TMPL_IF NAME='__LAST__'>
+					<tr style="border-bottom:2px solid #ccc;" class="info">
+						<td><TMPL_VAR NAME='LNG_Total'></td>
+						<td><TMPL_VAR NAME='ContractCount'></td>
+						<td></td>
+						<td><TMPL_VAR NAME='Amount'></td>
+						<td><TMPL_VAR NAME='PaidAmount'></td>
+						<td><TMPL_VAR NAME='UnpaidAmount'></td>
+					</tr>
+				<TMPL_ELSE>
+					<tr>
+						<td></td>
+						<td><TMPL_VAR NAME='LNG_Contract'> №<TMPL_VAR NAME='ContractID'></td>
+						<td><TMPL_VAR NAME='SeasonTitle'></td>
+						<td><TMPL_VAR NAME='Amount'></td>
+						<td><TMPL_VAR NAME='PaidAmount'></td>
+						<td><TMPL_VAR NAME='UnpaidAmount'></td>
+					</tr>
+				</TMPL_IF>
+			</TMPL_LOOP>
+		</TMPL_LOOP>
+	</tbody>

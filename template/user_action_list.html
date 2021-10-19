@@ -1,0 +1,96 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<h2 class="title pull-left"><TMPL_VAR NAME='LNG_UserActionList'></h2>
+		</header>
+		<div class="content-body">
+			<div class="row">
+				<div class="col-md-8 form-group">
+					<form action="<TMPL_VAR NAME='ADMIN_PATH'>user_action.php" method="post">
+						<div class="row">
+							<div class="col-md-3 col-sm-3">
+								<div class="form-group">
+									<label class="form-label"><TMPL_VAR NAME='LNG_UserName'></label>
+									<select name="FilterUserID" class="form-control">
+										<option value=""><TMPL_VAR NAME='LNG_All'></option>
+										<TMPL_LOOP NAME='FilterUserList'>
+											<option value="<TMPL_VAR NAME='UserID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></option>
+										</TMPL_LOOP>
+									</select>
+								</div>
+							</div>
+							<div class="form-group col-md-3 col-sm-3">
+								<label class="form-label"><TMPL_VAR NAME='LNG_DateFrom'></label>
+								<input type="text" name="FilterDateFrom" class="form-control datepicker" value="<TMPL_VAR NAME='FilterDateFrom'>" data-format="yyyy-mm-dd">
+							</div>
+							<div class="form-group col-md-3 col-sm-3">
+								<label class="form-label"><TMPL_VAR NAME='LNG_DateTo'></label>
+								<input type="text" name="FilterDateTo" class="form-control datepicker" value="<TMPL_VAR NAME='FilterDateTo'>" data-format="yyyy-mm-dd">
+							</div>
+							<div class="form-group col-md-3 col-sm-3">
+								<label class="form-label">&nbsp;</label><br />
+								<button type="submit" class="btn btn-primary btn-icon"><i class="fa fa-search"></i> <TMPL_VAR NAME='LNG_Find'></button>
+							</div>
+						</div>
+						<TMPL_VAR NAME='ParamsForFilter' ESCAPE='none'>
+					</form>
+				</div>
+				<div class="col-md-4 form-group text-right">
+					<ul class="pagination pagination">
+						<TMPL_VAR NAME='Paging' ESCAPE='none'>
+					</ul>
+				</div>
+			</div>
+			
+			<TMPL_IF NAME='UserActionList'>
+				<p><TMPL_VAR NAME='ListInfo'></p>
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th><TMPL_VAR NAME='LNG_Created'></th>
+								<th><TMPL_VAR NAME='LNG_UserName'></th>
+								<th><TMPL_VAR NAME='LNG_IP'></th>
+								<th><TMPL_VAR NAME='LNG_RequestMethod'></th>
+								<th><TMPL_VAR NAME='LNG_RequestUri'></th>
+								<th><TMPL_VAR NAME='LNG_Description'></th>
+							</tr>
+						</thead>
+						<tbody>
+							<TMPL_LOOP NAME='UserActionList'>
+								<TMPL_IF NAME='ShowDateRow'>
+									<tr class="blue-light hover clickable" data-toggle="element" data-target=".date-<TMPL_VAR NAME='CreatedDate'>">
+										<th colspan="6"><TMPL_VAR NAME='Created' FORMAT='date'></th>
+									</tr>
+								</TMPL_IF>
+								<tr class="date-<TMPL_VAR NAME='CreatedDate'> hidden">
+									<td class="text-nowrap"><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+									<td class="text-nowrap"><TMPL_VAR NAME='UserName'></td>
+									<td class="text-nowrap"><TMPL_VAR NAME='IP'></td>
+									<td class="text-nowrap"><TMPL_VAR NAME='RequestMethod'></td>
+									<td width="50%" style="word-break:break-word;">
+										<a href="<TMPL_VAR NAME='RequestURL'>"><TMPL_VAR NAME='RequestUri'></a>
+									</td>
+									<td width="50%"><TMPL_VAR NAME='Description'></td>
+								</tr>
+							</TMPL_LOOP>
+						</tbody>
+					</table>
+				</div>
+			<TMPL_ELSE>
+				<div class="alert alert-success"><TMPL_VAR NAME='LNG_Empty'></div>
+			</TMPL_IF>
+					
+			<TMPL_IF NAME='UserList'>
+				<div class="col-md-6 no-padding">
+					
+				</div>
+				<div class="col-md-6 no-padding text-right">
+					<ul class="pagination pagination">
+						<TMPL_VAR NAME='Paging' ESCAPE='none'>
+					</ul>
+				</div>
+			</TMPL_IF>
+		</div>
+	</section>
+</div>

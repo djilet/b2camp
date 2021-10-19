@@ -1,0 +1,171 @@
+<TMPL_INCLUDE FILE="blocks/block_view_header.html">
+				
+				<div class="row">
+					<div class="col-md-2">
+						<label><TMPL_VAR NAME='LNG_FieldSender'>:</label> 
+					</div>
+					<div class="col-md-10">
+						<a href="mailto:<TMPL_VAR NAME='SenderEmail'>"><TMPL_VAR NAME='SenderEmail'></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<label><TMPL_VAR NAME='LNG_FieldReciever'>:</label> 
+					</div>
+					<div class="col-md-10">
+						<TMPL_LOOP NAME='RecieverList'>
+							<TMPL_IF NAME='Email'>
+								<a href="mailto:<TMPL_VAR NAME='Email'>" class="reciever right15" style="display:none;"><TMPL_VAR NAME='Email'></a>
+							</TMPL_IF>
+						</TMPL_LOOP>
+						<a id="show-reciever" href="#" class="hidden" onclick="$('.reciever').show();$(this).remove();return false;"><TMPL_VAR NAME='LNG_ShowAllRecievers'></a>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$('.reciever:lt(4)').show();
+								if($('a.reciever').size() > 4)
+								{
+									$('#show-reciever').removeClass('hidden');
+								}
+							});
+						</script>
+					</div>
+				</div>
+				<h3><TMPL_VAR NAME='Subject'></h3>
+				<div class="top15">
+					<TMPL_VAR NAME='Content' ESCAPE='none'>
+				</div>
+				<TMPL_IF NAME='AttachmentList'>
+					<div class="top15">
+						<strong><TMPL_VAR NAME='LNG_AttachmentList'></strong>
+						<br />
+						<TMPL_LOOP NAME='AttachmentList'>
+							<a href="<TMPL_VAR NAME='FilePath'>"><TMPL_VAR NAME='FilePath'></a><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS>
+						</TMPL_LOOP>
+					</div>	
+				</TMPL_IF>
+				<br /><br />				
+				<div class="well transparent">
+					<h3 class="top15"><TMPL_VAR NAME='LNG_Report'></h3>					
+					<label><TMPL_VAR NAME='LNG_Sent'> <TMPL_VAR NAME='DispatchSuccessCount'> <TMPL_VAR NAME='LNG_Of'> <TMPL_VAR NAME='DispatchCount'></label>					
+					<TMPL_IF NAME='DispatchErrorList'>
+						<h4 class="top15"><TMPL_VAR NAME='LNG_DispatchError'></h4>
+						<form action="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>" method="post" class="lockable">
+							<div class="table-responsive" data-pattern="priority-columns">
+								<table class="table">
+									<thead>
+										<tr>
+											<th width="25" data-priority="1"><input type="checkbox" class="check-all" InputName="DispatchIDs[]" /></th>
+											<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnName'></th>
+											<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnPhone'></th>
+											<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnUser'></th>
+											<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnEmail'></th>
+											<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnErrorInfo'></th>
+										</tr>
+									</thead>
+									<tbody>
+										<TMPL_LOOP NAME='DispatchErrorList'>
+											<tr>
+												<td><input type="checkbox" name="DispatchIDs[]" value="<TMPL_VAR NAME='EntityID'>" /></td>
+												<td>
+													
+														<TMPL_IF NAME='EntityType' VALUE='child'>
+															<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='EntityType'>&EntityViewID=<TMPL_VAR NAME='RecieverEntityID'>">
+																<TMPL_VAR NAME='ChildTitle'>
+															</a>
+														<TMPL_ELSEIF NAME='EntityType' VALUE='school'>
+															<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='EntityType'>&EntityViewID=<TMPL_VAR NAME='RecieverEntityID'>">
+																<TMPL_VAR NAME='SchoolTitle'>
+															</a>
+														<TMPL_ELSEIF NAME='EntityType' VALUE='legal'>
+															<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='EntityType'>&EntityViewID=<TMPL_VAR NAME='RecieverEntityID'>">
+																<TMPL_VAR NAME='LegalTitle'>
+															</a>
+														<TMPL_ELSEIF NAME='EntityType' VALUE='staff'>
+															<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=<TMPL_VAR NAME='EntityType'>&EntityViewID=<TMPL_VAR NAME='RecieverEntityID'>">
+																<TMPL_VAR NAME='StaffTitle'>
+															</a>
+														<TMPL_ELSEIF NAME='EntityType' VALUE='parent'>
+															<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=child&EntityViewID=<TMPL_VAR NAME='ParentChildID'>">
+																<TMPL_VAR NAME='ParentTitle'>
+															</a>
+														<TMPL_ELSEIF NAME='EntityType' VALUE='school_contact'>
+															<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=school&EntityViewID=<TMPL_VAR NAME='ContactSchoolID'>">
+																<TMPL_VAR NAME='SchoolContactTitle'>
+															</a>
+														<TMPL_ELSEIF NAME='EntityType' VALUE='legal_contact'>
+															<a href="<TMPL_VAR NAME='MODULE_URL'>&entity=legal&EntityViewID=<TMPL_VAR NAME='ContactLegalID'>">
+																<TMPL_VAR NAME='LegalContactTitle'>
+															</a>
+														</TMPL_IF>
+													</a>
+												</td>
+												<td>
+													<TMPL_LOOP NAME='PhoneList'>
+														+7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'><br/>
+													</TMPL_LOOP>
+												</td>
+												<td><TMPL_VAR NAME='ManagerName'></td>
+												<td>
+													<span class="email"><TMPL_VAR NAME='Email'></span>
+												</td>
+												<td><TMPL_VAR NAME='ErrorInfo'></td>
+											</tr>
+										</TMPL_LOOP>
+									</tbody>
+								</table>
+							</div>
+							<input type="hidden" name="MailingID" value="<TMPL_VAR NAME='EntityID'>">
+							<input type="hidden" name="Do" value="Action" />
+							<input type="hidden" name="Action" value="Resend" />
+							<input type="hidden" name="Show" value="view" />
+							<input type="hidden" name="EntityViewID" value="<TMPL_VAR NAME='EntityID'>" />
+							<input type="submit" class="btn btn-primary" value="<TMPL_VAR NAME='LNG_Resend'>" />
+						</form>
+					
+						<div id="email-edit" class="modal">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<form id="email-edit-form" action="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>" method="post">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title"><TMPL_VAR NAME='LNG_ChangeEmail'></h4>
+										</div>
+										
+										<div class="modal-body">
+											<div class="form-group">
+												<label><TMPL_VAR NAME='LNG_Email'></label>
+												<input type="email" name="Email" class="form-control" />
+											</div>
+										</div>
+										<input type="hidden" name="EmailEntity" value="" />
+										<input type="hidden" name="EmailEntityID" value="" />
+										<input type="hidden" name="DispatchID" value="">
+										<input type="hidden" name="Do" value="Action" />
+										<input type="hidden" name="Action" value="SetEmail" />
+										<input type="hidden" name="Show" value="view" />
+										<input type="hidden" name="EntityViewID" value="<TMPL_VAR NAME='EntityID'>" />
+										<div class="modal-footer">
+											<button type="button" class="btn btn-icon" data-dismiss="modal"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></button>
+											<button type="submit" class="btn btn-success btn-icon"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</TMPL_IF>
+				</div>
+
+<TMPL_INCLUDE FILE="blocks/block_view_footer.html">
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.set-email-link').click(function(e){
+			$('#email-edit').find('[name=EmailEntity]').val($(this).attr('entity'))
+			$('#email-edit').find('[name=EmailEntityID]').val($(this).attr('entityID'))
+			$('#email-edit').find('[name=Email]').val($.trim($(this).closest('td').find('span.email').html()));
+			$('#email-edit').find('[name=DispatchID]').val($(this).attr('dispatchID'));
+			$('#email-edit').modal('show');
+			e.preventDefault();
+		});
+	});
+</script>

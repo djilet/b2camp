@@ -1,0 +1,1236 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<common>
+		<Reassign>Назначить</Reassign>
+		<ReassignChooseManager>Выбрать менеджера</ReassignChooseManager>
+		<SendToArchive>Убрать в архив</SendToArchive>
+		<RemoveFromArchive>Восстановить из архива</RemoveFromArchive>
+		<Export>Экспорт</Export>
+		<ClearPanel>Очистить панель</ClearPanel>
+		<RemoveMultiple>Удалить отмеченные</RemoveMultiple>
+		<CancelMultiple>Отметить как "Отменен"</CancelMultiple>
+		<AddComponent>добавить</AddComponent>
+		<PhoneTypeMobile>Мобильный</PhoneTypeMobile>
+		<PhoneTypeWork>Рабочий</PhoneTypeWork>
+		<PhoneTypeHome>Домашний</PhoneTypeHome>
+		<DocumentTypePassport>Паспорт</DocumentTypePassport>
+		<DocumentTypeInternational>Загран.паспорт</DocumentTypeInternational>
+		<DocumentTypeBirth>Свидетельство о рождении</DocumentTypeBirth>
+		<MainDocument>Основной документ</MainDocument>
+		<ParentStatusFather>Отец</ParentStatusFather>
+		<ParentStatusMother>Мать</ParentStatusMother>
+		<ParentStatusGrandfather>Дедушка</ParentStatusGrandfather>
+		<ParentStatusGrandmother>Бабушка</ParentStatusGrandmother>
+		<ContactStatusDirector>Директор</ContactStatusDirector>
+		<ContactStatusDirectorDeputy>Зам. директора</ContactStatusDirectorDeputy>
+		<ContactStatusClassManager>Классный руководитель</ContactStatusClassManager>
+		<ContactStatusParentCommittee>Род. комитет</ContactStatusParentCommittee>
+		<ContactStatusOther>Другой</ContactStatusOther>
+		<StatusCreated>Создан</StatusCreated>
+		<StatusSeason>Проект</StatusSeason>
+		<StatusStatus>Статус</StatusStatus>
+		<StatusDate>Дата</StatusDate>
+		<StatusQuantity>Кол-во</StatusQuantity>
+		<StatusSave>Сохранить статусы</StatusSave>
+		<StatusShowAll>Показать все</StatusShowAll>
+		<BookingTill>До</BookingTill>
+		<ListEmpty>список пуст</ListEmpty>
+		<Download>Скачать</Download>
+		<Add>Добавить</Add>
+		<SeasonCamp>Лагерь</SeasonCamp>
+		<SeasonUrbanArea>Городская площадка</SeasonUrbanArea>
+		<SeasonHoliday>Праздники</SeasonHoliday>
+		<ShowAllComments>Показать все комментарии</ShowAllComments>
+		<CallHistoryHeader>История звонков</CallHistoryHeader>
+		<CallHistoryCreated>Дата</CallHistoryCreated>
+		<CallHistoryManagerName>Менеджер</CallHistoryManagerName>
+		<CallHistoryDuration>Длительность звонка</CallHistoryDuration>
+		<CallHistoryRecord>Запись звонка</CallHistoryRecord>
+		<CallHistoryRecordOpen>Открыть</CallHistoryRecordOpen>
+		<ArriveDate>Дата заезда</ArriveDate>
+		<ReleaseDate>Дата выезда</ReleaseDate>
+		<SeasonAddress>Адрес проведения</SeasonAddress>
+		<Transfer>Трансферы</Transfer>
+		<HistoryChanges>История изменений</HistoryChanges>
+		<TransferConditions>Условия трансфера</TransferConditions>
+		<Note>Примечание</Note>
+		<There>Туда</There>
+		<AndBackAgain>Обратно</AndBackAgain>
+		<Cancel>Отмена</Cancel>
+		<Yes>Да</Yes>
+		<No>Нет</No>
+	</common>
+	<public>
+		<category_list.html>
+			<Title>Список категорий</Title>
+			<ColumnTitle>Название категории</ColumnTitle>
+		</category_list.html>
+		<category_edit.html>
+			<TitleAdd>Добавление категории</TitleAdd>
+			<TitleEdit>Редактирование категории</TitleEdit>
+			<FieldTitle>Название категории</FieldTitle>
+		</category_edit.html>
+		<child_list.html>
+			<Title>Дети</Title>
+			<ColumnFIO>ФИО</ColumnFIO>
+			<ColumnCategory>Категория</ColumnCategory>
+			<ColumnSquad>Отряд</ColumnSquad>
+			<ColumnAge>Возраст</ColumnAge>
+			<ColumnSchool>Школа</ColumnSchool>
+			<ColumnDocument>Документ</ColumnDocument>
+			<ColumnPhone>Телефон</ColumnPhone>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ColumnStatus>Статус</ColumnStatus>
+			<Filter>Поиск ребенка</Filter>
+			<FilterLastName>Фамилия</FilterLastName>
+			<FilterFirstName>Имя</FilterFirstName>
+			<FilterMiddleName>Отчество</FilterMiddleName>
+			<FilterCategory>Категория</FilterCategory>
+			<FilterParentLastName>Фамилия родителя</FilterParentLastName>
+			<FilterSchool>Школа</FilterSchool>
+			<FilterClass>Класс</FilterClass>
+			<FilterAge>Возраст</FilterAge>
+			<FilterSeason>Проект</FilterSeason>
+			<FilterStaff>Вожатые</FilterStaff>
+			<FilterPhone>Телефон</FilterPhone>
+			<FilterEmail>Email</FilterEmail>
+			<FilterFriends>Друзья</FilterFriends>
+			<FilterStatus>Статус</FilterStatus>
+			<FilterManager>Менеджер</FilterManager>
+			<FilterSearch>Поиск</FilterSearch>
+			<FilterFinance>Оплаты</FilterFinance>
+			<FilterFinanceContractID>№ договора</FilterFinanceContractID>
+			<FilterFinanceInvoiceID>№ счета</FilterFinanceInvoiceID>
+			<FilterFinanceAmount>Сумма</FilterFinanceAmount>
+			<FilterFinanceDateFrom>с</FilterFinanceDateFrom>
+			<FilterFinanceDateTo>по</FilterFinanceDateTo>
+			<FilterFinanceSeason>Проект</FilterFinanceSeason>
+			<FilterFinanceManager>Менеджер</FilterFinanceManager>
+			<FilterFinanceSearch>Поиск</FilterFinanceSearch>
+			<FilterSource>Источник</FilterSource>
+			<onSending>Согласие на рассылку</onSending>
+			<onSMS>Согласие на СМС</onSMS>
+			<onPhoto>Согласие на ФОТО</onPhoto>
+		</child_list.html>
+		<child_printlist.html>
+			<Title>Дети</Title>
+			<ColumnFIO>ФИО</ColumnFIO>
+			<ColumnCategory>Категория</ColumnCategory>
+			<ColumnSquad>Отряд</ColumnSquad>
+			<ColumnAge>Возраст</ColumnAge>
+			<ColumnSchool>Школа</ColumnSchool>
+			<ColumnDocument>Документ</ColumnDocument>
+			<ColumnPhone>Телефон</ColumnPhone>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ColumnStatus>Статус</ColumnStatus>
+		</child_printlist.html>
+		<child_list_duplicate.html>
+			<ColumnFIO>ФИО</ColumnFIO>
+			<ColumnManager>Менеджер</ColumnManager>
+			<Ignore>Игнорировать</Ignore>
+		</child_list_duplicate.html>
+		<child_view.html>
+			<Title>Карточка ребенка</Title>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldSquad>Отряд</FieldSquad>
+			<FieldAge>Возраст</FieldAge>
+			<FieldPhone>Телефон</FieldPhone>
+			<FieldEmail>E-mail</FieldEmail>
+			<Call>Позвонить</Call>
+			<CallHistory>История звонков</CallHistory>
+			<SendEmail>Отправить письмо</SendEmail>
+			<FieldSchool>Школа</FieldSchool>
+			<FieldClass>Класс</FieldClass>
+			<FieldClassSuffix>класс</FieldClassSuffix>
+			<FieldSocial>Соц. сети</FieldSocial>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldStaff>Вожатые</FieldStaff>
+			<FieldFriends>Друзья</FieldFriends>
+			<FieldFile>Вложения</FieldFile>
+
+			<Questionnaire>Медицинские и психологические особенности</Questionnaire>
+			<QuestionnaireCreated>Создано</QuestionnaireCreated>
+			<QuestionnaireModified>Изменено</QuestionnaireModified>
+            <SlideUp>Свернуть</SlideUp>
+
+			<RemindToCall>Напомнить о звонке</RemindToCall>
+			<RemindToCallTaskTitle>Позвонить ребенку</RemindToCallTaskTitle>
+			<RemindToCallTaskDescription>Позвонить ребенку</RemindToCallTaskDescription>
+			<FieldParentStatus>Статус</FieldParentStatus>
+			<FieldParentPhone>Телефон</FieldParentPhone>
+			<FieldParentEmail>E-mail</FieldParentEmail>
+			<FieldParentAddress>Адрес</FieldParentAddress>
+			<FieldParentWork>Место работы</FieldParentWork>
+			<FieldParentPassport>Паспортные данные</FieldParentPassport>
+			<FieldComments>Комментарии менеджера</FieldComments>
+			<FieldCommentText>Комментарий</FieldCommentText>
+
+			<FieldFinances>Финансы</FieldFinances>
+			<TabAddContract>Создать договор</TabAddContract>
+			<TabAddInvoice>Выставить счет</TabAddInvoice>
+			<TabAddPayment>Внести оплату</TabAddPayment>
+			<TabAddPayback>Возврат оплаты</TabAddPayback>
+			<TabAddAct>Акт услуг</TabAddAct>
+			<FieldAddingContract>Создание договора</FieldAddingContract>
+			<FieldAddingInvoice>Создание счета</FieldAddingInvoice>
+			<FieldAddingPayment>Внесение оплаты</FieldAddingPayment>
+			<FieldAddingPayback>Возврат оплаты</FieldAddingPayback>
+			<FieldAddingAct>Создание акта</FieldAddingAct>
+			<ContractParent>Родитель</ContractParent>
+			<ContractSeason>Проект</ContractSeason>
+			<ContractAmount>Сумма</ContractAmount>
+			<ContractLastDayForPay>Крайний срок оплаты</ContractLastDayForPay>
+			<ContractChildIsNeedStamp>Добавить печать</ContractChildIsNeedStamp>
+			<InvoiceContract>Договор</InvoiceContract>
+			<InvoiceAmount>Сумма</InvoiceAmount>
+			<PaymentContract>Договор</PaymentContract>
+			<PaymentAmount>Сумма</PaymentAmount>
+			<Bill>Счет</Bill>
+			<Reason>Основание</Reason>
+			<IncomeType>Статья прихода</IncomeType>
+			<OutcomeType>Статья расхода</OutcomeType>
+			<ActContract>Договор</ActContract>
+
+			<FieldCharacteristic>Характеристики</FieldCharacteristic>
+			<SetSeason>Укажите проект:</SetSeason>
+			<FieldCharacteristicText>Характеристика</FieldCharacteristicText>
+			<SaveComponent>Сохранить изменения</SaveComponent>
+			<RemoveConfirm>Вы действительно хотите удалить строку?</RemoveConfirm>
+
+			<ColumnNumber>Номер</ColumnNumber>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnSeason>Проект</ColumnSeason>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ColumnAmount>Сумма</ColumnAmount>
+			<ColumnLastDayForPay>Крайний срок</ColumnLastDayForPay>
+			<ColumnPaidAmount>Оплата</ColumnPaidAmount>
+			<ColumnUnPaidAmount>Остаток</ColumnUnPaidAmount>
+			<ColumnPaybackAmount>Возврат</ColumnPaybackAmount>
+			<PrefixContract>Договор №</PrefixContract>
+			<PrefixInvoice>Счет №</PrefixInvoice>
+			<PrefixPayment>Оплата №</PrefixPayment>
+			<PrefixPayback>Возврат №</PrefixPayback>
+			<PrefixAct>Акт выполненных услуг №</PrefixAct>
+			<No>Нет</No>
+			<ColumnLegalAgent>Юр.лица/Школы</ColumnLegalAgent>
+		</child_view.html>
+		<child_print.html>
+			<FieldSquad>Отряд</FieldSquad>
+			<FieldAge>Возраст</FieldAge>
+			<FieldSchool>Школа</FieldSchool>
+			<FieldClass>Класс</FieldClass>
+			<FieldClassSuffix>класс</FieldClassSuffix>
+			<FieldFriends>Друзья</FieldFriends>
+			<FieldStaff>Вожатые</FieldStaff>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldParent>Родители</FieldParent>
+			<FieldPhone>Телефон</FieldPhone>
+		</child_print.html>
+		<child_mass_print.html>
+			<FieldSquad>Отряд</FieldSquad>
+			<FieldAge>Возраст</FieldAge>
+			<FieldSchool>Школа</FieldSchool>
+			<FieldClass>Класс</FieldClass>
+			<FieldClassSuffix>класс</FieldClassSuffix>
+			<FieldFriends>Друзья</FieldFriends>
+			<FieldStaff>Вожатые</FieldStaff>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldParent>Родители</FieldParent>
+			<FieldPhone>Телефон</FieldPhone>
+		</child_mass_print.html>
+		<child_edit.html>
+			<TitleAdd>Добавление карточки ребенка</TitleAdd>
+			<TitleEdit>Редактирование карточки ребенка</TitleEdit>
+			<FieldImage>Фото</FieldImage>
+			<FieldLastName>Фамилия</FieldLastName>
+			<FieldFirstName>Имя</FieldFirstName>
+			<FieldMiddleName>Отчество</FieldMiddleName>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldSquad>Отряд</FieldSquad>
+			<FieldSex>Пол</FieldSex>
+			<FieldSexM>мальчик</FieldSexM>
+			<FieldSexF>девочка</FieldSexF>
+			<FieldDOB>Дата рождения</FieldDOB>
+			<FieldPhone>Телефон</FieldPhone>
+			<FieldEmail>E-mail</FieldEmail>
+			<FieldSchool>Школа</FieldSchool>
+			<FieldClass>Класс</FieldClass>
+			<FieldSocial>Соц. сети</FieldSocial>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldAddressCity>Город</FieldAddressCity>
+			<FieldAddressStreet>Улица</FieldAddressStreet>
+			<FieldAddressHome>Дом</FieldAddressHome>
+			<FieldAddressFlat>Квартира</FieldAddressFlat>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldDocumentNumber>Документы</FieldDocumentNumber>
+			<PlaceholderDocumentNumber>№ свидетельства о рождении/паспорта</PlaceholderDocumentNumber>
+			<FieldMailing>Согласен</FieldMailing>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldStaff>Вожатые</FieldStaff>
+			<FieldFriends>Друзья</FieldFriends>
+			<FieldFile>Вложения</FieldFile>
+			<FieldSource>Источник</FieldSource>
+			<FieldContact>Название источника</FieldContact>
+			<FieldContactPlaceholder>От Иванова/С какого сайта</FieldContactPlaceholder>
+			<FieldParent>Редактирование родственников</FieldParent>
+			<FieldParentLastName>Фамилия</FieldParentLastName>
+			<FieldParentFirstName>Имя</FieldParentFirstName>
+			<FieldParentMiddleName>Отчество</FieldParentMiddleName>
+			<FieldParentStatus>Статус</FieldParentStatus>
+			<FieldParentPhone>Телефон</FieldParentPhone>
+			<FieldParentEmail>E-mail</FieldParentEmail>
+			<FieldParentAddress>Адрес</FieldParentAddress>
+			<FieldParentAddressCity>Город</FieldParentAddressCity>
+			<FieldParentAddressStreet>Улица</FieldParentAddressStreet>
+			<FieldParentAddressHome>Дом</FieldParentAddressHome>
+			<FieldParentAddressFlat>Квартира</FieldParentAddressFlat>
+			<FieldParentWork>Место работы</FieldParentWork>
+			<FieldParentPassport>Паспортные данные</FieldParentPassport>
+			<Questionnaire>Медицинские и психологические особенности</Questionnaire>
+			<SlideUp>Свернуть</SlideUp>
+			<onSending>На рассылку</onSending>
+			<onSMS>СМС</onSMS>
+			<onPhoto>ФОТО</onPhoto>
+		</child_edit.html>
+		<child_export.html>
+			<LastName>Фамилия</LastName>
+			<FirstName>Имя</FirstName>
+			<MiddleName>Отчество</MiddleName>
+			<DOB>Дата рождения</DOB>
+			<School>Школа</School>
+			<Document>Документ</Document>
+			<Phone>Телефон</Phone>
+			<Email>E-mail</Email>
+			<ParentLastName>Фамилия (родителя)</ParentLastName>
+			<ParentFirstName>Имя (родителя)</ParentFirstName>
+			<ParentMiddleName>Отчество (родителя)</ParentMiddleName>
+		</child_export.html>
+		<season_list.html>
+			<Title>Проекты</Title>
+			<ColumnTitle>Название проекта</ColumnTitle>
+			<ColumnPeriod>Дата</ColumnPeriod>
+			<From>с</From>
+			<To>по</To>
+			<ColumnChildCount>Количество детей</ColumnChildCount>
+			<Filter>Поиск по проектам</Filter>
+			<FilterTitle>Название</FilterTitle>
+			<FilterDateFrom>Дата с</FilterDateFrom>
+			<FilterDateTo>Дата по</FilterDateTo>
+			<FilterChildrenCount>Количество детей</FilterChildrenCount>
+			<FilterSearch>Поиск</FilterSearch>
+			<FilterType>Тип</FilterType>
+		</season_list.html>
+		<season_list_duplicate.html>
+			<ColumnTitle>Название</ColumnTitle>
+			<Ignore>Игнорировать</Ignore>
+		</season_list_duplicate.html>
+		<season_view.html>
+			<Title>Карточка проекта</Title>
+			<FieldDateFrom>Дата начала</FieldDateFrom>
+			<FieldPeriod>Период</FieldPeriod>
+			<From>с</From>
+			<To>по</To>
+			<FieldPlaceCount>План продаж</FieldPlaceCount>
+			<FieldSocial>Соц. сети</FieldSocial>
+			<FieldFile>Вложения</FieldFile>
+			<FieldComment>Описание</FieldComment>
+			<FieldStaff>Список вожатых в проекте</FieldStaff>
+			<PrintList>Распечатать список</PrintList>
+			<FieldStaffColumnFIO>ФИО</FieldStaffColumnFIO>
+			<FieldStaffColumnCategory>Категория</FieldStaffColumnCategory>
+			<FieldStaffColumnAge>Возраст</FieldStaffColumnAge>
+			<FieldStaffColumnUniversity>ВУЗ</FieldStaffColumnUniversity>
+			<FieldStaffColumnCourse>Курс</FieldStaffColumnCourse>
+			<FieldStaffColumnNickname>Никнейм</FieldStaffColumnNickname>
+			<FieldStaffColumnPhone>Телефон</FieldStaffColumnPhone>
+			<FieldStaffColumnEmail>E-mail</FieldStaffColumnEmail>
+			<FieldChild>Список детей в проекте</FieldChild>
+			<FieldChildColumnFIO>ФИО</FieldChildColumnFIO>
+			<FieldChildColumnCategory>Категория</FieldChildColumnCategory>
+			<FieldChildColumnAge>Возраст</FieldChildColumnAge>
+			<FieldChildColumnSchool>Школа</FieldChildColumnSchool>
+			<FieldChildColumnPhone>Телефон</FieldChildColumnPhone>
+			<FieldChildColumnManager>Менеджер</FieldChildColumnManager>
+			<FieldChildColumnStatus>Статус</FieldChildColumnStatus>
+			<FieldComments>Комментарии менеджера</FieldComments>
+			<FieldCommentText>Комментарий</FieldCommentText>
+		</season_view.html>
+		<season_edit.html>
+			<TitleAdd>Добавление карточки проекта</TitleAdd>
+			<TitleEdit>Редактирование карточки проекта</TitleEdit>
+			<FieldImage>Фото</FieldImage>
+			<FieldTitle>Название</FieldTitle>
+			<FieldType>Тип</FieldType>
+			<FieldDateFrom>Дата начала</FieldDateFrom>
+			<FieldDateTo>Дата окончания</FieldDateTo>
+			<FieldPlaceCount>План продаж</FieldPlaceCount>
+			<FieldSocial>Соц. сети</FieldSocial>
+			<FieldStaff>Вожатые</FieldStaff>
+			<FieldTransferThereNote>Условия трансфера туда</FieldTransferThereNote>
+			<FieldTransferBackNote>Условия трансфера обратно</FieldTransferBackNote>
+			<FieldComment>Описание</FieldComment>
+			<FieldFile>Вложения</FieldFile>
+		</season_edit.html>
+		<school_list.html>
+			<Title>Школы</Title>
+			<Filter>Поиск по школам</Filter>
+			<FilterTitle>Название</FilterTitle>
+			<FilterCategory>Категория</FilterCategory>
+			<FilterPhone>Телефон</FilterPhone>
+			<FilterContact>Контактное лицо</FilterContact>
+			<FilterEmail>Email</FilterEmail>
+			<FilterStatus>Статус</FilterStatus>
+			<FilterSeason>Проект</FilterSeason>
+			<FilterManager>Менеджер</FilterManager>
+			<FilterSearch>Поиск</FilterSearch>
+			<FilterFinance>Оплаты</FilterFinance>
+			<FilterFinanceContractID>№ договора</FilterFinanceContractID>
+			<FilterFinanceInvoiceID>№ счета</FilterFinanceInvoiceID>
+			<FilterFinanceAmount>Сумма</FilterFinanceAmount>
+			<FilterFinanceDateFrom>с</FilterFinanceDateFrom>
+			<FilterFinanceDateTo>по</FilterFinanceDateTo>
+			<FilterFinanceSeason>Проект</FilterFinanceSeason>
+			<FilterFinanceManager>Менеджер</FilterFinanceManager>
+			<FilterFinanceSearch>Поиск</FilterFinanceSearch>
+			<ColumnTitle>Название</ColumnTitle>
+			<ColumnCategory>Категория</ColumnCategory>
+			<ColumnPhone>Телефон</ColumnPhone>
+			<ColumnEmail>E-mail</ColumnEmail>
+			<ColumnContact>Контактное лицо</ColumnContact>
+			<ColumnChildCount>Количество детей</ColumnChildCount>
+			<ColumnStatus>Статус</ColumnStatus>
+		</school_list.html>
+		<school_list_duplicate.html>
+			<ColumnTitle>Название</ColumnTitle>
+			<ColumnManager>Менеджер</ColumnManager>
+			<Ignore>Игнорировать</Ignore>
+		</school_list_duplicate.html>
+		<school_view.html>
+			<Title>Карточка школы</Title>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldPhone>Телефон</FieldPhone>
+			<Call>Позвонить</Call>
+			<CallHistory>История звонков</CallHistory>
+			<FieldEmail>E-mail</FieldEmail>
+			<SendEmail>Отправить письмо</SendEmail>
+			<FieldWebsite>Сайт</FieldWebsite>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldFile>Вложения</FieldFile>
+			<RemindToCall>Напомнить о звонке</RemindToCall>
+			<RemindToCallTaskTitle>Позвонить в школу</RemindToCallTaskTitle>
+			<RemindToCallTaskDescription>Позвонить в школу</RemindToCallTaskDescription>
+			<FieldContactStatus>Статус</FieldContactStatus>
+			<FieldContactPhone>Телефон</FieldContactPhone>
+			<FieldContactEmail>E-mail</FieldContactEmail>
+			<FieldContactPassport>Паспортные данные</FieldContactPassport>
+			<FieldVisit>История обходов</FieldVisit>
+			<FieldVisitColumnDate>Дата</FieldVisitColumnDate>
+			<FieldVisitColumnClass>Класс</FieldVisitColumnClass>
+			<FieldVisitColumnText>Комментарий</FieldVisitColumnText>
+			<FieldVisitClass>Класс</FieldVisitClass>
+			<FieldVisitText>Комментарий</FieldVisitText>
+			<FieldComments>Комментарии менеджера</FieldComments>
+			<FieldCommentText>Комментарий</FieldCommentText>
+
+			<FieldFinances>Финансы</FieldFinances>
+			<TabAddContract>Создать договор</TabAddContract>
+			<TabAddInvoice>Выставить счет</TabAddInvoice>
+			<TabAddPayment>Внести оплату</TabAddPayment>
+			<TabAddPayback>Возврат оплаты</TabAddPayback>
+			<TabAddAct>Акт услуг</TabAddAct>
+			<FieldAddingContract>Создание договора</FieldAddingContract>
+			<FieldAddingInvoice>Создание счета</FieldAddingInvoice>
+			<FieldAddingPayment>Внесение оплаты</FieldAddingPayment>
+			<FieldAddingAct>Создание акта</FieldAddingAct>
+			<ContractContact>Контактное лицо</ContractContact>
+			<ContractSeason>Проект</ContractSeason>
+			<ContractTourPrice>Стоимость путевки</ContractTourPrice>
+			<ContractTourCount>Количество</ContractTourCount>
+			<ContractCoursePrice>Стоимость курсовки</ContractCoursePrice>
+			<ContractCourseCount>Количество</ContractCourseCount>
+			<ContractLastDayForPay>Крайний срок оплаты</ContractLastDayForPay>
+			<ContractAmount>Итоговая стоимость заезда</ContractAmount>
+			<ContractIsNeedStamp>Добавить печать</ContractIsNeedStamp>
+			<InvoiceContract>Договор</InvoiceContract>
+			<InvoiceAmount>Сумма</InvoiceAmount>
+			<PaymentContract>Договор</PaymentContract>
+			<PaymentAmount>Сумма</PaymentAmount>
+			<ActContract>Договор</ActContract>
+			<Bill>Счет</Bill>
+			<Reason>Основание</Reason>
+			<IncomeType>Статья прихода</IncomeType>
+			<OutcomeType>Статья расхода</OutcomeType>
+			<ActContract>Договор</ActContract>
+
+			<ColumnNumber>Номер</ColumnNumber>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnSeason>Проект</ColumnSeason>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ColumnAmount>Сумма</ColumnAmount>
+			<ColumnPaidAmount>Оплата</ColumnPaidAmount>
+			<ColumnUnPaidAmount>Остаток</ColumnUnPaidAmount>
+			<ColumnPaybackAmount>Возврат</ColumnPaybackAmount>
+			<ColumnIsNeedStamp>Печать?</ColumnIsNeedStamp>
+			<ColumnLastDayForPay>Крайний срок</ColumnLastDayForPay>
+			<PrefixContract>Договор №</PrefixContract>
+			<PrefixInvoice>Счет №</PrefixInvoice>
+			<PrefixPayment>Оплата №</PrefixPayment>
+			<PrefixPayback>Возврат №</PrefixPayback>
+			<PrefixAct>Акт выполненных услуг №</PrefixAct>
+		</school_view.html>
+		<school_edit.html>
+			<TitleAdd>Добавление карточки школы</TitleAdd>
+			<TitleEdit>Редактирование карточки школы</TitleEdit>
+			<FieldImage>Фото</FieldImage>
+			<FieldTitle>Название</FieldTitle>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldPhone>Телефон</FieldPhone>
+			<FieldEmail>E-mail</FieldEmail>
+			<FieldWebsite>Сайт</FieldWebsite>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldAddressCity>Город</FieldAddressCity>
+			<FieldAddressStreet>Улица</FieldAddressStreet>
+			<FieldAddressHome>Дом</FieldAddressHome>
+			<FieldAddressFlat>Квартира</FieldAddressFlat>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldMailing>Подписан на рассылку</FieldMailing>
+			<FieldFile>Вложения</FieldFile>
+			<FieldContact>Редактирование карточки контактного лица</FieldContact>
+			<FieldContactLastName>Фамилия</FieldContactLastName>
+			<FieldContactFirstName>Имя</FieldContactFirstName>
+			<FieldContactMiddleName>Отчество</FieldContactMiddleName>
+			<FieldContactStatus>Статус</FieldContactStatus>
+			<FieldContactPhone>Телефон</FieldContactPhone>
+			<FieldContactEmail>E-mail</FieldContactEmail>
+			<FieldContactPassport>Паспортные данные</FieldContactPassport>
+		</school_edit.html>
+		<staff_list.html>
+			<Title>Кадры</Title>
+			<Filter>Поиск по кадрам</Filter>
+			<FilterLastName>Фамилия</FilterLastName>
+			<FilterFirstName>Имя</FilterFirstName>
+			<FilterMiddleName>Отчество</FilterMiddleName>
+			<FilterCategory>Категория</FilterCategory>
+			<FilterGroup>Группа</FilterGroup>
+			<FilterUniversity>ВУЗ</FilterUniversity>
+			<FilterCourse>Курс</FilterCourse>
+			<FilterAge>Возраст</FilterAge>
+			<FilterSeason>Проекты</FilterSeason>
+			<FilterPhone>Телефон</FilterPhone>
+			<FilterEmail>Email</FilterEmail>
+			<FilterStaff>Напарники</FilterStaff>
+			<FilterSearch>Поиск</FilterSearch>
+			<FilterFinance>Оплаты</FilterFinance>
+			<FilterFinanceContractID>№ договора</FilterFinanceContractID>
+			<FilterFinanceInvoiceID>№ счета</FilterFinanceInvoiceID>
+			<FilterFinanceAmount>Сумма</FilterFinanceAmount>
+			<FilterFinanceDateFrom>с</FilterFinanceDateFrom>
+			<FilterFinanceDateTo>по</FilterFinanceDateTo>
+			<FilterFinanceSeason>Проект</FilterFinanceSeason>
+			<FilterFinanceManager>Менеджер</FilterFinanceManager>
+			<FilterFinanceSearch>Поиск</FilterFinanceSearch>
+			<ColumnFIO>ФИО</ColumnFIO>
+			<ColumnCategory>Категория</ColumnCategory>
+			<ColumnGroup>Группа</ColumnGroup>
+			<ColumnAge>Возраст</ColumnAge>
+			<ColumnUniversity>ВУЗ</ColumnUniversity>
+			<ColumnCourse>Курс</ColumnCourse>
+			<ColumnPhone>Телефон</ColumnPhone>
+			<ColumnEmail>E-mail</ColumnEmail>
+		</staff_list.html>
+		<staff_list_duplicate.html>
+			<ColumnFIO>ФИО</ColumnFIO>
+			<ColumnManager>Менеджер</ColumnManager>
+			<Ignore>Игнорировать</Ignore>
+		</staff_list_duplicate.html>
+		<staff_view.html>
+			<Title>Карточка сотрудника</Title>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldGroup>Группа</FieldGroup>
+			<FieldAge>Возраст</FieldAge>
+			<FieldPhone>Телефон</FieldPhone>
+			<Call>Позвонить</Call>
+			<CallHistory>История звонков</CallHistory>
+			<FieldEmail>E-mail</FieldEmail>
+			<SendEmail>Отправить письмо</SendEmail>
+			<FieldUniversity>ВУЗ</FieldUniversity>
+			<FieldCourse>Курс</FieldCourse>
+			<FieldCourseSuffix>курс</FieldCourseSuffix>
+			<FieldSocial>Соц. сети</FieldSocial>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldPartner>Напарники</FieldPartner>
+			<FieldPassport>Паспортные данные</FieldPassport>
+			<FieldFile>Вложения</FieldFile>
+			<FieldComments>Комментарии менеджера</FieldComments>
+			<FieldCommentText>Комментарий</FieldCommentText>
+
+			<FieldFinances>Финансы</FieldFinances>
+			<TabAddContract>Создать договор</TabAddContract>
+			<TabAddInvoice>Выставить счет</TabAddInvoice>
+			<TabAddPayment>Внести зарплату</TabAddPayment>
+			<TabAddPayback>Возврат оплаты</TabAddPayback>
+			<TabAddAct>Акт услуг</TabAddAct>
+			<FieldAddingContract>Создание договора</FieldAddingContract>
+			<FieldAddingInvoice>Создание счета</FieldAddingInvoice>
+			<FieldAddingPayment>Внесение зарплаты</FieldAddingPayment>
+			<FieldAddingAct>Создание акта</FieldAddingAct>
+			<ContractTypeDiscipular>Договор ученический</ContractTypeDiscipular>
+			<ContractTypeEmployment>Договор трудовой</ContractTypeEmployment>
+			<ContractAmount>Сумма</ContractAmount>
+			<InvoiceContract>Договор</InvoiceContract>
+			<InvoiceAmount>Сумма</InvoiceAmount>
+			<PaymentContract>Договор</PaymentContract>
+			<PaymentAmount>Сумма</PaymentAmount>
+			<ActContract>Договор</ActContract>
+			<Bill>Счет</Bill>
+			<Reason>Основание</Reason>
+			<IncomeType>Статья прихода</IncomeType>
+			<OutcomeType>Статья расхода</OutcomeType>
+			<ActContract>Договор</ActContract>
+
+			<ColumnNumber>Номер</ColumnNumber>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnContractType>Тип договора</ColumnContractType>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ColumnAmount>Сумма</ColumnAmount>
+			<ColumnPaidAmount>Зарплата</ColumnPaidAmount>
+			<ColumnUnPaidAmount>Остаток</ColumnUnPaidAmount>
+			<ColumnPaybackAmount>Возврат</ColumnPaybackAmount>
+			<PrefixContract>Договор №</PrefixContract>
+			<PrefixInvoice>Счет №</PrefixInvoice>
+			<PrefixPayment>Зарплата №</PrefixPayment>
+			<PrefixPayback>Оплата №</PrefixPayback>
+			<PrefixAct>Акт выполненных услуг №</PrefixAct>
+		</staff_view.html>
+		<staff_edit.html>
+			<TitleAdd>Добавление карточки сотрудника</TitleAdd>
+			<TitleEdit>Редактирование карточки сотрудника</TitleEdit>
+			<FieldImage>Фото</FieldImage>
+			<FieldLastName>Фамилия</FieldLastName>
+			<FieldFirstName>Имя</FieldFirstName>
+			<FieldMiddleName>Отчество</FieldMiddleName>
+			<FieldNickName>Никнейм</FieldNickName>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldGroup>Группа</FieldGroup>
+			<FieldSex>Пол</FieldSex>
+			<FieldSexM>парень</FieldSexM>
+			<FieldSexF>девушка</FieldSexF>
+			<FieldDOB>Дата рождения</FieldDOB>
+			<FieldPhone>Телефон</FieldPhone>
+			<FieldEmail>E-mail</FieldEmail>
+			<FieldUniversity>ВУЗ</FieldUniversity>
+			<FieldCourse>Курс</FieldCourse>
+			<FieldSocial>Соц. сети</FieldSocial>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldAddressCity>Город</FieldAddressCity>
+			<FieldAddressStreet>Улица</FieldAddressStreet>
+			<FieldAddressHome>Дом</FieldAddressHome>
+			<FieldAddressFlat>Квартира</FieldAddressFlat>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldMailing>Подписан на рассылку</FieldMailing>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldPartners>Напарники</FieldPartners>
+			<FieldPassport>Паспортные данные</FieldPassport>
+			<FieldFile>Вложения</FieldFile>
+			<Password>Пароль</Password>
+			<CheckPassword>Подтверждение пароля</CheckPassword>
+		</staff_edit.html>
+		<old_staff_edit.html>
+			<TitleAdd>Добавление карточки сотрудника</TitleAdd>
+			<TitleEdit>Редактирование карточки сотрудника</TitleEdit>
+			<FieldImage>Фото</FieldImage>
+			<FieldLastName>Фамилия</FieldLastName>
+			<FieldFirstName>Имя</FieldFirstName>
+			<FieldMiddleName>Отчество</FieldMiddleName>
+			<FieldNickName>Никнейм</FieldNickName>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldGroup>Группа</FieldGroup>
+			<FieldSex>Пол</FieldSex>
+			<FieldSexM>парень</FieldSexM>
+			<FieldSexF>девушка</FieldSexF>
+			<FieldDOB>Дата рождения</FieldDOB>
+			<FieldPhone>Телефон</FieldPhone>
+			<FieldEmail>E-mail</FieldEmail>
+			<FieldUniversity>ВУЗ</FieldUniversity>
+			<FieldCourse>Курс</FieldCourse>
+			<FieldSocial>Соц. сети</FieldSocial>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldAddressCity>Город</FieldAddressCity>
+			<FieldAddressStreet>Улица</FieldAddressStreet>
+			<FieldAddressHome>Дом</FieldAddressHome>
+			<FieldAddressFlat>Квартира</FieldAddressFlat>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldMailing>Подписан на рассылку</FieldMailing>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldPartners>Напарники</FieldPartners>
+			<FieldPassport>Паспортные данные</FieldPassport>
+			<FieldFile>Вложения</FieldFile>
+			<Password>Пароль</Password>
+			<CheckPassword>Подтверждение пароля</CheckPassword>
+		</old_staff_edit.html>
+		<legal_list.html>
+			<Title>Юр. лица</Title>
+			<Filter>Поиск организации</Filter>
+			<FilterTitle>Название</FilterTitle>
+			<FilterGroup>Группа</FilterGroup>
+			<FilterCategory>Категория</FilterCategory>
+			<FilterSeason>Проект</FilterSeason>
+			<FilterEmail>Email</FilterEmail>
+			<FilterPhone>Телефон</FilterPhone>
+			<FilterContact>Контактное лицо</FilterContact>
+			<FilterStatus>Статус</FilterStatus>
+			<FilterManager>Менеджер</FilterManager>
+			<FilterSearch>Поиск</FilterSearch>
+			<FilterFinance>Оплаты</FilterFinance>
+			<FilterFinanceContractID>№ договора</FilterFinanceContractID>
+			<FilterFinanceInvoiceID>№ счета</FilterFinanceInvoiceID>
+			<FilterFinanceAmount>Сумма</FilterFinanceAmount>
+			<FilterFinanceDateFrom>с</FilterFinanceDateFrom>
+			<FilterFinanceDateTo>по</FilterFinanceDateTo>
+			<FilterFinanceSeason>Проект</FilterFinanceSeason>
+			<FilterFinanceManager>Менеджер</FilterFinanceManager>
+			<FilterFinanceSearch>Поиск</FilterFinanceSearch>
+			<ColumnTitle>Название</ColumnTitle>
+			<ColumnGroup>Группа</ColumnGroup>
+			<ColumnCategory>Категория</ColumnCategory>
+			<ColumnPhone>Телефон</ColumnPhone>
+			<ColumnContact>Контактное лицо</ColumnContact>
+			<ColumnStatus>Статус</ColumnStatus>
+			<ColumnManager>Менеджер</ColumnManager>
+		</legal_list.html>
+		<legal_list_duplicate.html>
+			<ColumnTitle>Название</ColumnTitle>
+			<ColumnManager>Менеджер</ColumnManager>
+			<Ignore>Игнорировать</Ignore>
+		</legal_list_duplicate.html>
+		<legal_view.html>
+			<Title>Карточка юр. лица</Title>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldPhone>Телефон</FieldPhone>
+			<Call>Позвонить</Call>
+			<CallHistory>История звонков</CallHistory>
+			<FieldEmail>E-mail</FieldEmail>
+			<SendEmail>Отправить письмо</SendEmail>
+			<FieldWebsite>Сайт</FieldWebsite>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldFile>Вложения</FieldFile>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldGroup>Группа</FieldGroup>
+			<FieldRequisites>Реквизиты</FieldRequisites>
+			<FieldContactPost>Должность</FieldContactPost>
+			<FieldContactPhone>Телефон</FieldContactPhone>
+			<FieldContactEmail>E-mail</FieldContactEmail>
+			<FieldContactPassport>Паспортные данные</FieldContactPassport>
+			<FieldComments>Комментарии менеджера</FieldComments>
+			<FieldCommentText>Комментарий</FieldCommentText>
+			<RemindToCall>Напомнить о звонке</RemindToCall>
+			<RemindToCallTaskTitle>Позвонить юр. лицу</RemindToCallTaskTitle>
+			<RemindToCallTaskDescription>Позвонить юр. лицу</RemindToCallTaskDescription>
+
+			<FieldFinances>Финансы</FieldFinances>
+			<TabAddContract>Создать договор</TabAddContract>
+			<TabAddInvoice>Выставить счет</TabAddInvoice>
+			<TabAddPayment>Внести оплату</TabAddPayment>
+			<TabAddAct>Акт услуг</TabAddAct>
+			<TabAddCommission>Внести комиссию</TabAddCommission>
+			<AddCommission>Задать комиссию для данного юр.лица, %</AddCommission>
+			<Commission>Комиссия, %</Commission>
+			<TabAddPayback>Возврат оплаты</TabAddPayback>
+			<FieldAddingContract>Создание договора</FieldAddingContract>
+			<FieldAddingInvoice>Создание счета</FieldAddingInvoice>
+			<FieldAddingPayment>Внесение оплаты</FieldAddingPayment>
+			<FieldAddingAct>Создание акта</FieldAddingAct>
+			<ContractContact>Контактное лицо</ContractContact>
+			<ContractSeason>Проект</ContractSeason>
+			<ContractTourPrice>Стоимость путевки</ContractTourPrice>
+			<ContractTourCount>Количество</ContractTourCount>
+			<ContractCoursePrice>Стоимость курсовки</ContractCoursePrice>
+			<ContractCourseCount>Количество</ContractCourseCount>
+			<ContractLastDayForPay>Крайний срок оплаты</ContractLastDayForPay>
+			<ContractAmount>Итоговая стоимость заезда</ContractAmount>
+			<ContractIsNeedStamp>Добавить печать</ContractIsNeedStamp>
+			<InvoiceContract>Договор</InvoiceContract>
+			<InvoiceAmount>Сумма</InvoiceAmount>
+			<PaymentContract>Договор</PaymentContract>
+			<PaymentAmount>Сумма</PaymentAmount>
+			<ActContract>Договор</ActContract>
+			<Bill>Счет</Bill>
+			<Reason>Основание</Reason>
+			<IncomeType>Статья прихода</IncomeType>
+			<OutcomeType>Статья расхода</OutcomeType>
+			<ActContract>Договор</ActContract>
+
+			<ColumnNumber>Номер</ColumnNumber>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnSeason>Проект</ColumnSeason>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ColumnAmount>Сумма</ColumnAmount>
+			<ColumnPaidAmount>Оплата</ColumnPaidAmount>
+			<ColumnUnPaidAmount>Остаток</ColumnUnPaidAmount>
+			<ColumnPaybackAmount>Возврат</ColumnPaybackAmount>
+			<ColumnIsNeedStamp>Печать?</ColumnIsNeedStamp>
+			<ColumnLastDayForPay>Крайний срок</ColumnLastDayForPay>
+			<PrefixContract>Договор №</PrefixContract>
+			<PrefixInvoice>Счет №</PrefixInvoice>
+			<PrefixPayment>Оплата №</PrefixPayment>
+			<PrefixPayback>Возврат №</PrefixPayback>
+			<PrefixAct>Акт выполненных услуг №</PrefixAct>
+		</legal_view.html>
+		<legal_edit.html>
+			<TitleAdd>Добавление карточки юр.лица</TitleAdd>
+			<TitleEdit>Редактирование карточки юр.лица</TitleEdit>
+			<FieldImage>Фото</FieldImage>
+			<FieldTitle>Организация</FieldTitle>
+			<FieldCategory>Категория</FieldCategory>
+			<FieldGroup>Группа</FieldGroup>
+			<FieldEmail>E-mail</FieldEmail>
+			<FieldPhone>Телефон</FieldPhone>
+			<FieldWebsite>Сайт</FieldWebsite>
+			<FieldSeason>Проекты</FieldSeason>
+			<FieldRequisites>Реквизиты</FieldRequisites>
+			<FieldAddress>Адрес</FieldAddress>
+			<FieldAddressCity>Город</FieldAddressCity>
+			<FieldAddressStreet>Улица</FieldAddressStreet>
+			<FieldAddressHome>Дом</FieldAddressHome>
+			<FieldAddressFlat>Квартира</FieldAddressFlat>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldComment>Характеристика</FieldComment>
+			<FieldMailing>Подписан на рассылку</FieldMailing>
+			<FieldFile>Вложения</FieldFile>
+			<FieldContact>Редактирование контактных лиц</FieldContact>
+			<FieldContactLastName>Фамилия</FieldContactLastName>
+			<FieldContactFirstName>Имя</FieldContactFirstName>
+			<FieldContactMiddleName>Отчество</FieldContactMiddleName>
+			<FieldContactPost>Должность</FieldContactPost>
+			<FieldContactPhone>Телефон</FieldContactPhone>
+			<FieldContactEmail>E-mail</FieldContactEmail>
+			<FieldContactPassport>Паспортные данные</FieldContactPassport>
+			<FieldINN>ИНН</FieldINN>
+			<FieldKPP>КПП</FieldKPP>
+			<FieldBankName>Наименование банка</FieldBankName>
+			<FieldPC>Р/С</FieldPC>
+			<FieldKC>К/С</FieldKC>
+			<FieldBIK>БИК</FieldBIK>
+			<FieldLegalPostIndex>Индекс</FieldLegalPostIndex>
+			<FieldLegalCountry>Страна</FieldLegalCountry>
+			<FieldLegalCity>Город</FieldLegalCity>
+			<FieldLegalStreet>Улица</FieldLegalStreet>
+			<FieldLegalHome>Дом</FieldLegalHome>
+			<FieldLegalBuilding>Строение</FieldLegalBuilding>
+			<FieldLegalOffice>Офис</FieldLegalOffice>
+			<FieldRequisites>Реквизиты</FieldRequisites>
+			<FieldLegalAddress>Юр.адрес</FieldLegalAddress>
+		</legal_edit.html>
+		<task_list.html>
+			<Title>Задачи</Title>
+			<ColumnTitle>Название задачи</ColumnTitle>
+			<ColumnStatus>Статус</ColumnStatus>
+			<ColumnPriority>Приоритет</ColumnPriority>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnExecutionDate>Дата выполнения</ColumnExecutionDate>
+			<ColumnCreatedManager>Постановщик</ColumnCreatedManager>
+			<ColumnExecutorManager>Ответственный</ColumnExecutorManager>
+			<Filter>Поиск по задачам</Filter>
+			<FilterTitle>Название</FilterTitle>
+			<FilterDateFrom>Дата с</FilterDateFrom>
+			<FilterDateTo>Дата по</FilterDateTo>
+			<FilterCreatedManager>Постановщик</FilterCreatedManager>
+			<FilterExecutorManager>Ответственный</FilterExecutorManager>
+			<FilterPriority>Приоритет</FilterPriority>
+			<FilterSearch>Поиск</FilterSearch>
+			<StatusOpened>Не выполнена</StatusOpened>
+			<StatusClosed>Выполнена</StatusClosed>
+			<PriorityLow>Низкий</PriorityLow>
+			<PriorityNormal>Средний</PriorityNormal>
+			<PriorityHigh>Высокий</PriorityHigh>
+		</task_list.html>
+		<task_export.html>
+			<ColumnTitle>Название задачи</ColumnTitle>
+			<ColumnDescription>Текст задачи</ColumnDescription>
+			<ColumnStatus>Статус</ColumnStatus>
+			<ColumnPriority>Приоритет</ColumnPriority>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnExecutionDate>Дата выполнения</ColumnExecutionDate>
+			<ColumnCreatedManager>Постановщик</ColumnCreatedManager>
+			<ColumnExecutorManager>Ответственный</ColumnExecutorManager>
+			<StatusOpened>Не выполнена</StatusOpened>
+			<StatusClosed>Выполнена</StatusClosed>
+			<PriorityLow>Низкий</PriorityLow>
+			<PriorityNormal>Средний</PriorityNormal>
+			<PriorityHigh>Высокий</PriorityHigh>
+		</task_export.html>
+		<task_view.html>
+			<Title>Карточка задачи</Title>
+			<FieldCreatedManager>Постановщик</FieldCreatedManager>
+			<FieldCreated>Создана</FieldCreated>
+			<FieldExecutionDate>Дата выполнения</FieldExecutionDate>
+			<FieldExecutorManager>Ответственный</FieldExecutorManager>
+			<FieldPriority>Приоритет</FieldPriority>
+			<FieldFile>Вложения</FieldFile>
+			<FieldComments>Комментарии менеджера</FieldComments>
+			<PriorityLow>Низкий</PriorityLow>
+			<PriorityNormal>Средний</PriorityNormal>
+			<PriorityHigh>Высокий</PriorityHigh>
+			<Status>Статус</Status>
+			<StatusOpened>Не выполнена</StatusOpened>
+			<StatusClosed>Выполнена</StatusClosed>
+			<Subscribers>Подписчики задачи</Subscribers>
+		</task_view.html>
+		<task_edit.html>
+			<TitleAdd>Добавление карточки задачи</TitleAdd>
+			<TitleEdit>Редактирование карточки задачи</TitleEdit>
+			<FieldTitle>Название</FieldTitle>
+			<FieldExecutorManager>Ответственный</FieldExecutorManager>
+			<FieldExecutionDateFrom>Дата выполнения с</FieldExecutionDateFrom>
+			<FieldExecutionDateTo>Дата выполнения по</FieldExecutionDateTo>
+			<FieldPriority>Приоритет</FieldPriority>
+			<FieldFile>Вложения</FieldFile>
+			<FieldDescription>Текст задачи</FieldDescription>
+			<PriorityLow>Низкий</PriorityLow>
+			<PriorityNormal>Средний</PriorityNormal>
+			<PriorityHigh>Высокий</PriorityHigh>
+		</task_edit.html>
+		<mailing_list.html>
+			<Title>История рассылок</Title>
+			<Mailing>Email-рассылка</Mailing>
+			<ColumnSubject>Тема письма</ColumnSubject>
+			<ColumnCountReciever>Количество</ColumnCountReciever>
+			<ColumnReciever>Получатель</ColumnReciever>
+			<ColumnSender>Отправитель</ColumnSender>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnUser>Менеджер</ColumnUser>
+			<Filter>Поиск рассылки</Filter>
+			<FilterEmail>Email</FilterEmail>
+			<FilterChild>Дети</FilterChild>
+			<FilterSchool>Школы</FilterSchool>
+			<FilterLegal>Юр. лица</FilterLegal>
+			<FilterStaff>Кадры</FilterStaff>
+			<FilterSearch>Поиск рассылок</FilterSearch>
+			<ChildAge>Возраст</ChildAge>
+			<ChildClass>Класс</ChildClass>
+			<ChildStatus>Статус</ChildStatus>
+			<ChildSeason>Проекты</ChildSeason>
+			<SchoolCategory>Категория</SchoolCategory>
+			<LegalCategory>Категория</LegalCategory>
+			<LegalGroup>Группа</LegalGroup>
+			<StaffCategory>Категория</StaffCategory>
+			<Target>Получатель</Target>
+			<Sender>Отправитель</Sender>
+			<SenderManagement>Управление отправителями</SenderManagement>
+			<Subject>Тема письма</Subject>
+			<Content>Содержание письма</Content>
+			<AddFinanceAttachment>Прикрепить финансовый документ</AddFinanceAttachment>
+			<AddAttachment>Прикрепить файл</AddAttachment>
+			<Send>Отправить</Send>
+		</mailing_list.html>
+		<mailing_finance_popup.html>
+			<ColumnNumber>Номер</ColumnNumber>
+			<ColumnCreated>Дата</ColumnCreated>
+			<ColumnSeason>Проекты</ColumnSeason>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ColumnAmount>Сумма</ColumnAmount>
+			<ColumnPaidAmount>Оплата</ColumnPaidAmount>
+			<ColumnUnPaidAmount>Остаток</ColumnUnPaidAmount>
+			<ColumnPaybackAmount>Возврат</ColumnPaybackAmount>
+			<PrefixContract>Договор №</PrefixContract>
+			<PrefixInvoice>Счет №</PrefixInvoice>
+			<PrefixPayment>Оплата №</PrefixPayment>
+			<PrefixPayback>Возврат №</PrefixPayback>
+			<PrefixAct>Акт выполненных услуг №</PrefixAct>
+		</mailing_finance_popup.html>
+		<mailing_view.html>
+			<Title>Страница рассылки</Title>
+			<FieldSender>От кого</FieldSender>
+			<FieldReciever>Кому</FieldReciever>
+			<ShowAllRecievers>Показать весь список</ShowAllRecievers>
+			<AttachmentList>Прикрепленные документы</AttachmentList>
+			<Report>Отчет об отправке</Report>
+			<Sent>Отправлено</Sent>
+			<Of>из</Of>
+			<DispatchError>Адресаты, не получившие письмо</DispatchError>
+			<ColumnName>ФИО/Название</ColumnName>
+			<ColumnPhone>Телефон</ColumnPhone>
+			<ColumnUser>Менеджер</ColumnUser>
+			<ColumnEmail>Email</ColumnEmail>
+			<ChangePhone>Изменить Email</ChangePhone>
+			<ColumnErrorInfo>Информация об ошибке</ColumnErrorInfo>
+
+			<ChangeEmail>Изменить Email</ChangeEmail>
+			<Email>Email</Email>
+			<Resend>Отправить повторно</Resend>
+		</mailing_view.html>
+		<mailing_email.html>
+			<Unsubscribe>Отписаться от рассылки</Unsubscribe>
+		</mailing_email.html>
+		<sender_list.html>
+			<Title>Список отправителей</Title>
+			<ColumnEmail>E-mail</ColumnEmail>
+		</sender_list.html>
+		<sender_edit.html>
+			<TitleAdd>Добавление отправителя</TitleAdd>
+			<TitleEdit>Редактирование отправителя</TitleEdit>
+			<FieldEmail>E-mail</FieldEmail>
+		</sender_edit.html>
+		<storage_list.html>
+			<Title>Хранилище</Title>
+			<ColumnTitle>Название документа</ColumnTitle>
+			<ColumnManager>Загрузил</ColumnManager>
+			<Filter>Поиск документа</Filter>
+			<FilterType>Тип документа</FilterType>
+			<FilterTypeTxt>Текстовый документ(.txt)</FilterTypeTxt>
+			<FilterTypeJpg>Картинка (.jpg)</FilterTypeJpg>
+			<FilterTypePng>Картинка (.png)</FilterTypePng>
+			<FilterTypePdf>PDF</FilterTypePdf>
+			<FilterTypeDoc>MS Word(.doc)</FilterTypeDoc>
+			<FilterTypeZip>Архив(.zip)</FilterTypeZip>
+			<FilterTitle>Название документа</FilterTitle>
+			<FilterSearch>Поиск</FilterSearch>
+		</storage_list.html>
+		<dashboard_view.html>
+			<Title>Главная страница</Title>
+			<MyEventList>Мои события на:</MyEventList>
+			<DOBList>Сегодня День рождения отмечают:</DOBList>
+			<ManagerStat>Воронка продаж</ManagerStat>
+			<ManagerStatName>Менеджер</ManagerStatName>
+			<ManagerStatCallCount>Звонков</ManagerStatCallCount>
+			<ManagerStatReservedCount>Броней</ManagerStatReservedCount>
+			<ManagerStatBoughtCount>Продаж</ManagerStatBoughtCount>
+			<ManagerStatOutgoingCallCount>Исходящих</ManagerStatOutgoingCallCount>
+			<ManagerStatIncomingCallCount>Входящих</ManagerStatIncomingCallCount>
+			<FutureSeasonStat>Будущие проекты</FutureSeasonStat>
+			<SeasonStatTitle>Название проекта</SeasonStatTitle>
+			<SeasonStatPreOrder>Предоплата</SeasonStatPreOrder>
+			<SeasonStatReservedCount>Броней</SeasonStatReservedCount>
+			<SeasonStatBoughtCount>Продаж</SeasonStatBoughtCount>
+			<SeasonStatFreeCount>Свободно</SeasonStatFreeCount>
+			<FilterDateFrom>От</FilterDateFrom>
+			<FilterDateTo>До</FilterDateTo>
+			<FilterSearch>Сформировать</FilterSearch>
+			<FilterSort>Сортировать</FilterSort>
+			<SortSeasonDate>Проект</SortSeasonDate>
+			<SortSales>Продажи</SortSales>
+		</dashboard_view.html>
+		<event_edit_popup.html>
+			<TitleAdd>Добавить событие</TitleAdd>
+			<TitleEdit>Редактировать событие</TitleEdit>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldTitle>Название</FieldTitle>
+			<FieldEventDateFrom>Время начала</FieldEventDateFrom>
+			<FieldEventDateTo>Окончание</FieldEventDateTo>
+			<FieldEventType>Тип события</FieldEventType>
+			<FieldEventTypePrivate>Личное</FieldEventTypePrivate>
+			<FieldEventTypePublic>Публичное</FieldEventTypePublic>
+		</event_edit_popup.html>
+		<report_list.html>
+			<Title>Отчеты</Title>
+			<ColumnTitle>Название отчета</ColumnTitle>
+		</report_list.html>
+		<report_view.html>
+			<Title>Отчеты</Title>
+			<Print>Печать</Print>
+			<Export>Экспорт</Export>
+			<DateFrom>Период с</DateFrom>
+			<DateTo>Период по</DateTo>
+			<ChooseManager>Все менеджеры</ChooseManager>
+			<ChooseSeason>Все проекты</ChooseSeason>
+			<ParamSchool>По школам</ParamSchool>
+			<ParamStatus>По статусам</ParamStatus>
+			<ParamCategory>По категориям</ParamCategory>
+			<ParamManager>По менеджерам</ParamManager>
+			<ParamSquad>По отрядам</ParamSquad>
+			<ParamAge>По возрасту</ParamAge>
+			<Generate>Сформировать</Generate>
+			<NotGenerated>Отчет не сформирован. Нажмите кнопку «Сформировать» для получения отчета</NotGenerated>
+
+			<Manager>Менеджер</Manager>
+			<ChildName>ФИО ребенка</ChildName>
+			<ChildAge>Возраст, лет</ChildAge>
+			<Contract>Договор</Contract>
+			<Season>Проект</Season>
+			<Amount>Общая сумма</Amount>
+			<PaidAmount>Сумма предоплаты</PaidAmount>
+			<UnpaidAmount>Сумма дебиторской задолженности</UnpaidAmount>
+			<ChildCount>Кол-во детей</ChildCount>
+			<BoughtCount>Продано</BoughtCount>
+			<ReservedCount>Забронировано</ReservedCount>
+			<FreeCount>Свободно</FreeCount>
+			<Total>ИТОГО</Total>
+		</report_view.html>
+		<report_view_result.html>
+			<Manager>Менеджер</Manager>
+			<ChildName>ФИО ребенка</ChildName>
+			<ChildAge>Возраст, лет</ChildAge>
+			<Contract>Договор</Contract>
+			<Season>Проект</Season>
+			<Amount>Общая сумма</Amount>
+			<PaidAmount>Сумма предоплаты</PaidAmount>
+			<UnpaidAmount>Сумма дебиторской задолженности</UnpaidAmount>
+			<ChildCount>Кол-во детей</ChildCount>
+			<BoughtCount>Продано</BoughtCount>
+			<ReservedCount>Забронировано</ReservedCount>
+			<FreeCount>Свободно</FreeCount>
+			<Total>ИТОГО</Total>
+		</report_view_result.html>
+		<directory_list.html>
+			<Title>Справочники</Title>
+			<Billings>Счета</Billings>
+		</directory_list.html>
+		<directory_list.php>
+			<TitleEdit>Справочники</TitleEdit>
+			<TitleAdd>Справочники</TitleAdd>
+			<Billings>Счета</Billings>
+			<ArticleArrival>Статьи прихода</ArticleArrival>
+			<ArticleConsumption>Статьи расхода</ArticleConsumption>
+			<SourcesOfChildren>Источники</SourcesOfChildren>
+		</directory_list.php>
+		<bookkeeping_list.html>
+			<Title>Бухгалтерия</Title>
+			<Filter>Поиск</Filter>
+			<FilterDateFrom>Период с</FilterDateFrom>
+			<FilterDateTo>Период по</FilterDateTo>
+			<FilterCheck>Счет</FilterCheck>
+			<FilterArticleType>Приход/расход</FilterArticleType>
+			<FilterArticleIn>Статьи прихода</FilterArticleIn>
+			<FilterArticleOut>Статьи расхода</FilterArticleOut>
+			<FilterDocumentNumber>№ документа</FilterDocumentNumber>
+			<FilterLastname>Фамилия</FilterLastname>
+			<FilterContractor>Контрагент</FilterContractor>
+			<FilterManagerID>Менеджер</FilterManagerID>
+			<FilterAmount>Сумма</FilterAmount>
+			<FilterSearch>Поиск</FilterSearch>
+			<ColumnDate>Дата</ColumnDate>
+			<ColumnDocumentNumber>№ Документа</ColumnDocumentNumber>
+			<ColumnCheck>Счет</ColumnCheck>
+			<ColumnBase>Основание</ColumnBase>
+			<ColumnDate>Дата</ColumnDate>
+			<ColumnArticleIn>Статья прихода</ColumnArticleIn>
+			<ColumnAmountIn>Приход</ColumnAmountIn>
+			<ColumnArticleOut>Статья расхода</ColumnArticleOut>
+			<ColumnAmountOut>Расход</ColumnAmountOut>
+			<ColumnFio>ФИО/Контрагент</ColumnFio>
+			<ColumnManager>Менеджер</ColumnManager>
+			<ArticleIn>Приход</ArticleIn>
+			<ArticleOut>Расход</ArticleOut>
+			<CreateArticleIn>Создать приход</CreateArticleIn>
+			<CreateArticleOut>Создать расход</CreateArticleOut>
+		</bookkeeping_list.html>
+		<bookkeeping_edit.html>
+			<TitleIncomeAdd>Добавление прихода</TitleIncomeAdd>
+			<TitleOutcomeAdd>Добавление расхода</TitleOutcomeAdd>
+			<TitleIncomeEdit>Редактирование прихода</TitleIncomeEdit>
+			<TitleOutcomeEdit>Редактирование прихода</TitleOutcomeEdit>
+			<FieldDate>Дата</FieldDate>
+			<FieldDocumentNumber>№ Документа</FieldDocumentNumber>
+			<FieldBill>Счет</FieldBill>
+			<FieldBase>Основание</FieldBase>
+			<FieldDate>Дата</FieldDate>
+			<FieldArticleIncome>Статья прихода</FieldArticleIncome>
+			<FieldAmount>Сумма</FieldAmount>
+			<FieldArticleOutcome>Статья расхода</FieldArticleOutcome>
+			<FieldContractor>Контрагент</FieldContractor>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldLastname>Фамилия</FieldLastname>
+			<FieldFirstname>Имя</FieldFirstname>
+			<FieldSecondname>Отчество</FieldSecondname>
+			<FieldComment>Комментарий</FieldComment>
+			<FieldArticleIn>1</FieldArticleIn>
+			<FieldArticleOut>2</FieldArticleOut>
+		</bookkeeping_edit.html>
+		<bookkeepingout_edit.html>
+			<TitleIncomeAdd>Добавление прихода</TitleIncomeAdd>
+			<TitleOutcomeAdd>Добавление расхода</TitleOutcomeAdd>
+			<TitleIncomeEdit>Редактирование прихода</TitleIncomeEdit>
+			<TitleOutcomeEdit>Редактирование прихода</TitleOutcomeEdit>
+			<FieldDate>Дата</FieldDate>
+			<FieldDocumentNumber>№ Документа</FieldDocumentNumber>
+			<FieldBill>Счет</FieldBill>
+			<FieldBase>Основание</FieldBase>
+			<FieldDate>Дата</FieldDate>
+			<FieldArticleIncome>Статья прихода</FieldArticleIncome>
+			<FieldAmount>Сумма</FieldAmount>
+			<FieldArticleOutcome>Статья расхода</FieldArticleOutcome>
+			<FieldContractor>Контрагент</FieldContractor>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldLastname>Фамилия</FieldLastname>
+			<FieldFirstname>Имя</FieldFirstname>
+			<FieldSecondname>Отчество</FieldSecondname>
+			<FieldComment>Комментарий</FieldComment>
+			<FieldArticleIn>1</FieldArticleIn>
+			<FieldArticleOut>2</FieldArticleOut>
+		</bookkeepingout_edit.html>
+		<bookkeeping_export.html>
+			<ColumnDate>Дата</ColumnDate>
+			<DocumentNumber>№ Документа</DocumentNumber>
+			<Check>Счет</Check>
+			<Base>Основание</Base>
+			<Date>Дата</Date>
+			<ArticleIn>Статья прихода</ArticleIn>
+			<AmountIn>Приход</AmountIn>
+			<ArticleOut>Статья расхода</ArticleOut>
+			<AmountOut>Расход</AmountOut>
+			<FIO>ФИО/Контрагент</FIO>
+			<Manager>Менеджер</Manager>
+		</bookkeeping_export.html>
+		<bookkeeping_view.html>
+			<TitleIncome>Просмотр прихода</TitleIncome>
+			<TitleOutcome>Просмотр расхода</TitleOutcome>
+			<TitleEdit>Редактирование карточки ребенка</TitleEdit>
+			<FieldDate>Дата</FieldDate>
+			<FieldDocumentNumber>№ Документа</FieldDocumentNumber>
+			<FieldBill>Счет</FieldBill>
+			<FieldBase>Основание</FieldBase>
+			<FieldDate>Дата</FieldDate>
+			<FieldArticleIncome>Статья прихода</FieldArticleIncome>
+			<FieldAmount>Сумма</FieldAmount>
+			<FieldArticleOutcome>Статья расхода</FieldArticleOutcome>
+			<FieldContractor>Контрагент</FieldContractor>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldLastname>Фамилия</FieldLastname>
+			<FieldFirstname>Имя</FieldFirstname>
+			<FieldSecondname>Отчество</FieldSecondname>
+			<FieldComment>Комментарий</FieldComment>
+		</bookkeeping_view.html>
+		<bookkeeping_print.html>
+			<FieldDate>Дата</FieldDate>
+			<FieldDocumentNumber>№ Документа</FieldDocumentNumber>
+			<FieldBill>Счет</FieldBill>
+			<FieldBase>Основание</FieldBase>
+			<FieldDate>Дата</FieldDate>
+			<FieldArticleIncome>Статья прихода</FieldArticleIncome>
+			<FieldAmount>Сумма</FieldAmount>
+			<FieldArticleOutcome>Статья расхода</FieldArticleOutcome>
+			<FieldContractor>Контрагент</FieldContractor>
+			<FieldManager>Менеджер</FieldManager>
+			<FieldLastname>Фамилия</FieldLastname>
+			<FieldFirstname>Имя</FieldFirstname>
+			<FieldSecondname>Отчество</FieldSecondname>
+			<FieldComment>Комментарий</FieldComment>
+			<ColumnDate>Дата</ColumnDate>
+			<ColumnDocumentNumber>№ Документа</ColumnDocumentNumber>
+			<ColumnCheck>Счет</ColumnCheck>
+			<ColumnBase>Основание</ColumnBase>
+			<ColumnDate>Дата</ColumnDate>
+			<ColumnArticleIn>Статья прихода</ColumnArticleIn>
+			<ColumnAmountIn>Приход</ColumnAmountIn>
+			<ColumnArticleOut>Статья расхода</ColumnArticleOut>
+			<ColumnAmountOut>Расход</ColumnAmountOut>
+			<ColumnFio>ФИО/Контрагент</ColumnFio>
+			<ColumnManager>Менеджер</ColumnManager>
+		</bookkeeping_print.html>
+	</public>
+</Root>

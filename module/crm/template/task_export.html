@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class=" ">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th><TMPL_VAR NAME='LNG_ColumnTitle'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnStatus'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnPriority'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnCreated'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnExecutionDate'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnCreatedManager'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnExecutorManager'></th>
+				<th><TMPL_VAR NAME='LNG_ColumnDescription'></th>
+			</tr>
+			<TMPL_LOOP NAME='ItemList'>
+				<tr>
+					<td><TMPL_VAR NAME='Title'></td>
+					<td><TMPL_IF NAME='Status' VALUE='opened'><TMPL_VAR NAME='LNG_StatusOpened'><TMPL_ELSEIF NAME='Status' VALUE='closed'><TMPL_VAR NAME='LNG_StatusClosed'></TMPL_IF></td>
+					<td>
+						<TMPL_IF NAME='Priority' VALUE='low'>
+							<TMPL_VAR NAME='LNG_PriorityLow'>
+						<TMPL_ELSEIF NAME='Priority' VALUE='normal'>
+							<TMPL_VAR NAME='LNG_PriorityNormal'>
+						<TMPL_ELSEIF NAME='Priority' VALUE='high'>
+							<TMPL_VAR NAME='LNG_PriorityHigh'>
+						</TMPL_IF>
+					</td>
+					<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+					<td><TMPL_VAR NAME='ExecutionDateFrom' FORMAT='date'> - <TMPL_VAR NAME='ExecutionDateTo' FORMAT='date'></td>
+					<td><TMPL_VAR NAME='CreatedManagerTitle'></td>
+					<td><TMPL_VAR NAME='ExecutorManagerTitle'></td>
+					<td><TMPL_VAR NAME='Description'></td>
+				</tr>
+			</TMPL_LOOP>	
+		</table>
+	</body>
+</html>

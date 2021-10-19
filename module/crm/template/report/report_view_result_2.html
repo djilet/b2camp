@@ -1,0 +1,46 @@
+
+	<thead>
+		<tr class="info">
+			<th><TMPL_VAR NAME='LNG_ChildName'></th>
+			<th><TMPL_VAR NAME='LNG_ChildAge'></th>
+			<th><TMPL_VAR NAME='LNG_Contract'></th>
+			<th><TMPL_VAR NAME='LNG_Season'></th>
+			<th><TMPL_VAR NAME='LNG_Amount'></th>
+			<th><TMPL_VAR NAME='LNG_PaidAmount'></th>
+			<th><TMPL_VAR NAME='LNG_UnpaidAmount'></th>
+		</tr>
+	</thead>
+	<tbody>
+		<TMPL_LOOP NAME='ResultList'>
+			<TMPL_UNLESS NAME='__LAST__'>
+				<tr>
+					<td>
+						<a href="<TMPL_VAR NAME='URL_PREFIX'>module.php?load=crm&entity=child&&EntityViewID=<TMPL_VAR NAME='ChildID'>">
+							<TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'>
+						</a>
+					</td>
+					<td><TMPL_VAR NAME='Age'></td>
+					<td><TMPL_VAR NAME='LNG_Contract'> №<TMPL_VAR NAME='ContractID'></td>
+					<td><TMPL_VAR NAME='SeasonTitle'></td>
+					<td><TMPL_VAR NAME='Amount'></td>
+					<td><TMPL_VAR NAME='PaidAmount'></td>
+					<td><TMPL_VAR NAME='UnpaidAmount'></td>
+				</tr>
+			</TMPL_UNLESS>
+		</TMPL_LOOP>
+	</tbody>
+	<tfoot>
+		<TMPL_LOOP NAME='ResultList'>
+			<TMPL_IF NAME='__LAST__'>
+				<tr class="info">
+					<td><TMPL_VAR NAME='LNG_Total'></td>
+					<td></td>
+					<td><TMPL_VAR NAME='ContractCount'></td>
+					<td></td>
+					<td><TMPL_VAR NAME='Amount'></td>
+					<td><TMPL_VAR NAME='PaidAmount'></td>
+					<td><TMPL_VAR NAME='UnpaidAmount'></td>
+				</tr>
+			</TMPL_IF>
+		</TMPL_LOOP>
+	</tfoot>

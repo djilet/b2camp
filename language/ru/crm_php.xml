@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<module-title>CRM</module-title>
+	<entity-is-removed>Объект удален из базы данных</entity-is-removed>
+	<entity-are-removed>Объекты удалены из базы данных</entity-are-removed>
+	<entity-saved>Основной объект успешно сохранен</entity-saved>
+	
+	<entity-is-canceled>Объект отмечен статусом "Отменен"</entity-is-canceled>
+	<entity-are-canceled>Объекты отмечены статусом "Отменен"</entity-are-canceled>
+	
+	<validation-error-empty>Заполните поле</validation-error-empty>
+	<validation-error-select>Выберите значение</validation-error-select>
+	<validation-error-incorrect>Некорректное значение поля</validation-error-incorrect>
+	
+	<validation-entity-child>ребёнка</validation-entity-child>
+	<validation-entity-phone>телефона</validation-entity-phone>
+	<validation-entity-parent>родителя</validation-entity-parent>
+	<validation-entity-season>проекта</validation-entity-season>
+	<validation-entity-school>школы</validation-entity-school>
+	<validation-entity-contact>контактного лица</validation-entity-contact>
+	<validation-entity-staff>сотрудника</validation-entity-staff>
+	<validation-entity-legal>юр. лица</validation-entity-legal>
+	<validation-entity-task>задачи</validation-entity-task>
+	<validation-entity-sender>отправителя</validation-entity-sender>
+	<validation-entity-event>события</validation-entity-event>
+	<validation-entity-bookkeeping>бухгалтерии</validation-entity-bookkeeping>
+	<validation-entity-bookkeepingout>бухгалтерии</validation-entity-bookkeepingout> 
+	<validation-entity-call>звонка</validation-entity-call>
+	
+	<validation-field-LastName>Фамилия</validation-field-LastName>
+	<validation-field-FirstName>Имя</validation-field-FirstName>
+	<validation-field-Category>Категория</validation-field-Category>
+	<validation-field-DOB>Дата рождения</validation-field-DOB>
+	<validation-field-Sex>Пол</validation-field-Sex>
+	<validation-field-Phone>Телефон</validation-field-Phone>
+	<validation-field-PhoneCode>Код</validation-field-PhoneCode>
+	<validation-field-PhoneNumber>Номер</validation-field-PhoneNumber>
+	<validation-field-Email>E-mail</validation-field-Email>
+	<validation-field-School>Школа</validation-field-School>
+	<validation-field-Class>Класс</validation-field-Class>
+	<validation-field-Comment>Характеристика</validation-field-Comment>
+	<validation-field-Base>Основание</validation-field-Base>
+	<validation-field-ParentStatus>Статус</validation-field-ParentStatus>
+	<validation-field-Work>Место работы</validation-field-Work>
+	<validation-field-Title>Название</validation-field-Title>
+	<validation-field-DateFrom>Дата начала</validation-field-DateFrom>
+	<validation-field-DateTo>Дата окончания</validation-field-DateTo>
+	<validation-field-Staff>Вожатые</validation-field-Staff>
+	<validation-field-ContactStatus>Статус</validation-field-ContactStatus>
+	<validation-field-Group>Группа</validation-field-Group>
+	<validation-field-Priority>Приоритет</validation-field-Priority>
+	<validation-field-ExecutorManagerID>Ответственный</validation-field-ExecutorManagerID>
+	<validation-field-Description>Текст</validation-field-Description>
+	<validation-field-EventDateFrom>Время начала</validation-field-EventDateFrom>
+	<validation-field-EventDateTo>Окончание</validation-field-EventDateTo>
+	<validation-field-PlaceCount>Количество путевок</validation-field-PlaceCount>
+	<validation-field-Check>Счет</validation-field-Check>
+	<validation-field-ArticleID>Статья</validation-field-ArticleID>
+	<validation-field-Manager>Менеджер</validation-field-Manager>
+	<validation-field-Password>Пароль</validation-field-Password>
+	<validation-field-CheckPassword>Подтверждение пароля</validation-field-CheckPassword>
+	<validation-field-LinkedEntityID>ID сущности</validation-field-LinkedEntityID>
+	<validation-field-LinkedEntity>Сущность</validation-field-LinkedEntity>
+	<validation-field-UserID>Пользователь</validation-field-UserID>
+	<validation-field-CallKey>Ключ звонка</validation-field-CallKey>
+	
+	<validation-description-Class>Значение от 1 до 11</validation-description-Class>
+	
+	<mailing-reciever-list-empty>По заданным параметрам не найдено ни одного получателя</mailing-reciever-list-empty>
+	<mailing-sender-required>Укажите отправителя</mailing-sender-required>
+	<mailing-subject-required>Укажите тему письма</mailing-subject-required>
+	<mailing-content-required>Укажите содержание письма</mailing-content-required>
+	<mailing-email-incorrect>Указан некорректный Email</mailing-email-incorrect>
+	<mailing-email-updated>Email сохранен</mailing-email-updated>
+	<mailing-resend-dispatch-required>Не выбран ни один адресат</mailing-resend-dispatch-required>
+	<mailing-resend-result>Из выбранных адресатов получили письмо: %SuccessCount%</mailing-resend-result>
+	
+	<finance-contract-amount-required>Введите сумму договора</finance-contract-amount-required>
+	<finance-contract-entity-id-required>Укажите сторону договора</finance-contract-entity-id-required>
+	<finance-contract-season-required>Укажите проект для договора</finance-contract-season-required>
+	<finance-contract-type-required>Выберите тип договора</finance-contract-type-required>
+	<finance-contract-tour-price-required>Введите стоимость путевки</finance-contract-tour-price-required>
+	<finance-contract-course-price-required>Введите стоимость курсовки</finance-contract-course-price-required>
+	<finance-contract-tour-count-required>Введите количество для путевок</finance-contract-tour-count-required>
+	<finance-contract-course-count-required>Введите количество для курсовок</finance-contract-course-count-required>
+	<finance-contract-lastday-required>Введите крайний срок оплаты</finance-contract-lastday-required>
+	<finance-contract-added>Договор создан</finance-contract-added>
+	<finance-contract-count-not-true>Количество выбранных детей превышает выбранное число путевок/курсовок</finance-contract-count-not-true>
+	<finance-contract-contact-is-empty>Нельзя создать договор без указания контактного лица</finance-contract-contact-is-empty>
+	
+	<finance-invoice-contract-required>Выберите договор для счета</finance-invoice-contract-required>
+	<finance-invoice-amount-required>Укажите сумму счета</finance-invoice-amount-required>
+	<finance-invoice-added>Счет создан</finance-invoice-added>
+	<finance-invoice-amount-exceed>Указанная сумма счета больше, чем часть суммы договора, не покрытая счетами (%UninvoicedAmount% руб.)</finance-invoice-amount-exceed>
+	<finance-payment-amount-exceed>Указанная сумма оплаты больше, чем неоплаченная часть суммы договора (%UnpaidAmount% руб.)</finance-payment-amount-exceed>
+	<finance-payback-amount-exceed>Сумма возврата больше оплаченной части договора (%paidAmount% руб.)</finance-payback-amount-exceed>
+	<finance-invoice-subject-rest>Отдых в ДОЛ "Синяя птица" в проект(ы): %SeasonTitle%</finance-invoice-subject-rest>
+	<finance-invoice-subject-education>Обучение организации досуговых программ</finance-invoice-subject-education>
+	
+	<finance-payment-contract-required>Выберите договор для оплаты</finance-payment-contract-required>
+	<finance-payment-amount-required>Укажите сумму оплаты</finance-payment-amount-required>
+	<finance-payment-added>Оплата внесена</finance-payment-added>
+	<finance-payback-added>Возврат выполнен</finance-payback-added>
+	<finance-payback-staff-added>Оплачено</finance-payback-staff-added>
+	
+	<finance-act-contract-required>Выберите договор для акта</finance-act-contract-required>
+	<finance-act-added>Акт создан</finance-act-added>
+	<finance-act-commission>Комиссия сохранена</finance-act-commission>
+	<finance-act-subject-rest>Отдых в ДОЛ "Синяя птица" в проект(ы): %SeasonTitle%</finance-act-subject-rest>
+	<finance-act-subject-education>Обучение организации досуговых программ</finance-act-subject-education>
+	
+	<public-error>При обработке Вашего запроса произошла ошибка. Возможно, вы перешли по устаревшей или некорректной ссылке.</public-error>
+	<public-unsubscribe-message>Вы успешно отписались от Email-рассылки.</public-unsubscribe-message>
+	
+	<status-changed>Статус изменен с "%From%" на "%To%"</status-changed>
+	<status-removed>Статус сброшен со значения "%From%"</status-removed>
+	<status-set>Статус установлен в значение "%To%"</status-set>
+	<status-didnt-call>Не звонили</status-didnt-call>
+
+	<status-value-cancel>Отменен</status-value-cancel>
+	
+	<report-group-category>Категория</report-group-category>
+	<report-group-squad>Отряд</report-group-squad>
+	<report-group-manager>Менеджер</report-group-manager>
+	<report-group-school>Школа</report-group-school>
+	<report-group-age>Возраст</report-group-age>
+	<report-group-status>Статус</report-group-status>
+	
+	<validation-field-Date>Дата</validation-field-Date>
+	<validation-field-Amount>Сумма</validation-field-Amount>
+	
+	<entity-child>Ребенок</entity-child>
+	<entity-legal>Юр. лицо</entity-legal>
+
+	<qMed>Медицинские данные</qMed>
+	<qMedChronical>Хронические заболевания</qMedChronical>
+	<qMedTrauma>Переломы, сотрясения, операции</qMedTrauma>
+	<qMedAllergy>Аллергии</qMedAllergy>
+	<qMedSea>Укачивает ли ребенка?</qMedSea>
+	<qMedDrugs>Есть ли необходимость в приеме каких-либо лекарств?</qMedDrugs>
+	<qMedSun>Как переносит солнце? Есть ли реакция на укусы насекомых?</qMedSun>
+	<qPhys>Физическое состояние</qPhys>
+	<qPhysSport>Какими видами спорта занимается</qPhysSport>
+	<qPhysSweam>Умеет ли плавать</qPhysSweam>
+	<qPhysEyes>Зрение. Ношение очков.</qPhysEyes>
+	<qPersonal>Индивидуальные особенности</qPersonal>
+	<qPersonalPhobia>Фобии</qPersonalPhobia>
+	<qPersonalCharacter>Наиболее выраженные черты характера</qPersonalCharacter>
+	<qPersonalIndependence>Самостоятельность по 10-балльной шкале (отношение к вещам,деньгам, способность к самообслуживанию)</qPersonalIndependence>
+	<qPersonalHobbies>Увлечения</qPersonalHobbies>
+	<qAnthropo>Антропометрические данные</qAnthropo>
+	<qAnthropoHeight>Рост</qAnthropoHeight>
+	<qAnthropoWeight>Вес</qAnthropoWeight>
+	<qAnthropoSize>Размер одежды</qAnthropoSize>
+
+	<qMed-editor>Медицинские данные</qMed-editor>
+	<qMedChronical-editor>Хронические заболевания</qMedChronical-editor>
+	<qMedTrauma-editor>Переломы, сотрясения, операции (указать какие и когда)</qMedTrauma-editor>
+	<qMedAllergy-editor>Аллергия (кожная, дыхательная, ринит? на что? чем снимаете?)</qMedAllergy-editor>
+	<qMedSea-editor>Укачивает ли ребенка?</qMedSea-editor>
+	<qMedDrugs-editor>Есть ли необходимость в приеме каких-либо лекарств?</qMedDrugs-editor>
+	<qMedSun-editor>Как переносит солнце? Есть ли реакция на укусы насекомых?</qMedSun-editor>
+	<qPhys-editor>Физическое состояние</qPhys-editor>
+	<qPhysSport-editor>Какими видами спорта занимается ваш ребенок?</qPhysSport-editor>
+	<qPhysSweam-editor>Умеет ли плавать?</qPhysSweam-editor>
+	<qPhysEyes-editor>Зрение. Ношение очков.</qPhysEyes-editor>
+	<qPersonal-editor>Индивидуальные особенности</qPersonal-editor>
+	<qPersonalPhobia-editor>Есть ли фобии? (боязнь высоты, темноты, животных)</qPersonalPhobia-editor>
+	<qPersonalCharacter-editor>Наиболее выраженные черты характера (позитивные и те что вызывают вашу тревогу)</qPersonalCharacter-editor>
+	<qPersonalIndependence-editor>Самостоятельность по 10-балльной шкале (отношение к вещам,деньгам, способность к самообслуживанию)</qPersonalIndependence-editor>
+	<qPersonalHobbies-editor>Хобби и увлечения</qPersonalHobbies-editor>
+	<qAnthropo-editor>Антропометрические данные</qAnthropo-editor>
+	<qAnthropoHeight-editor>Рост</qAnthropoHeight-editor>
+	<qAnthropoWeight-editor>Вес</qAnthropoWeight-editor>
+	<qAnthropoSize-editor>Размер одежды</qAnthropoSize-editor>
+
+	<IncomeType>Статья прихода</IncomeType>
+	<OutcomeType>Статья расхода</OutcomeType>
+
+	<characteristic-updated>Характеристика обновлена</characteristic-updated>
+</Root>

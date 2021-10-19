@@ -1,0 +1,34 @@
+<TMPL_INCLUDE FILE="blocks/block_view_header.html">
+	
+	<form action="<TMPL_VAR NAME='EntityURLPrefix'>" method="post">
+		<div class="row">
+			<div class="col-md-9">
+				<h4 class="text-center"><TMPL_VAR NAME='Title'></h4>
+				<TMPL_INCLUDE FILE='report_view_form.html'>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="text-center pull-right submit-with-param" param="Output" value="Excel">
+					<i class="fa fa-file-excel-o icon-md"></i><br />
+					<TMPL_VAR NAME='LNG_Export'>
+				</a>
+				<a href="#" class="text-center pull-right right15 submit-with-param" param="Output" value="Print">
+					<i class="fa fa-print icon-md"></i><br />
+					<TMPL_VAR NAME='LNG_Print'>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<TMPL_IF NAME='Generated'>
+					<TMPL_INCLUDE FILE='report_view_result.html'>
+				<TMPL_ELSE>
+					<div class="alert alert-default"><TMPL_VAR NAME='LNG_NotGenerated'></div>
+				</TMPL_IF>
+			</div>
+		</div>
+		<input type="hidden" name="EntityViewID" value="<TMPL_VAR NAME='EntityID'>" />
+		<input type="hidden" name="Action" value="Generate" />
+		<input type="hidden" name="Output" value="" />
+	</form>
+	
+<TMPL_INCLUDE FILE="blocks/block_view_footer.html">

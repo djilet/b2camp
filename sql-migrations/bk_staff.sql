@@ -1,0 +1,10 @@
+ALTER TABLE `crm_staff` ADD `LastName` varchar(255) DEFAULT NULL,
+ADD `FirstName` varchar(255) DEFAULT NULL,
+ADD `MiddleName` varchar(255) DEFAULT NULL,
+ADD `Sex` enum('M','F') NOT NULL,
+ADD `DOB` date DEFAULT NULL,
+ADD `Social` varchar(255) DEFAULT NULL,
+ADD `AddressCity` varchar(255) DEFAULT NULL,
+ADD `AddressStreet` varchar(255) DEFAULT NULL,
+ADD `AddressHome` varchar(255) DEFAULT NULL,
+ADD `AddressFlat` varchar(255) DEFAULT NULL;

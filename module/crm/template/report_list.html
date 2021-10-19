@@ -1,0 +1,20 @@
+<TMPL_INCLUDE FILE="blocks/block_list_header.html">
+
+					<TMPL_IF NAME='ItemList'>
+						<table class="table">
+							<thead>
+								<tr>
+									<th><TMPL_VAR NAME='LNG_ColumnTitle'></th>
+								</tr>
+							</thead>
+							<tbody>
+								<TMPL_LOOP NAME='ItemList'>
+									<tr>
+										<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityViewID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='Title'></a></td>
+									</tr>
+								</TMPL_LOOP>
+							</tbody>
+						</table>
+					</TMPL_IF>
+					
+<TMPL_INCLUDE FILE="blocks/block_list_footer.html">

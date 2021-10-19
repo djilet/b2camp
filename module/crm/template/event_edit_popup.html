@@ -1,0 +1,66 @@
+<TMPL_INCLUDE FILE="blocks/block_popup_edit_header.html">
+				
+			<div class="row">	
+				<div class="col-md-12">
+					
+					<TMPL_IF NAME='EntityID'>
+						<div class="row">
+							<div class="col-md-3"><label><TMPL_VAR NAME='LNG_FieldManager'></label></div>
+							<div class="col-md-9"><label><TMPL_VAR NAME='ManagerTitle'></label></div>
+						</div>
+					</TMPL_IF>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Title" class="required"><TMPL_VAR NAME='LNG_FieldTitle'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Title" id="Title" value="<TMPL_VAR NAME='Title'>" placeholder="<TMPL_VAR NAME='LNG_FieldTitle'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="EventDateFrom"><TMPL_VAR NAME='LNG_FieldEventDateFrom'></label></div>
+						<div class="col-md-9">
+							<div class="form-group">
+								<div class="input-group date form_datetime" data-link-field="EventDateFrom">
+									<input class="form-control" size="16" type="text" value="<TMPL_VAR NAME='EventDateFrom' FORMAT='datetime'>" readonly>
+									<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+								</div>
+								<input type="hidden" name="EventDateFrom" id="EventDateFrom" value="<TMPL_VAR NAME='EventDateFrom'>" />
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="EventDateTo"><TMPL_VAR NAME='LNG_FieldEventDateTo'></label></div>
+						<div class="col-md-9">
+							<div class="form-group">
+								<div class="input-group date form_datetime" data-link-field="EventDateTo">
+									<input class="form-control" size="16" type="text" value="<TMPL_VAR NAME='EventDateTo' FORMAT='datetime'>" readonly>
+									<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+								</div>
+								<input type="hidden" name="EventDateTo" id="EventDateTo" value="<TMPL_VAR NAME='EventDateTo'>" />
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="EventType"><TMPL_VAR NAME='LNG_FieldEventType'></label></div>
+						<div class="col-md-9">
+							<select name="EventType" class="form-control">
+								<option value="private" <TMPL_IF NAME='EventType' VALUE='private'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='LNG_FieldEventTypePrivate'></option>
+								<option value="public" <TMPL_IF NAME='EventType' VALUE='public'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='LNG_FieldEventTypePublic'></option>
+							</select>
+						</div>
+					</div>
+					
+					<TMPL_IF NAME='EntityID'>
+						<input type="hidden" name="ManagerID" value="<TMPL_VAR NAME='ManagerID'>" />
+					<TMPL_ELSE>
+						<input type="hidden" name="ManagerID" value="<TMPL_VAR NAME='USER_UserID'>" />
+					</TMPL_IF>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					InitDateTimePickers();
+				});
+			</script>
+<TMPL_INCLUDE FILE="blocks/block_popup_edit_footer.html">

@@ -1,0 +1,74 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<TMPL_IF NAME='ArticleType' VALUE='1'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_TitleIncome'></h2>
+			<TMPL_ELSEIF NAME='ArticleType' VALUE='2'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_TitleOutcome'></h2>
+			</TMPL_IF>				
+		</header>
+		<div class="content-body">
+				<TMPL_IF NAME='ErrorList'>
+					<div class="col-md-12">
+						<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</div>
+				</TMPL_IF>
+				<TMPL_IF NAME='MessageList'>
+					<div class="col-md-12">
+						<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</div>
+				</TMPL_IF>
+				
+						
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="col-md-6"><h3><TMPL_VAR NAME='FIO'> <TMPL_VAR NAME='Contractor'></h3></div>
+						<TMPL_IF NAME='Date' VALUE='0000-00-00 00:00:00'>
+							<div class="col-md-3">00-00-0000</div>
+						<TMPL_ELSE>
+							<div class="col-md-3"><TMPL_VAR NAME='Date' FORMAT='date'></div>
+						</TMPL_IF>
+						<TMPL_IF NAME='ArticleType' VALUE='1'>
+							<div class="col-md-3"><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityID=<TMPL_VAR NAME='EntityID'>" class="btn btn-success btn-icon edit-file"><i class="fa fa-image"></i><TMPL_VAR NAME='LNG_Edit'></a></div>
+						<TMPL_ELSEIF NAME='ArticleType' VALUE='2'>
+							<div class="col-md-3"><a href="module.php?load=crm&entity=bookkeepingout&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityID=<TMPL_VAR NAME='EntityID'>" class="btn btn-success btn-icon edit-file"><i class="fa fa-image"></i><TMPL_VAR NAME='LNG_Edit'></a></div>
+						</TMPL_IF>				
+							
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="DocumentNumber"><TMPL_VAR NAME='LNG_FieldDocumentNumber'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='DocumentNumber'></div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Manager"><TMPL_VAR NAME='LNG_FieldManager'></label></div>
+						<div class="col-md-7"><TMPL_VAR NAME='ManagerTitle'></div>
+<!-- 						<div class="col-md-3"><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityPrintID=<TMPL_VAR NAME='EntityID'>" target="_blank" class="btn btn-success btn-icon edit-file"><i class="fa fa-print"></i><TMPL_VAR NAME='LNG_Print'></a></div>
+ -->					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Bill"><TMPL_VAR NAME='LNG_FieldBill'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='BillName'></div>
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="Base"><TMPL_VAR NAME='LNG_FieldBase'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='Base'></div>
+					</div>
+					
+					<div class="row">
+						<TMPL_IF NAME='IncomeTypeName'>
+							<div class="col-md-2"><label for="IncomeTypeName"><TMPL_VAR NAME='LNG_FieldArticleIncome'></label></div>
+							<div class="col-md-10"><TMPL_VAR NAME='IncomeTypeName'></div>
+						<TMPL_ELSEIF NAME='OutcomeTypeName'>
+							<div class="col-md-2"><label for="OutcomeTypeName"><TMPL_VAR NAME='LNG_FieldArticleOutcome'></label></div>
+							<div class="col-md-10"><TMPL_VAR NAME='OutcomeTypeName'></div>
+						</TMPL_IF>	
+					</div>
+					<div class="row">
+						<div class="col-md-2"><label for="RealComment"><TMPL_VAR NAME='LNG_FieldComment'></label></div>
+						<div class="col-md-10"><TMPL_VAR NAME='RealComment'></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				
+				
+				
+<TMPL_INCLUDE FILE="blocks/block_view_footer.html">

@@ -1,0 +1,20 @@
+<TMPL_INCLUDE FILE="blocks/block_list_header.html">
+<TMPL_INCLUDE FILE="blocks/block_list_table_header.html">
+
+					<TMPL_IF NAME='ItemList'>
+					<table class="table">
+						<tr>
+							<th width="25"><input type="checkbox" class="icheck-minimal-green check-all" InputName="EntityIDs[]" /></th>
+							<th><TMPL_VAR NAME='LNG_ColumnEmail'></th>
+						</tr>
+						<TMPL_LOOP NAME='ItemList'>
+						<tr>
+							<td><input type="checkbox" class="icheck-minimal-green" name="EntityIDs[]" value="<TMPL_VAR NAME='EntityID'>" /></td>
+							<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='Email'></a></td>
+						</tr>
+						</TMPL_LOOP>
+					</table>
+					</TMPL_IF>
+
+<TMPL_INCLUDE FILE="blocks/block_list_table_footer.html">
+<TMPL_INCLUDE FILE="blocks/block_list_footer.html">

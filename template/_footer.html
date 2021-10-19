@@ -1,0 +1,57 @@
+				</section>
+			</section>
+			<!-- END CONTENT -->
+			
+		</div>
+		<!-- END CONTAINER -->
+		
+		<div id="voximplant-popup" class="modal" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title"></h4>
+					</div>
+					<div class="modal-body">
+						<div class="status"></div>
+					</div>
+					<div class="modal-footer">
+						<div class="pull-left">
+							<button type="button" class="btn btn-icon btn-primary voximplant-mute-mic"><i class="fa fa-microphone-slash"></i><TMPL_VAR NAME='LNG_VoxImplantMuteMic'></button>
+							<button type="button" class="btn btn-icon btn-primary voximplant-unmute-mic hidden"><i class="fa fa-microphone"></i><TMPL_VAR NAME='LNG_VoxImplantUnmuteMic'></button>
+						</div>
+						<div class="pull-right">
+							<button type="button" class="btn btn-icon btn-success voximplant-redirect" data-toggle="modal" data-target="#voximplant-redirect-popup"><i class="fa fa-forward"></i><TMPL_VAR NAME='LNG_VoxImplantRedirect'></button>
+							<button type="button" class="btn btn-icon btn-success voximplant-answer"><i class="fa fa-phone"></i><TMPL_VAR NAME='LNG_VoxImplantAnswer'></button>
+							<button type="button" class="btn btn-icon btn-danger voximplant-reject"><i class="fa fa-close"></i><TMPL_VAR NAME='LNG_VoxImplantReject'></button>
+							<button type="button" class="btn btn-icon btn-danger voximplant-hangup"><i class="fa fa-phone"></i><TMPL_VAR NAME='LNG_VoxImplantHangup'></button>
+							<button type="button" class="btn btn-icon btn-default voximplant-close"><i class="fa fa-times"></i><TMPL_VAR NAME='LNG_VoxImplantClose'></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="voximplant-redirect-popup" class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title"><TMPL_VAR NAME='LNG_VoxImplantRedirectHeader'></h4>
+					</div>
+					<div class="modal-body">
+						<select class="form-control voximplant-redirect-user">
+							<TMPL_LOOP NAME='VoxImplantRedirectUserList'>
+								<option value="<TMPL_VAR NAME='VoxImplantLogin'>"><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></option>
+							</TMPL_LOOP>
+						</select>
+					</div>
+					<div class="modal-footer">
+						<div class="pull-right">
+							<button type="button" class="btn btn-icon btn-success voximplant-redirect-confirm"><i class="fa fa-phone"></i><TMPL_VAR NAME='LNG_VoxImplantRedirect'></button>
+							<button type="button" class="btn btn-icon btn-default" data-dismiss="modal"><i class="fa fa-times"></i><TMPL_VAR NAME='LNG_VoxImplantClose'></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

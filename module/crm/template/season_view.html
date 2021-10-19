@@ -1,0 +1,140 @@
+<TMPL_INCLUDE FILE="blocks/block_view_header.html">
+
+<div class="col-md-4">
+	<TMPL_IF NAME='ImageSmallPath'>
+		<img src="<TMPL_VAR NAME='ImageSmallPath'>" class="img-responsive" /><br/><br/>
+	</TMPL_IF>
+</div>
+<div class="col-md-8">
+	<div class="row">
+		<div class="col-md-9"><h3><TMPL_VAR NAME='Title'></h3></div>
+		<div class="col-md-3"><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityID=<TMPL_VAR NAME='EntityID'>" class="btn btn-success btn-icon edit-file"><i class="fa fa-image"></i><TMPL_VAR NAME='LNG_Edit'></a></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2"><label for="Period"><TMPL_VAR NAME='LNG_FieldPeriod'></label></div>
+		<div class="col-md-10"><TMPL_VAR NAME='LNG_From'> <TMPL_VAR NAME='DateFrom' FORMAT='date'> <TMPL_VAR NAME='LNG_To'> <TMPL_VAR NAME='DateTo' FORMAT='date'></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2"><label for="PlaceCount"><TMPL_VAR NAME='LNG_FieldPlaceCount'></label></div>
+		<div class="col-md-10"><TMPL_VAR NAME='PlaceCount'></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2"><label for="Social"><TMPL_VAR NAME='LNG_FieldSocial'></label></div>
+		<div class="col-md-10"><a href="<TMPL_VAR NAME='Social'>" target="_blank"><TMPL_VAR NAME='Social'></a></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2"><label for="Friends"><TMPL_VAR NAME='LNG_FieldFile'></label></div>
+		<div class="col-md-10">
+		<TMPL_LOOP NAME='FileList'>
+			<a href="<TMPL_VAR NAME='FilePath'>" target="_blank" download="<TMPL_VAR NAME='FileTitle'>"><TMPL_VAR NAME='FileTitle'></a><br/>
+		</TMPL_LOOP>
+		</div>
+	</div>
+</div>
+<div class="col-md-12" id="SeasonDescription-block">
+	<b><TMPL_VAR NAME='LNG_FieldComment'></b><br/>
+	<TMPL_VAR NAME='Comment' ESCAPE='none'>
+</div>
+
+<div class="col-md-12">&nbsp;</div>
+
+<div class="col-md-12" id="StaffListInSeason-block">
+	<h3><TMPL_VAR NAME='LNG_FieldStaff'></h3>
+	<TMPL_IF NAME='StaffList'>
+	<table class="table">
+		<tr>
+			<th>&nbsp;</th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnFIO'></th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnCategory'></th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnAge'></th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnUniversity'></th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnCourse'></th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnNickname'></th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnPhone'></th>
+			<th><TMPL_VAR NAME='LNG_FieldStaffColumnEmail'></th>
+		</tr>
+		<TMPL_LOOP NAME='StaffList'>
+		<tr>
+			<td><TMPL_IF NAME='ImageSmallPath'><img src="<TMPL_VAR NAME='ImageSmallPath'>" /><TMPL_ELSE>&nbsp;</TMPL_IF></td>
+			<td><a href="<TMPL_VAR NAME='CommonURLPrefix'>&entity=staff&EntityViewID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='FIO'></a></td>
+			<td><TMPL_VAR NAME='CategoryTitle'></td>
+			<td><TMPL_VAR NAME='Age'></td>
+			<td><TMPL_VAR NAME='University'></td>
+			<td><TMPL_VAR NAME='Course'></td>
+			<td><TMPL_VAR NAME='NickName'></td>
+			<td>
+				<TMPL_IF NAME='PhoneList'>
+					<TMPL_LOOP NAME='PhoneList'>
+						+7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'><br/>
+					</TMPL_LOOP>
+				<TMPL_ELSE>
+					&nbsp;
+				</TMPL_IF>
+			</td>
+			<td>
+				<TMPL_LOOP NAME='EmailList'><TMPL_VAR NAME='Email'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP>
+			</td>
+		</tr>
+		</TMPL_LOOP>
+	</table>
+	<TMPL_ELSE>
+		<p><TMPL_VAR NAME='LNG_ListEmpty'></p>
+	</TMPL_IF>
+</div>
+
+<div class="col-md-12">
+	<h3><TMPL_VAR NAME='LNG_FieldChild'></h3>
+</div>
+<div class="col-md-3">
+	<a href="<TMPL_VAR NAME='EntityURLPrefix'>&EntityViewID=<TMPL_VAR NAME='EntityID'>&Do=Action&Action=PrintChildCards" class="btn btn-primary btn-icon form-control-inline"><i class="fa fa-print"></i> <TMPL_VAR NAME='LNG_PrintList'/></a>
+</div>
+<div class="col-md-12" id="ChildListInSeason">
+	<TMPL_IF NAME='ChildList'>
+		<div class="table-responsive" data-pattern="priority-columns">
+			<table class="table">
+				<thead>
+					<tr>
+						<th data-priority="6">&nbsp;</th>
+						<th data-priority="1"><TMPL_VAR NAME='LNG_FieldChildColumnFIO'></th>
+						<th data-priority="6"><TMPL_VAR NAME='LNG_FieldChildColumnCategory'></th>
+						<th data-priority="6"><TMPL_VAR NAME='LNG_FieldChildColumnAge'></th>
+						<th data-priority="6"><TMPL_VAR NAME='LNG_FieldChildColumnSchool'></th>
+						<th data-priority="1"><TMPL_VAR NAME='LNG_FieldChildColumnPhone'></th>
+						<th data-priority="6"><TMPL_VAR NAME='LNG_FieldChildColumnManager'></th>
+					</tr>
+				</thead>
+				<tbody>
+					<TMPL_LOOP NAME='ChildList'>
+						<tr>
+							<td><TMPL_IF NAME='ImageSmallPath'><img src="<TMPL_VAR NAME='ImageSmallPath'>" /><TMPL_ELSE>&nbsp;</TMPL_IF></td>
+							<td><a href="<TMPL_VAR NAME='CommonURLPrefix'>&entity=child&EntityViewID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='FIO'></a></td>
+							<td><TMPL_VAR NAME='CategoryTitle'></td>
+							<td><TMPL_VAR NAME='Age'></td>
+							<td><TMPL_VAR NAME='SchoolTitle'></td>
+							<td>
+								<TMPL_IF NAME='PhoneList'>
+									<TMPL_LOOP NAME='PhoneList'>
+										+7-<TMPL_VAR NAME='Prefix'>-<TMPL_VAR NAME='Number'><br/>
+									</TMPL_LOOP>
+								<TMPL_ELSE>
+									&nbsp;
+								</TMPL_IF>
+							</td>
+							<td><TMPL_VAR NAME='SchoolTitle'></td>
+						</tr>
+					</TMPL_LOOP>
+				</tbody>
+			</table>
+		</div>
+	<TMPL_ELSE>
+		<p><TMPL_VAR NAME='LNG_ListEmpty'></p>
+	</TMPL_IF>
+</div>
+
+<div class="col-md-12">&nbsp;</div>
+<div class="col-md-12">
+	<h3><TMPL_VAR NAME='LNG_FieldComments'></h3>
+	<TMPL_INCLUDE FILE="blocks/block_view_comments.html">
+</div>
+
+<TMPL_INCLUDE FILE="blocks/block_view_footer.html">

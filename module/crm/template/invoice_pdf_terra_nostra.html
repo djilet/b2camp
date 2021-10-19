@@ -1,0 +1,140 @@
+<h3 align="center">&nbsp; Образец заполнения платежного поручения &nbsp;</h3>
+
+<table border="1" cellpadding="5" cellspacing="0">
+	<tbody>
+		<tr>
+			<td colspan="5" rowspan="2">АО &laquo;АЛЬФА-БАНК&raquo; &nbsp; &nbsp; Банк получателя</td>
+			<td colspan="2">БИК</td>
+			<td colspan="5">&nbsp;044525593 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2">Сч. №</td>
+			<td colspan="5">30101810200000000593</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;ИНН 7725333585</td>
+			<td colspan="3">&nbsp;КПП 772501001</td>
+			<td colspan="2" rowspan="2">Сч. №</td>
+			<td colspan="5" rowspan="2">40702810202860002779 &nbsp;</td>
+			
+		</tr>
+		<tr>
+			<td colspan="5" rowspan="4">ООО &laquo;Реликт Групп&raquo; <br /><br /><br /> Получатель</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2">Вид оп.</td>
+			<td rowspan="3">&nbsp; &nbsp;&nbsp;</td>
+			<td colspan="2">Срок плат.</td>
+			<td colspan="2" rowspan="3">&nbsp; &nbsp;&nbsp;</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2">Наз. пл.</td>
+			<td colspan="2">Очер. плат.</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2">Код</td>
+			<td colspan="2">Рез. поле</td>
+			
+		</tr>
+		<tr>
+			<td colspan="12" rowspan="1">&nbsp;</td>
+			
+		</tr>
+		<tr>
+			<td colspan="12">Оплата за туристическую путевку на смену &quot;<TMPL_VAR NAME='SeasonTitle'>&quot; в детский лагерь Terra Nostra<br /> по счету № <TMPL_VAR NAME='InvoiceID'> от <TMPL_VAR NAME='Created' FORMAT='datedoc'> г. (НДС не облагается) &nbsp;</td>
+			
+		</tr>
+		<tr>
+			<td colspan="12" rowspan="1">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3 align="center">&nbsp; &nbsp; СЧЕТ НА ОПЛАТУ № <TMPL_VAR NAME='InvoiceID'> от <TMPL_VAR NAME='Created' FORMAT='datedoc'> г. &nbsp;</h3>
+
+<table border="0" cellpadding="5" cellspacing="0">
+	<tbody>
+		<tr>
+			<td valign="top">Поставщик:</td>
+			<td valign="top">ООО &laquo;Реликт Групп&raquo;, ИНН 7725333585, КПП 772501001, г. Москва, ул. М. Калужская, д. 27 кв. 12 &nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">Покупатель:</td>
+			<td valign="top"><TMPL_VAR NAME='ClientName'>, <TMPL_VAR NAME='ClientAddress'> <TMPL_LOOP NAME='ClientPhoneList'><TMPL_VAR NAME='Prefix'><TMPL_VAR NAME='Number'> </TMPL_LOOP>, <TMPL_LOOP NAME='ClientEmailList'><TMPL_VAR NAME='Email'></TMPL_LOOP></td>
+		</tr>
+	</tbody>
+</table>
+
+<br />
+
+<table border="1" cellpadding="5" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>№ п/п</td>
+			<td>Наименование товара (описание выполненных работ, оказанных услуг)</td>
+			<td>Ед. изм.</td>
+			<td>Количество</td>
+			<td>Цена (тариф) за единицу измерения, руб. коп.</td>
+			<td>Стоимость товаров (работ, услуг), руб. коп.</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>
+			<p>Туристическая путевка на смену &quot;<TMPL_VAR NAME='SeasonTitle'>&quot; в детский лагерь Terra Nostra с <TMPL_VAR NAME='SeasonDateFrom' FORMAT='date'> по <TMPL_VAR NAME='SeasonDateTo' FORMAT='date'></p>
+			</td>
+			<td>шт.</td>
+			<td>1</td>
+			<td><TMPL_VAR NAME='Amount'></td>
+			<td><TMPL_VAR NAME='Amount'></td>
+		</tr>
+		<tr>
+			<td colspan="5">
+			<p>Итого:</p>
+			</td>
+			<td><TMPL_VAR NAME='Amount'></td>
+		</tr>
+		<tr>
+			<td colspan="5">
+			<p>Без налога (НДС):</p>
+			</td>
+			<td>0.00</td>
+		</tr>
+		<tr>
+			<td colspan="5">
+			<p>Всего к оплате:</p>
+			</td>
+			<td><TMPL_VAR NAME='Amount'></td>
+		</tr>
+	</tbody>
+</table>
+<br />
+Всего наименований 1, на сумму <TMPL_VAR NAME='Amount'> руб. <TMPL_VAR NAME='AmountString'> &nbsp; &nbsp; <br />
+
+<img src="<TMPL_VAR NAME='PATH2MAIN'>images/invoice_sign.png" />
+
+<!-- 
+<table border="0" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>Руководитель</td>
+			<td>_________________________________</td>
+			<td>М.М. Кокорев</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Главный бухгалтер</td>
+			<td>_________________________________</td>
+			<td>М.М. Кокорев</td>
+		</tr>
+	</tbody>
+</table>
+ -->

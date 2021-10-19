@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class=" ">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th><TMPL_VAR NAME='LNG_Date'></th>
+				<th><TMPL_VAR NAME='LNG_DocumentNumber'></th>
+				<th><TMPL_VAR NAME='LNG_Check'></th>
+				<th><TMPL_VAR NAME='LNG_Base'></th>
+				<th><TMPL_VAR NAME='LNG_ArticleIn'></th>
+				<th><TMPL_VAR NAME='LNG_AmountIn'></th>
+				<th><TMPL_VAR NAME='LNG_ArticleOut'></th>
+				<th><TMPL_VAR NAME='LNG_AmountOut'></th>
+				<th><TMPL_VAR NAME='LNG_FIO'></th>
+				<th><TMPL_VAR NAME='LNG_Manager'></th>
+			</tr>
+			<TMPL_LOOP NAME='ItemList'>
+				<tr>
+					<td><TMPL_VAR NAME='Date' FORMAT='date'></td>
+					<td><TMPL_VAR NAME='DocumentNumber'></td>
+					<td><TMPL_VAR NAME='BillName'></td>
+					<td><TMPL_VAR NAME='Base'></td>
+					<td><TMPL_VAR NAME='IncomeTypeName'></td>
+					<td><TMPL_VAR NAME='AmountIncome'></td>
+					<td><TMPL_VAR NAME='OutcomeTypeName'></td>
+					<td><TMPL_VAR NAME='AmountOutcome'></td>
+					<td><TMPL_VAR NAME='FIO'> <TMPL_VAR NAME='Contractor'></td>
+					<td><TMPL_VAR NAME='ManagerTitle'></td>
+					<td><TMPL_VAR NAME='RealComment'></td>
+					
+<!-- 					<td><TMPL_VAR NAME='Lastname'></td>
+					<td><TMPL_VAR NAME='Firstname'></td>
+					<td><TMPL_VAR NAME='Secondname'></td> -->
+				</tr>
+			</TMPL_LOOP>	
+		</table>
+	</body>
+</html>

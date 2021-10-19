@@ -1,0 +1,163 @@
+<TMPL_INCLUDE FILE="blocks/block_list_header.html">
+
+<form action="" method="post">
+	<div class="form-group well transparent">
+		<h3><TMPL_VAR NAME='LNG_Filter'></h3>
+		<div class="row">
+			<div class="col-md-2">
+				<label><TMPL_VAR NAME='LNG_FilterTitle'></label>
+			</div>
+			<div class="col-md-2">
+				<input type="text" name="FilterTitle" value="<TMPL_VAR NAME='FilterTitle'>" class="form-control" />
+			</div>
+			<div class="col-md-2">
+				<label><TMPL_VAR NAME='LNG_FilterDateFrom'></label>
+			</div>
+			<div class="col-md-2">
+				<input type="text" name="FilterDateFrom" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='FilterDateFrom' FORMAT='date'>" class="form-control datepicker" />
+			</div>
+			<div class="col-md-2">
+				<label><TMPL_VAR NAME='LNG_FilterDateTo'></label>
+			</div>
+			<div class="col-md-2">
+				<input type="text" name="FilterDateTo" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='FilterDateTo' FORMAT='date'>" class="form-control datepicker" />
+			</div>
+		</div>
+		<div class="row">
+			<TMPL_IF NAME='FilterShow' OP='!=' VALUE='out'>
+				<div class="col-md-2">
+					<label><TMPL_VAR NAME='LNG_FilterCreatedManager'></label>
+				</div>
+				<div class="col-md-2">
+					<select name="FilterCreatedManagerID" class="form-control">
+						<option value=""></option>
+						<TMPL_LOOP NAME='FilterCreatedManagerList'>
+							<option value="<TMPL_VAR NAME='UserID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></option>
+						</TMPL_LOOP>
+					</select>
+				</div>
+			</TMPL_IF>	
+			<TMPL_IF NAME='USER_Role' OP='!=' VALUE='manager'>
+				<div class="col-md-2">
+					<label><TMPL_VAR NAME='LNG_FilterExecutorManager'></label>
+				</div>
+				<div class="col-md-2">
+					<select name="FilterExecutorManagerID" id="FilterExecutorManagerID" class="s2container">
+						<option value=""></option>
+						<TMPL_LOOP NAME='FilterExecutorManagerList'>
+							<option value="<TMPL_VAR NAME='UserID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></option>
+						</TMPL_LOOP>
+					</select>
+					<TMPL_VAR NAME='FilterExecutorManagerIDControlHTML' ESCAPE='none'>
+				</div>	
+			<TMPL_ELSEIF NAME='FilterShow' VALUE='out'>
+				<div class="col-md-2">
+					<label><TMPL_VAR NAME='LNG_FilterExecutorManager'></label>
+				</div>
+				<div class="col-md-2">
+					<select name="FilterExecutorManagerID" id="FilterExecutorManagerID" class="s2container">
+						<option value=""></option>
+						<TMPL_LOOP NAME='FilterExecutorManagerList'>
+							<option value="<TMPL_VAR NAME='UserID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='LastName'> <TMPL_VAR NAME='FirstName'></option>
+						</TMPL_LOOP>
+					</select>
+					<TMPL_VAR NAME='FilterExecutorManagerIDControlHTML' ESCAPE='none'>
+				</div>
+			</TMPL_IF>
+			<div class="col-md-2">
+				<label><TMPL_VAR NAME='LNG_FilterPriority'></label>
+			</div>
+			<div class="col-md-2">
+				<select name="FilterPriority" class="form-control">
+					<option value=""></option>
+					<option value="low" <TMPL_IF NAME='FilterPriority' VALUE='low'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_PriorityLow'></option>
+					<option value="normal" <TMPL_IF NAME='FilterPriority' VALUE='normal'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_PriorityNormal'></option>
+					<option value="high" <TMPL_IF NAME='FilterPriority' VALUE='high'>selected</TMPL_IF>><TMPL_VAR NAME='LNG_PriorityHigh'></option>
+				</select>
+			</div>
+		</div>
+		<div class="row top15">
+			<div class="col-md-4">
+				<button type="submit" class="btn btn-primary btn-icon"><i class="fa fa-search"></i> <TMPL_VAR NAME='LNG_FilterSearch'></button>
+			</div>
+			<div class="col-md-4">
+				
+			</div>
+			<div class="col-md-4">
+				
+			</div>
+		</div>
+	</div>
+</form>
+
+<TMPL_INCLUDE FILE="blocks/block_list_table_header.html">
+
+<TMPL_IF NAME='ItemList'>
+<div class="table-responsive" data-pattern="priority-columns">
+	<table class="table">
+		<thead>
+			<tr>
+				<th width="25" data-priority="1"><input type="checkbox" class="icheck-minimal-green check-all" InputName="EntityIDs[]" /></th>
+				<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnTitle'></th>
+				<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnStatus'></th>
+				<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnPriority'></th>
+				<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnCreated'></th>
+				<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnExecutionDate'></th>
+				<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnCreatedManager'></th>
+				<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnExecutorManager'></th>
+			</tr>
+		</thead>
+		<tbody>
+			<TMPL_LOOP NAME='ItemList'>
+			<tr 
+				<TMPL_IF NAME='Executor'>
+					<TMPL_IF NAME='Read' VALUE='N'>class="success"</TMPL_IF>
+				<TMPL_ELSEIF NAME='LinkRead' VALUE='N'>
+					class="success"
+				</TMPL_IF> date="<TMPL_VAR NAME='ExecutionDateTo'>">
+				<td><input type="checkbox" class="icheck-minimal-green" name="EntityIDs[]" value="<TMPL_VAR NAME='EntityID'>" /></td>
+				<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityViewID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='Title'></a></td>
+				<td>
+					<TMPL_IF NAME='Status' VALUE='opened'>
+						<TMPL_VAR NAME='LNG_StatusOpened'>
+					<TMPL_ELSEIF NAME='Status' VALUE='closed'>
+						<TMPL_VAR NAME='LNG_StatusClosed'>
+					</TMPL_IF>
+				</td>
+				<td>
+					<TMPL_IF NAME='Priority' VALUE='low'>
+						<span class="label block label-success"><TMPL_VAR NAME='LNG_PriorityLow'></span>
+					<TMPL_ELSEIF NAME='Priority' VALUE='normal'>
+						<span class="label block label-warning"><TMPL_VAR NAME='LNG_PriorityNormal'></span>
+					<TMPL_ELSEIF NAME='Priority' VALUE='high'>
+						<span class="label block label-danger"><TMPL_VAR NAME='LNG_PriorityHigh'></span>
+					</TMPL_IF>
+				</td>
+				<td><TMPL_VAR NAME='Created' FORMAT='datetime'></td>
+				<td><TMPL_VAR NAME='ExecutionDateFrom' FORMAT='date'> - <TMPL_VAR NAME='ExecutionDateTo' FORMAT='date'></td>
+				<td><TMPL_VAR NAME='CreatedManagerTitle'></td>
+				<td><TMPL_VAR NAME='ExecutorManagerTitle'></td>
+			</tr>
+			</TMPL_LOOP>
+		</tbody>
+	</table>
+</div>
+</TMPL_IF>
+
+<TMPL_INCLUDE FILE="blocks/block_list_table_footer.html">
+<TMPL_INCLUDE FILE="blocks/block_list_footer.html">
+
+<script type="text/javascript" src="<TMPL_VAR NAME='PATH2MOD'>js/date.format.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#entity-list tbody tr').each(
+			function(i,e){
+				var formatedDateNow = new Date().format("yyyy-mm-dd");
+				if (formatedDateNow<$(e).attr('date')){
+					// дата исполнения задачи больше чем сейчас
+					$(e).hide();
+				}
+			}
+		)
+	})
+</script>

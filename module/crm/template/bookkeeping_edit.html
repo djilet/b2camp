@@ -1,0 +1,122 @@
+<TMPL_VAR NAME='FIO'><TMPL_INCLUDE FILE="blocks/block_edit_header.html">
+				
+										
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-3"><label for="DocumentNumber" class="required"><TMPL_VAR NAME='LNG_FieldDocumentNumber'></label></div>
+						<div class="col-md-9">
+							<span class='static-number'><TMPL_VAR NAME='DocumentNumber'></span>
+							<input type="hidden" name="DocumentNumber" value="<TMPL_VAR NAME='DocumentNumber'>" />
+						</div>
+					</div>
+					<TMPL_VAR NAME='DuplicateControlHTML' ESCAPE='none'>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Check" class="required"><TMPL_VAR NAME='LNG_FieldBill'></label></div>
+						<div class="col-md-9">
+							<!-- <input class="form-control" type="text" name="Check" id="Check" value="<TMPL_VAR NAME='Check'>" placeholder="<TMPL_VAR NAME='LNG_FieldBill'>" />
+							 -->
+							<select name="Check" class="form-control">
+								<option value="0"></option>															
+								<TMPL_LOOP NAME='CheckList'>
+									<option value="<TMPL_VAR NAME='Check'>" <TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='CheckName'></option>
+								</TMPL_LOOP>
+							</select>
+						</div>
+					</div>	
+						
+					<div class="row">
+						<div class="col-md-3"><label for="Base" class="required"><TMPL_VAR NAME='LNG_FieldBase'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Base" id="Base" value="<TMPL_VAR NAME='Base'>" placeholder="<TMPL_VAR NAME='LNG_FieldBase'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Lastname"><TMPL_VAR NAME='LNG_FieldLastname'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Lastname" id="Lastname" value="<TMPL_VAR NAME='Lastname'>" placeholder="<TMPL_VAR NAME='LNG_FieldLastname'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Firstname"><TMPL_VAR NAME='LNG_FieldFirstname'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Firstname" id="Firstname" value="<TMPL_VAR NAME='Firstname'>" placeholder="<TMPL_VAR NAME='LNG_FieldFirstname'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Secondname"><TMPL_VAR NAME='LNG_FieldSecondname'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Secondname" id="Secondname" value="<TMPL_VAR NAME='Secondname'>" placeholder="<TMPL_VAR NAME='LNG_FieldSecondname'>" /></div>
+					</div>
+
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Manager" class="required"><TMPL_VAR NAME='LNG_FieldManager'></label></div>
+						<div class="col-md-9">
+						<!-- 	<input class="form-control" type="text" name="Manager" id="Manager" value="<TMPL_VAR NAME='Manager'>" placeholder="<TMPL_VAR NAME='LNG_FieldManager'>" />
+						 -->
+						 	<select name="Manager" id="Manager" class="form-control">
+								<option value="0"></option>
+								<TMPL_LOOP NAME='ManagerValueList'>
+									<option value="<TMPL_VAR NAME='UserID'>" <TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='Name'></option>
+								</TMPL_LOOP>
+							</select> 
+						<!--	
+							<select name="ManagerID" id="ManagerID" class="form-control">
+								<option value=''></option>
+								<TMPL_LOOP NAME='ManagerIDValueList'>
+									<option value="<TMPL_VAR NAME='ID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+								</TMPL_LOOP>
+							</select>-->
+						</div>
+					</div> 
+				</div>
+				<div class="col-md-6">
+				
+					<div class="row">
+						<div class="col-md-3"><label for="Date" class="required"><TMPL_VAR NAME='LNG_FieldDate'></label></div>
+						<div class="col-md-9"><input class="form-control datepicker" data-format="dd.mm.yyyy" type="text" name="Date" id="Date" value="<TMPL_VAR NAME='Date' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_FieldDate'>" /></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="Amount" class="required"><TMPL_VAR NAME='LNG_FieldAmount'></label></div>
+						<div class="col-md-9"><input class="form-control" type="text" name="Amount" id="Amount" value="<TMPL_VAR NAME='Amount'>" placeholder="<TMPL_VAR NAME='LNG_FieldAmount'>" /></div>
+					</div>
+						
+					<div class="row">
+						
+							<div class="col-md-3"><label for="ArticleID" class="required"><TMPL_VAR NAME='LNG_FieldArticleIncome'></label></div>
+							<div class="col-md-9">	
+								<select name="ArticleID" class="form-control">
+									<option value=""></option>															
+									<TMPL_LOOP NAME='ArticleIDList'>
+										<option value="<TMPL_VAR NAME='ArticleID'>" <TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='ArticleName'></option>
+									</TMPL_LOOP>
+								</select>
+								
+								<input type='hidden' name="ArticleType" value="1" />					
+							
+							</div>
+ 					</div>
+							
+					<div class="row">
+						<div class="col-md-3"><label for="Contractor"><TMPL_VAR NAME='LNG_FieldContractor'></label></div>
+						<div class="col-md-9">
+							<input class="form-control" type="text" name="Contractor" id="Contractor" value="<TMPL_VAR NAME='Contractor'>" placeholder="<TMPL_VAR NAME='LNG_FieldContractor'>" />
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-3"><label for="RealComment"><TMPL_VAR NAME='LNG_FieldComment'></label></div>
+						<div class="col-md-9">
+							<textarea class="form-control" name="RealComment" id="RealComment" rows="6" cols="80" placeholder="<TMPL_VAR NAME='LNG_FieldComment'>">
+								<TMPL_VAR NAME='RealComment'>
+							</textarea>
+						</div>
+					</div> 
+			
+				</div>
+				
+<!-- 				<TMPL_IF NAME='ArticleType' OP='==' VALUE='3'>
+					<input type="hidden" name="ArticleType" value="2" />
+				<TMPL_ELSE>	
+					<input type="hidden" name="ArticleType" value="1" />
+				</TMPL_IF> -->
+				
+<TMPL_INCLUDE FILE="blocks/block_edit_footer.html">

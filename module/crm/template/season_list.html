@@ -1,0 +1,86 @@
+<TMPL_INCLUDE FILE="blocks/block_list_header.html">
+
+				<form action="" method="post">
+					<div class="form-group well transparent">
+						<h3><TMPL_VAR NAME='LNG_Filter'></h3>
+						<div class="row">
+							<div class="col-md-2">
+								<label><TMPL_VAR NAME='LNG_FilterTitle'></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterTitle" value="<TMPL_VAR NAME='FilterTitle'>" class="form-control" />
+							</div>
+							<div class="col-md-2">
+								<label><TMPL_VAR NAME='LNG_FilterDateFrom'></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterDateFrom" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='FilterDateFrom' FORMAT='date'>" class="form-control datepicker" />
+							</div>
+							<div class="col-md-2">
+								<label><TMPL_VAR NAME='LNG_FilterDateTo'></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterDateTo" data-format="dd.mm.yyyy" value="<TMPL_VAR NAME='FilterDateTo' FORMAT='date'>" class="form-control datepicker" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2">
+								<label><TMPL_VAR NAME='LNG_FilterChildrenCount'></label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" name="FilterChildrenCount" value="<TMPL_VAR NAME='FilterChildrenCount'>" class="form-control" />
+							</div>
+							
+							<div class="col-md-2">
+								<label><TMPL_VAR NAME='LNG_FilterType'></label>
+							</div>
+							<div class="col-md-2">
+								<select name="FilterTypeID" class="form-control">
+									<option value=""></option>
+									<TMPL_LOOP NAME='FilterTypeList'>
+										<option value="<TMPL_VAR NAME='TypeID'>" <TMPL_IF NAME='Selected'>selected</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							
+						</div>
+						<div class="row top15">
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-primary btn-icon"><i class="fa fa-search"></i> <TMPL_VAR NAME='LNG_FilterSearch'></button>
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+							<div class="col-md-4">
+								
+							</div>
+						</div>
+						
+					</div>
+				</form>
+				
+<TMPL_INCLUDE FILE="blocks/block_list_table_header.html">
+
+					<TMPL_IF NAME='ItemList'>
+					<table class="table">
+						<tr>
+							<th width="25"><input type="checkbox" class="icheck-minimal-green check-all" InputName="EntityIDs[]" /></th>
+							<th>&nbsp;</th>
+							<th><TMPL_VAR NAME='LNG_ColumnTitle'></th>
+							<th><TMPL_VAR NAME='LNG_ColumnPeriod'></th>
+							<th><TMPL_VAR NAME='LNG_ColumnChildCount'></th>
+						</tr>
+						<TMPL_LOOP NAME='ItemList'>
+						<tr>
+							<td><input type="checkbox" class="icheck-minimal-green" name="EntityIDs[]" value="<TMPL_VAR NAME='EntityID'>" /></td>
+							<td><TMPL_IF NAME='ImageSmallPath'><img src="<TMPL_VAR NAME='ImageSmallPath'>" /><TMPL_ELSE>&nbsp;</TMPL_IF></td>
+							<td><a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityViewID=<TMPL_VAR NAME='EntityID'>"><TMPL_VAR NAME='Title'></a></td>
+							<td><TMPL_VAR NAME='LNG_From'> <TMPL_VAR NAME='DateFrom' FORMAT='date'> <TMPL_VAR NAME='LNG_To'> <TMPL_VAR NAME='DateTo' FORMAT='date'></td>
+							<td><TMPL_VAR NAME='ChildCount'></td>
+						</tr>
+						</TMPL_LOOP>
+					</table>
+					</TMPL_IF>
+					
+<TMPL_INCLUDE FILE="blocks/block_list_table_footer.html">
+<TMPL_INCLUDE FILE="blocks/block_list_footer.html">

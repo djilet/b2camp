@@ -1,0 +1,39 @@
+			<div class="col-md-6 no-padding form-group">
+				<ul class="pagination">
+					<TMPL_VAR NAME='Paging' ESCAPE='none'>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="form-group row">
+				<div class="col-md-5 col-sm-5 col-xs-12 form-group">
+					<a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityID=&ArticleType=1" class="btn btn-success btn-icon"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_CreateArticleIn'></a>
+					<a href="module.php?load=crm&entity=bookkeepingout&EntityID=&ArticleType=2" class="btn btn-success btn-icon"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_CreateArticleOut'></a>					
+					<a href="#" class="btn btn-warning btn-icon" onclick="return MultipleCancel($('#entity-list')[0], 'EntityIDs[]');"><i class="fa fa-remove"></i><TMPL_VAR NAME='LNG_CancelMultiple'></a>
+				</div>
+				<div class="col-md-5 col-sm-5 col-md-offset-2 col-xs-12 form-group">
+					<div class="pull-right">
+						<TMPL_IF NAME='ShowClearPanelButton'>
+							<a class="btn btn-warning btn-icon" href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityPrintList=1" target="_blank">
+								<i class="fa fa-print"></i><TMPL_VAR NAME='LNG_Print'></a>
+<!-- 	 						<a href="<TMPL_VAR NAME='EntityURLPrefix'>&<TMPL_VAR NAME='InnerFilterParamsForURL'>&EntityPrintID=<TMPL_VAR NAME='EntityID'>" target="_blank" class="btn btn-success btn-icon edit-file"><i class="fa fa-print"></i><TMPL_VAR NAME='LNG_Print'></a> -->
+<!--  							<a href="#" class="btn btn-warning btn-icon" onclick="return MultipleClearPanel($('#entity-list')[0], 'EntityIDs[]');"><i class="glyphicon glyphicon-edit"></i><TMPL_VAR NAME='LNG_ClearPanel'></a>-->
+ 						</TMPL_IF>
+						<TMPL_IF NAME='ShowExportButton'>
+							<a href="<TMPL_VAR NAME='EntityURLPrefix'>&Do=Action&Action=Export<TMPL_IF NAME='InnerFilterParamsForURL'>&<TMPL_VAR NAME='InnerFilterParamsForURL' /></TMPL_IF>" class="btn btn-success btn-icon">
+								<i class="glyphicon glyphicon-export"></i>
+								<TMPL_VAR NAME='LNG_Export'>
+							</a>
+						</TMPL_IF>
+					</div>
+				</div>
+			</div>
+			<p><TMPL_VAR NAME='ListInfo'></p>
+			<div>
+				<form action="" method="post" id="entity-list">
+					<TMPL_IF NAME='ErrorList'>
+					<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</TMPL_IF>
+					<TMPL_IF NAME='MessageList'>
+					<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</TMPL_IF>

@@ -1,0 +1,33 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<TMPL_IF NAME='ArticleType' OP='==' VALUE='2'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_TitleOutcomeAdd'></h2>
+			<TMPL_ELSEIF NAME='EntityID'>
+				<TMPL_IF NAME='ArticleType' VALUE='1'>
+					<h2 class="title pull-left"><TMPL_VAR NAME='LNG_TitleIncomeEdit'></h2>
+				<TMPL_ELSE>
+					<h2 class="title pull-left"><TMPL_VAR NAME='LNG_TitleOutcomeEdit'></h2>
+				</TMPL_IF>
+			<TMPL_ELSE>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_TitleIncomeAdd'></h2>
+			</TMPL_IF>
+			<p class="pull-right top15 right15" id="autosave-info"></p>
+		</header>
+		<div class="content-body">
+			<form action="<TMPL_VAR NAME='EntityURLPrefix'><TMPL_VAR NAME='ArticleTypeUrl'>" method="post" class="nform lockable" enctype="multipart/form-data" accept-charset="utf-8" id="entity-form">
+				<TMPL_IF NAME='ErrorList'>
+					<div class="col-md-12">
+						<div class="alert alert-error">
+							<TMPL_LOOP NAME='ErrorList'>
+								<TMPL_VAR NAME='Message'>
+								<TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS>
+							</TMPL_LOOP>
+						</div>
+					</div>
+				</TMPL_IF>
+				<TMPL_IF NAME='MessageList'>
+					<div class="col-md-12">
+						<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</div>
+				</TMPL_IF>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title><TMPL_VAR NAME='FIO'></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				window.print();
+			}
+		</script>
+	</head>
+	<body>
+	
+		<h2 align="center"><TMPL_VAR NAME='FIO'></h2>
+		<TMPL_IF NAME='ItemList'>
+			<div class="table-responsive" data-pattern="priority-columns">
+				<table width="100%" border="1" cellspacing="0" cellpadding="10" style="border-collapse:collapse;">
+					<thead>
+						<tr>
+							<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnDate'></th>
+							<th data-priority="1"><TMPL_VAR NAME='LNG_ColumnDocumentNumber'></th>
+							<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnCheck'></th>
+							<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnBase'></th>
+							<th data-priority="4"><TMPL_VAR NAME='LNG_ColumnArticleIn'></th>
+							<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnAmountIn'></th>
+							<th data-priority="5"><TMPL_VAR NAME='LNG_ColumnArticleOut'></th>
+							<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnAmountOut'></th>
+							<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnFio'></th>
+							<th data-priority="6"><TMPL_VAR NAME='LNG_ColumnManager'></th>
+						</tr>
+					</thead>
+					<tbody>
+						<TMPL_LOOP NAME='ItemList'>
+							<tr class="<TMPL_VAR NAME='BillColor'>">
+								<td><TMPL_VAR NAME='Date' format='date'></td>
+								<td><TMPL_VAR NAME='DocumentNumber'></td>											
+								<td><TMPL_VAR NAME='BillName'></td>											
+								<td><TMPL_VAR NAME='Base'></td>
+								<td><TMPL_VAR NAME='IncomeTypeName'></td>
+								<td><TMPL_VAR NAME='AmountIncome'></td>
+								<td><TMPL_VAR NAME='OutcomeTypeName'></td>
+								<td><TMPL_VAR NAME='AmountOutcome'></td>
+								<td><TMPL_VAR NAME='FIO'><TMPL_VAR NAME='Contractor'></td>
+								<td><TMPL_VAR NAME='ManagerTitle'></td>
+							</tr>
+						</TMPL_LOOP>
+					</tbody>
+				</table>
+			</div>
+		</TMPL_IF>
+	</body>
+</html>

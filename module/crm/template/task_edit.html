@@ -1,0 +1,70 @@
+<TMPL_INCLUDE FILE="blocks/block_edit_header.html">
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-5"><label for="Title" class="required"><TMPL_VAR NAME='LNG_FieldTitle'></label></div>
+							<div class="col-md-7"><input class="form-control" type="text" name="Title" id="Title" value="<TMPL_VAR NAME='Title'>" placeholder="<TMPL_VAR NAME='LNG_FieldTitle'>" /></div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-5"><label for="ExecutorManagerID" class="required"><TMPL_VAR NAME='LNG_FieldExecutorManager'></label></div>
+							<div class="col-md-7">
+								<select name="ExecutorManagerID" id="ExecutorManagerID"  class="s2container">
+									<option value=""></option>
+									<TMPL_LOOP NAME='ExecutorManagerIDValueList'>
+										<option value="<TMPL_VAR NAME='ID'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='Title'></option>
+									</TMPL_LOOP>
+								</select>
+								<TMPL_VAR NAME='ExecutorManagerIDControlHTML' ESCAPE='none'>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-5"><label for="ExecutionDateFrom"><TMPL_VAR NAME='LNG_FieldExecutionDateFrom'></label></div>
+							<div class="col-md-7"><input class="form-control datepicker" data-format="dd.mm.yyyy" type="text" name="ExecutionDateFrom" id="ExecutionDateFrom" value="<TMPL_VAR NAME='ExecutionDateFrom' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_FieldExecutionDateFrom'>" /></div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-5"><label for="ExecutionDateTo"><TMPL_VAR NAME='LNG_FieldExecutionDateTo'></label></div>
+							<div class="col-md-7"><input class="form-control datepicker" data-format="dd.mm.yyyy" type="text" name="ExecutionDateTo" id="ExecutionDateTo" value="<TMPL_VAR NAME='ExecutionDateTo' FORMAT='date'>" placeholder="<TMPL_VAR NAME='LNG_FieldExecutionDateTo'>" /></div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-3"><label><TMPL_VAR NAME='LNG_FieldPriority'></label></div>
+							<div class="col-md-9">
+								<input class="icheck-minimal-green" type="radio" name="Priority" id="PriorityLow" value="low" <TMPL_IF NAME='Priority' VALUE='low'>checked</TMPL_IF> /><label for="PriorityLow" class="label label-success right15"><TMPL_VAR NAME='LNG_PriorityLow'></label>
+								<input class="icheck-minimal-green" type="radio" name="Priority" id="PriorityNormal" value="normal" <TMPL_IF NAME='Priority' VALUE='normal'>checked</TMPL_IF> /><label for="PriorityNormal" class="label label-warning right15"><TMPL_VAR NAME='LNG_PriorityNormal'></label>
+								<input class="icheck-minimal-green" type="radio" name="Priority" id="PriorityHigh" value="high" <TMPL_IF NAME='Priority' VALUE='high'>checked</TMPL_IF> /><label for="PriorityHigh" class="label label-danger right15"><TMPL_VAR NAME='LNG_PriorityHigh'></label>
+							</div>
+						</div>
+						<div class="row top15">
+							<div class="col-md-3"><label for="File"><TMPL_VAR NAME='LNG_FieldFile'></label></div>
+							<div class="col-md-9 no-padding">
+								<TMPL_INCLUDE FILE="blocks/block_edit_files.html">
+							</div>
+						</div>
+						<input type="hidden" name="CreatedManagerID" value="<TMPL_IF NAME='CreatedManagerID'><TMPL_VAR NAME='CreatedManagerID'><TMPL_ELSE><TMPL_VAR NAME='UserID'></TMPL_IF>" />
+					</div>
+				
+					<div class="col-md-12">
+						<label for="Description"><TMPL_VAR NAME='LNG_FieldDescription'></label>
+						<textarea rows="10" class="form-control" name="Description" id="Description"><TMPL_VAR NAME='Description'></textarea>
+					</div>
+				</div>
+	<script>
+        $(document).ready(function(){
+            $(".datepicker").datepicker({
+                utoclose: true,
+                minViewMode: 0,
+                format: 'dd.mm.yyyy',
+                startDate: Date(),
+                endDate: '',
+                daysOfWeekDisabled: '',
+                startView: 0,
+                language: 'ru'
+            });
+        });
+	</script>
+<TMPL_INCLUDE FILE="blocks/block_edit_footer.html">

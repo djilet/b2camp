@@ -1,0 +1,25 @@
+	
+	<thead>
+		<tr class="info">
+			<th><TMPL_VAR NAME='LNG_Season'></th>
+			<th><TMPL_VAR NAME='GroupTitle'></th>
+			<th><TMPL_VAR NAME='LNG_ChildCount'></th>
+		</tr>
+	</thead>
+	<tbody>
+		<TMPL_LOOP NAME='ResultList'>
+			<tr>
+				<td><TMPL_VAR NAME='Title'></td>
+				<td><TMPL_VAR NAME='GroupTitle'></td>
+				<td><TMPL_VAR NAME='ChildCount'></td>
+			</tr>
+		</TMPL_LOOP>
+	</tbody>
+
+	<TMPL_LOOP NAME='TotalList'>
+		<tr class="info">
+			<td><TMPL_VAR NAME='Title'></td>
+			<td></td>
+			<td><TMPL_VAR NAME='ChildCount'></td>
+		</tr>
+	</TMPL_LOOP>
